@@ -194,7 +194,9 @@ Each thread that encounters a task: packages the code and data and puts the task
 
 By default; Global vars are shared, Vars declared in the scope of a task are private.
 
-### Task synchronization
+### Task synchronization: taskwait
+
+### Task synchronization: taskgroup
 
 
 
