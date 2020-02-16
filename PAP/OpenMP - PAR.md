@@ -1,4 +1,4 @@
-## OpenMP - PAR
+# OpenMP - PAR
 
 API extension for C, C++. Can create threads, tasks and synchronize them.
 
@@ -25,7 +25,7 @@ double omp_get_wtime();
 
 
 
-## Basic constructs
+## Part 1 : Basic constructs
 
 
 
@@ -39,17 +39,17 @@ A internal control variable (ICV) is used to determine the num of threads. By de
 
 * Clauses:
 
-  num_threads(exp): Ignore ICV and sets the num of threads.
+  * num_threads(exp): Ignore ICV and sets the num of threads.
 
-  if(exp): if exp evaluates false -> the parallel only use 1 thread.
+  * if(exp): if exp evaluates false -> the parallel only use 1 thread.
 
-  shared(var-list): All threads view the same var (not necessarily the same value).
+  * shared(var-list): All threads view the same var (not necessarily the same value).
 
-  private(var-list): All threads have a different var, initialy with undefined value.
+  * private(var-list): All threads have a different var, initialy with undefined value.
 
-  firstprivate(var-list): Same as private, but initialized to the original value.
+  * firstprivate(var-list): Same as private, but initialized to the original value.
 
-  reduction(op:var-list): Defines the kind of join for a private var that will perform at the end of the parallel region. (op: +,-,*,|,||,&,&&,^, min,max).
+  * reduction(op:var-list): Defines the kind of join for a private var that will perform at the end of the parallel region. (op: +,-,*,|,||,&,&&,^, min,max).
 
 ### Synchronization mechanisms: barrier
 
@@ -120,7 +120,7 @@ Synchronization constructs have an associated flush operation.
 
 
 
-## Worksharing
+## Part 2: Worksharing
 
 A worksharing construct defines a team of threads that execute a certain region of code. Is a better way than split the code with the threads ID.
 
@@ -130,12 +130,81 @@ Is less flexible than tasks, but have lower overhead.
 
 ````c++
 #pragma omp for[clauses]
-	for(int i = 0; i<exp; ++i)
+	for(int i = 0; i<exp; ++i);
+#pragma omp parallel for[clauses]
 ````
 
+The loop iterations are divided among the threads of the team. The loop iterations must be independet and the number must be knowed.
+
+* Clauses:
+
+  * private, firstprivate, reduction: same as parallel
+
+  * schedule: determines wich it's are executed by each thread. 
+
+    * static -> the it space is broken in chunks with size N/num_threads.
+    * static, N ->chunks of size N.
+    * dynamic, N -> Threads grab chunks of N it's until all iterations have been executed (if no N -> N=1).
+    * guided ->Variant of dynamic. The size of the chunk deceases as the thread grab iterations, but is al least of size N.
+
+    The dynamic schedule have higher overhead but can solve the imbalance problems of the static schedule.
+
+  * nowait: The implicit barrier at the end of the loop disapears.
+
+  * collapse(n): Allows to distribute work from a set of 'n' nested loops.
+
+  * ordered(n): Specify sequential ordering in the execution of a block of statements in a set of 'n' nested loops. Also if the nested loop have cross-iterations dependences we need to use the clauses:
+
+    * depend(sink:i-1) defines the wait point for the completion of the i-N
+    * depend(source) defines the completion of the iteration i
 
 
-## Example: PI parallel Code
+
+### Worksharing: Single construct
+
+````c++
+#pragma omp single [clauses]
+	block
+````
+
+* clauses:
+  * private, firstprivate, nowait
+
+Only one thread of the team executes the block. There is an implicit barrier at the end.
+
+## Part 3: Task parallelism
+
+A task is a work unit whose execution may be deferred. All the tasks in thre program waits to be executed in a task pool. One thread assigns tasks to the threads in a team.
+
+### Task creation
+
+Each thread that encounters a task: packages the code and data and puts the task in the task pool. We need to use the parallel and the single construct. The threads (the single one when finishes the task generation) cooperate to execute them.
+
+````c++
+#pragma omp task[clauses]
+	block
+````
+
+* clauses:
+  * shared, private, firstprivate.
+  * if(exp): if the exp evaluates false, the task is suspended
+  * final(exp): if he exp evaluates true, the task is immediately executed. All his child tasks also will be final.
+  * mergeable:
+  * depend(in:vars), depend(out:vars), depend(inout:vars)
+
+By default; Global vars are shared, Vars declared in the scope of a task are private.
+
+### Task synchronization
+
+
+
+### Taskloop construct
+
+
+
+## Examples
+
+### Example: Pi v1
 
 In this example we have a 'Data race' with sum variable (by default shared). We can use atomic or critical to avoid it. Another option is to use reduction + for the variable.
 
@@ -161,5 +230,55 @@ void main(){
 	}
     pi = sum * step;
 }
+````
+
+Also, we can use in the parallel version the 'reduction(+:sum)' to avoid use the omp critical.
+
+### Example: Pi v2
+
+In this version, we use the for worksharing constructor
+
+````c++
+#include <omp.h>
+#define NUM_THREADS 2
+double step;
+static long num_steps = 100000;
+
+void main(){
+    int i, id;
+    double x, pi, sum =0.0;
+    step = 1.0/(double) num_steps;
+    omp_set_num_threads(NUM_THREADS);
+    #pragma omp parallel for private reduction(+:sum)
+    {
+    	id = omp_get_thread_num();
+        for(i=id+1; i<= num_steps; i=i+NUM_THREADS){
+            x = (i-0.5)*step;
+            sum = sum + 4.0/(1.0+x*x);
+        }
+	}
+    pi = sum * step;
+}
+````
+
+### Example: Pi v3
+
+In this example we use the task parallelism to define tasks to the diferent elements of a list. The tasks didn't have dependences.
+
+````c++
+int main(){
+	List l;
+	#pragma omp parallel
+	#pragma omp single
+	travese_list(l);    
+}
+void travese_list(List l){
+    Element e;
+    for(e = l->first; e; e=e->next){
+        #pragma omp task
+        process(e);
+    }
+}
+
 ````
 
