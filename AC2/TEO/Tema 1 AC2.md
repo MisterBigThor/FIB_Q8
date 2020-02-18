@@ -35,15 +35,15 @@ El factor que nos limita estas propiedades es la distribución de la memoria.
 
 > Ciclos Medios Aceso = CMA = CICLOSacierto + (FALLOSref * PENf)
 
-
 ### Progreso de los procesadores y métricas
 
-$$
-Rendimiento^{-1}= T = N*CPI*T_c \\
-\frac{Tiempo}{programa}=\frac{instr}{programa}*\frac{Ciclos}{instr}*\frac{Tiempo}{Ciclo}\\
-SpeedUp = \frac{T_{ori}}{T_{new}} \\
-CPI = \sum\frac{N_i * CPI_i}{N}
-$$
+>1/Rendimiento = Texec = N * CPI * Tc
+>
+>Tiempo / Programa = instr / programa * ciclos / inst * Tiempo / Ciclo
+>
+>Speed-Up = Tori / Tnew --> (Tori / Tnew) - 1) * 100
+>
+>CPImedio = SUM[(Ni * CPIi)/N]
 
 Donde N depende del compilador y el LM, el CPI depende de la organización y el LM y el Tiempo de ciclo depende de la tecnología y la organización. Añadiendo la jerarquía de memoria, obtenemos:
 
@@ -51,10 +51,6 @@ Donde N depende del compilador y el LM, el CPI depende de la organización y el 
 > T = (N * CPIup + CM) = (N * CPIup +(N * REFinst* FALLOSref * Pf)) * Tc
 
 Donde podemos usar los fallos de acceso por instrucción o los fallos por referencias a memoria. 
-
-
-
-
 
 ### Ley de Amdahl
 
