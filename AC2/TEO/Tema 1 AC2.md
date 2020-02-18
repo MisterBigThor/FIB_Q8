@@ -65,11 +65,11 @@ Donde podemos usar los fallos de acceso por instrucción o los fallos por refere
 
 ### Multihilo
 
-### Potencia
+### Potencia y Energía
 
+La energía se mide en unidades de trabajo (Julios) y la Potencia es la energía consumida por unidad de tiempo(Julio/s o W).
 
-
-
+> Pcom = C * V^2 * freq
 
 
 
