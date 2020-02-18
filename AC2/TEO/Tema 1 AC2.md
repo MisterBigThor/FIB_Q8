@@ -17,12 +17,14 @@ Una máquina de esta clase es limitada por la comunicación entre UP y MEM, cara
 * Ancho de banda: Numero de bytes que se transmiten por tiempo.
 
 Hay que destacar que hay que leer de memoria cada instrucción y cada acceso a memoria(LOAD, STORE).
-$$
-Operaciones = \frac{num. op's}{tiempo} \\
-\text{Si queremos interpretar 500 millones de inst por segundo, entonces}\\
-\text{El tiempo de acceso a memoria definira el AB necesario(con 64 bits)} \\
-TAM=\frac{1seg}{500*10^6} = 286 ps;\rightarrow AB = \frac{numBytes}{tiempo}=\frac{8Bytes}{TAM} = 28 Gbytes/s
-$$
+
+> OP = # operaciones / tiempo
+>
+> Si queremos interpretar 500 millones de instrucciones por segundo, necesitaremos(con 64 bits):
+>
+> Tiempo Acceso Medio = 1seg/500*10^6 = 286ps
+>
+> Ancho Banda = #Bytes/Tiempo = 28 GBytes/s
 
 ### Propiedad de localidad y jerarquía de Memoria
 
@@ -48,6 +50,7 @@ El factor que nos limita estas propiedades es la distribución de la memoria.
 Donde N depende del compilador y el LM, el CPI depende de la organización y el LM y el Tiempo de ciclo depende de la tecnología y la organización. Añadiendo la jerarquía de memoria, obtenemos:
 
 > T = (N * CPIup + CM) = (N * CPIup +(N * FALLOSinst * Pf)) * Tc
+>
 > T = (N * CPIup + CM) = (N * CPIup +(N * REFinst* FALLOSref * Pf)) * Tc
 
 Donde podemos usar los fallos de acceso por instrucción o los fallos por referencias a memoria. 
