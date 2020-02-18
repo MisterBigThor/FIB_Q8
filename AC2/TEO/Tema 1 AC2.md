@@ -32,9 +32,8 @@ Los programas (conjuntos de instrucciones) tienden a interpretar instrucciones y
 * Localidad espacial: Acceso a una posición contigua.
 
 El factor que nos limita estas propiedades es la distribución de la memoria.
-$$
-\text{Ciclos Medios Aceso }= CMA = c_{acierto} + (f_{ref}*P_f)\\
-$$
+
+> Ciclos Medios Aceso = CMA = CICLOSacierto + (FALLOSref * PENf)
 
 
 ### Progreso de los procesadores y métricas
@@ -47,13 +46,21 @@ CPI = \sum\frac{N_i * CPI_i}{N}
 $$
 
 Donde N depende del compilador y el LM, el CPI depende de la organización y el LM y el Tiempo de ciclo depende de la tecnología y la organización. Añadiendo la jerarquía de memoria, obtenemos:
-$$
-T = (N*CPI_{UP} + CM) * t_c = (N*CPI_{UP} + (N*f{i}*P_f))*t_c\\
-T = (N*CPI_{UP} + CM) * t_c=T= (N*CPI_{UP}+(N*Ref_{i}*F{r}*P_f)) * t_c
-$$
-Donde podemos usar los fallos de acceso por instrucción o los fallos por referencias a memoria.
+
+> T = (N * CPIup + CM) = (N * CPIup +(N * FALLOSinst * Pf)) * Tc
+> T = (N * CPIup + CM) = (N * CPIup +(N * REFinst* FALLOSref * Pf)) * Tc
+
+Donde podemos usar los fallos de acceso por instrucción o los fallos por referencias a memoria. 
+
+
+
+
 
 ### Ley de Amdahl
+
+> La ley de Amdahl establece que la ganancia por añadir una mejora en un diseño está limitada por la fracción de tiempo original en que se utiliza.
+
+
 
 ### Concurrencia en Instrucciones
 
