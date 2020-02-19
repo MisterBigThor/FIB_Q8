@@ -47,7 +47,7 @@ En un procesador las instrucciones Load y Store representan un 26% de las instru
 
 <u>Pregunta 1</u>: Calcule el CPI del procesador original.
 
-#### $CPI^0 = \sum\frac{N_i*CPI_i}{N}= \sum Ci*CPI_i= 0.26*2.3 + 0.74*1.5=1.71 $
+$CPI^0 = \sum\frac{N_i*CPI_i}{N}= \sum Ci*CPI_i= 0.26*2.3 + 0.74*1.5=1.71 $
 
 En la próxima generación del procesador, debido a un cambio en el proceso tecnológico, se puede disponer de más transistores y se plantean dos opciones en la forma de utilizar estos transistores adicionales. 
 
@@ -56,21 +56,27 @@ En la próxima generación del procesador, debido a un cambio en el proceso tecn
 
 <u>Pregunta 2:</u> Calcule el CPI de la 1ª opción de diseño. 
 
-#### $CPI^1=0.26*2.3*0.8+0.74*1.5 = 1.58$
+$CPI^1=0.26*2.3*0.8+0.74*1.5 = 1.58$
 
 <u>Pregunta 3:</u> Calcule el tiempo de ejecución en la 2ª opción de diseño. 
 
-#### $T^2_{exec} = T_{exec}*0.9$
+$T^2_{exec} = T_{exec}*0.9$
 
 <u>Pregunta 4:</u> ¿Cuál de las dos opciones permite obtener un procesador con mayor rendimiento? 
 
-#### $ \frac{T_1}{T_2} = \frac{N*CPI_1*T_c}{N*CPI_0*T_c*0.9} = \frac{CPI_1}{CPI_0*0.9}=\frac{1.58}{1.71*0.9} = >1$
+$ \frac{T_1}{T_2} = \frac{N*CPI_1*T_c}{N*CPI_0*T_c*0.9} = \frac{CPI_1}{CPI_0*0.9}=\frac{1.58}{1.71*0.9} = >1$
 
 <u>Pregunta 5:</u> ¿Cuál es la ganancia, respecto del procesador original, de la mejor opción?
 
-#### $G = (\frac{T_{ori}}{T_{new}}-1)*100 = \frac{N*CPI_0*T_c}{N*CPI_0*T_c*0.9} = \frac{1}{0.9} = 1.11$
+$G = (\frac{T_{ori}}{T_{new}}-1)*100 = \frac{N*CPI_0*T_c}{N*CPI_0*T_c*0.9} = \frac{1}{0.9} = 1.11$
 
 La ganancia es del 11%.
 
 ### Ejercicio 1.8
+
+### Ejercicio 1.17
+
+### Ejercicio 1.18
+
+### Ejercicio 1.19
 
