@@ -178,7 +178,7 @@ A task is a work unit whose execution may be deferred. All the tasks in thre pro
 
 ### Task creation
 
-Each thread that encounters a task: packages the code and data and puts the task in the task pool. We need to use the parallel and the single construct. The threads (the single one when finishes the task generation) cooperate to execute them.
+Each thread that encounters a task: packages the code and data and puts the task in the task pool. We need to use the parallel and the single construct. The threads (also the single one when finishes the task generation) cooperate to execute them.
 
 ````c++
 #pragma omp task[clauses]
@@ -188,21 +188,57 @@ Each thread that encounters a task: packages the code and data and puts the task
 * clauses:
   * shared, private, firstprivate.
   * if(exp): if the exp evaluates false, the task is suspended
-  * final(exp): if he exp evaluates true, the task is immediately executed. All his child tasks also will be final.
-  * mergeable:
-  * depend(in:vars), depend(out:vars), depend(inout:vars)
+  * final(exp): if he exp evaluates true, the task is immediately executed(named included task). All his child tasks also will be final.
+  * mergeable: When be apply mergeable to a final construct, won't create a task and context
+  * depend(in:vars): The task will be a dependent task of all previously generated that reference at least one of the vars in his inout or out list. 
+  * depend(out:vars) && depend(inout:vars) : The task will be dependent task of all previous task with at least one of the list item in inout, out or in list.
 
-By default; Global vars are shared, Vars declared in the scope of a task are private.
+By default; Global vars are shared, Vars declared in the scope of a task are private. 
 
 ### Task synchronization: taskwait
 
+Suspends the current task waiting on the completion of child tasks of the current task. This constructor is a stand-alone directive
+
+````c++
+#pragma omp task{} 		//t1
+#pragma omp task 		//t2
+{ 
+	#pragma omp task{} 	//t3
+} 
+#pragma omp task{} 		//t4
+#pragma omp taskwait// Only t1, t2 && t4 are guaranteed to have finish.
+````
+
 ### Task synchronization: taskgroup
 
-
+Suspends the current task at the end of structured block waiting on completion of child tasks of the current task and their descendent tasks.
+`````c++
+#pragma omp task {} 	// T1
+#pragma omp taskgoup
+{
+	#pragma omp task 	// T2
+    {
+		#pragma omp task {} // T3
+    }
+	#pragma omp task {} // T4
+} //Only T2, T3 && T4 are guaranteed to have finish.
+`````
 
 ### Taskloop construct
 
+This constructor convert one o more associated loop into OpenMP tasks. There is a implicit taskloop for synchronization.
 
+````c++
+#pragma omp taskloop [clauses]
+	for(int i = 0; i < A; ++i)
+````
+
+* Clauses:
+  * shared, private, firstprivate, if, final, mergeable
+  * grainsize(n)
+  * num_tasks(n)
+  * collapse(n)
+  * nogroup: Override the implicit taskgroup construct.
 
 ## Examples
 
