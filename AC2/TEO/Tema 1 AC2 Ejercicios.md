@@ -24,22 +24,32 @@ $$
 <u>Pregunta 2</u>: Calcule la fracción (m) de accesos a datos que son fallo de cache y $T_{mem}$.
 $$
 m = \frac{fallos}{acesos} = \frac{2,5*10^3}{10^4} = 0.25 \\
-T_{mem} = N*m*t_{penlaty} = 10^4 * 0.25 * 60ns = 1,5*10^{-4}
+T_{mem} = N*m*t_{penlaty} = 10^4 * 0.25 * 60ns = 1,5*10^{-4} s
 $$
 
 > El tiempo de memoria será, el numero de accesos a memoria (1 en cada iteración), por la tasa de fallos por acceso por la penalización de un fallo.
 
 Mejoras tecnológicas permiten implementar el procesador y las caches con un tiempo de ciclo de reloj de 1.5 ns. Ahora bien, la organización del procesador y del subsistema de memoria es idéntica a la del computador C1.
 
-<u>Pregunta 3</u>: Calcule el tiempo de ejecución T'ex del programa en el nuevo computador y la ganancia.
+<u>Pregunta 3</u>: Calcule el tiempo de ejecución $T'_{ex}$ del programa en el nuevo computador y la ganancia.
 $$
 T'_{ex}=T'_{CPU}+T_{MEM}\\
-T'_{CPU} = N * CPI_{CPU} * T'_c\\
-T'_{ex}=T_{CPU}*\frac{T'_c}{T_c}+T_{MEM}\\
+T'_{CPU} = N * CPI_{CPU} * T_c *\frac{T'_c}{T_c}= T_{CPU}* T'_c\\
+T'_{ex}=T_{CPU}*\frac{T'_c}{T_c}+T_{MEM}= (150 \mu s)*\frac{1.5ns}{2ns}+ 150 \space \mu s=112.5\mu s + 150 \mu s = 262.5 \mu s\\
+G = \frac{T_{ori}}{T_{new}} = \frac{300\mu s}{262.5 \mu s} = 1.14
 $$
 > El tiempo de memoria no se ve alterado, solamente afecta al tiempo de CPU; por tanto, debemos calcular el nuevo tiempo de CPU, donde el nuevo tiempo de ciclo se debe aplicar.
 
-**//todo: acabar calculos + leyde amdhala**
+<u>Ganancia Usando ley de Amdhal:</u>
+
+![img](img1)
+$$
+F_m := \text{Fracción de tiempo original donde se usa la mejora} =\frac{T_2}{T_0}=\frac{150\mu s}{300 \mu s} = 0.5\\
+G_m := \text{Ganancia de la mejora.} = \frac{T_2}{T_3} = \frac{150 \mu s}{150\mu s }*\frac{1.5ns}{2ns}=1+1/3\\
+G_{amdahl} = \frac{1}{(1-F_m)+\frac{F_m}{G_m}} = \frac{1}{0.5+0.38} = 1.14
+$$
+
+> En este caso, T2 es el Tcpu y T1 es Tmem. Comprovamos que las G concuerdan.
 
 ### Ejercicio 1.2
 
@@ -73,6 +83,29 @@ $G = (\frac{T_{ori}}{T_{new}}-1)*100 = \frac{N*CPI_0*T_c}{N*CPI_0*T_c*0.9} = \fr
 La ganancia es del 11%.
 
 ### Ejercicio 1.8
+
+Un procesador interpreta instrucciones de 3 tipos: enteras (ENT), accesos a memoria (MEM) y saltos (BR). La frecuencia de reloj del procesador es de 800 MHz. El primer nivel de la jerarquía de memoria está integrado en el mismo chip del procesador y consta de una cache de instrucciones y una cache de datos (CD). Para reducir la latencia media de accesos a memoria, el procesador dispone de una cache (segundo nivel) externa. 
+
+En este ejercicio consideraremos que la cache de instrucciones y la cache de segundo nivel son ideales (no hay fallos) y que las instrucciones MEM son bloqueantes. La penalización por fallo en la cache de datos es de 12 ciclos. 
+
+El procesador ejecuta un programa P. La siguiente tabla muestra la distribución de instrucciones y el CPI:
+
+* ENT -> 40% CPI = 1
+* MEM hit en CD -> 20% CPI = 2
+* MEM miss en CD -> 20% CPI = 14
+* BR -> 20% CPI = 2
+
+<u>Pregunta 1</u>: Calcule el IPC medio, CPI, la cantidad de MIPS, fallos en CD por instrucción, fallos en CD por acceso a memoria al ejecutar el programa P.
+
+$CPI = 0.4 * 1 + 0.2 * 2 + 0.2*14 + 0.2*2 = 4$
+
+$IPC = CPI^{-1} = 0.25$
+
+$MIPS = \frac{N}{ \Delta T} = \frac{N}{N*CPI*T_c}=IPC*\nu = 0.25*800MHz = 200 MIPS$
+
+$F_{i}=?$
+
+$F_a=?$
 
 ### Ejercicio 1.17
 
