@@ -226,7 +226,7 @@ Suspends the current task at the end of structured block waiting on completion o
 
 ### Taskloop construct
 
-This constructor convert one o more associated loop into OpenMP tasks. There is a implicit taskloop for synchronization.
+This constructor convert one o more associated loop into OpenMP tasks. There is a implicit taskgroup for synchronization. 
 
 ````c++
 #pragma omp taskloop [clauses]
@@ -239,6 +239,7 @@ This constructor convert one o more associated loop into OpenMP tasks. There is 
   * num_tasks(n)
   * collapse(n)
   * nogroup: Override the implicit taskgroup construct.
+* No existeix una opcio per fer el 'reduction', cal fer-ho a ma.
 
 ## Examples
 
