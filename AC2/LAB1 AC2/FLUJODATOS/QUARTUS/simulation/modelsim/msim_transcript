@@ -1,0 +1,84 @@
+# Reading D:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do s1bit_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {D:/LAB1 AC2/FLUJODATOS/CODIGO/s1bit.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity s1bit
+# -- Compiling architecture flujodatos of s1bit
+# 
+vsim rtl_work.s1bit
+# vsim rtl_work.s1bit 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading rtl_work.s1bit(flujodatos)
+add wave -position end  sim:/s1bit/x
+add wave -position end  sim:/s1bit/y
+add wave -position end  sim:/s1bit/cen
+add wave -position end  sim:/s1bit/s
+add wave -position end  sim:/s1bit/csal
+add wave -position end  sim:/s1bit/xorxy
+add wave -position end  sim:/s1bit/andxy
+add wave -position end  sim:/s1bit/andxcen
+add wave -position end  sim:/s1bit/andycen
+add wave -position end  sim:/s1bit/retardoxor
+add wave -position end  sim:/s1bit/retardoand
+add wave -position end  sim:/s1bit/retardoor
+add list  \
+sim:/s1bit/x \
+sim:/s1bit/y \
+sim:/s1bit/cen \
+sim:/s1bit/s \
+sim:/s1bit/csal \
+sim:/s1bit/xorxy \
+sim:/s1bit/andxy \
+sim:/s1bit/andxcen \
+sim:/s1bit/andycen
+LS
+# invalid command name "LS"
+ls
+# modelsim.ini  msim_transcript  rtl_work  s1bit_run_msim_rtl_vhdl.do  vsim.wlf                        
+pwd
+# D:/LAB1 AC2/FLUJODATOS/QUARTUS/simulation/modelsim
+do ../../../PRUEBAS/estimulos.do
+# ** Error: (vsim-4007) A value argument is required.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]
+# Error in macro ./../../../PRUEBAS/estimulos.do line 1
+# ** Error: (vsim-4007) A value argument is required.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]
+#     while executing
+# "force s1bit/x U 0 ns, 0 50 ns, U 100 ns, 1 150 ns, U 200 ns, 0 250 ns, U 300 ns, 1 350 ns, U 400 ns, 0 450 ns, U 500 ns, 1 550 ns, U 600 ns,"
+do ../../../PRUEBAS/estimulos.do
+# ** Error: (vsim-4007) A value argument is required.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]
+# Error in macro ./../../../PRUEBAS/estimulos.do line 1
+# ** Error: (vsim-4007) A value argument is required.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]
+#     while executing
+# "force -freeze s1bit/x U 0 ns, 0 50 ns, U 100 ns, 1 150 ns, U 200 ns, 0 250 ns, U 300 ns, 1 350 ns, U 400 ns, 0 450 ns, U 500 ns, 1 550 ns, U 600 ns,"
+force s1bit/x U 0 ns
+run
+run
+restart
+force s1bit/x U 0 ns, 0 50 ns, U 100 ns, 1 150 ns, U 200 ns, 0 250 ns, U 300 ns, 1 350 ns, U 400 ns, 0 450 ns, U 500 ns, 1 550 ns, U 600 ns,
+# ** Error: (vsim-4007) A value argument is required.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]
+0 650 ns, U 700 ns, 1 750 ns
+# invalid command name "0"
+force -freeze s1bit/x U 0 ns, 0 50 ns, U 100 ns, 1 150 ns, U 200 ns, 0 250 ns, U 300 ns, 1 350 ns, U 400 ns, 0 450 ns, U 500 ns, 1 550 ns, U 600 ns,0 650 ns, U 700 ns, 1 750 ns
+do ../../../PRUEBAS/estimulos.do
+do ../../../PRUEBAS/estimulos.do
+restart
+do ../../../PRUEBAS/estimulos.do

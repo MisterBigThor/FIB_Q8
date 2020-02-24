@@ -1,0 +1,89 @@
+# Reading D:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do s1bit_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {D:/LAB1 AC2/CODIGO/s1bit.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity s1bit
+# -- Compiling architecture funcional of s1bit
+# 
+vsim rtl_work.s1bit
+# vsim rtl_work.s1bit 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading rtl_work.s1bit(funcional)
+add wave -position insertpoint  \
+sim:/s1bit/x \
+sim:/s1bit/y \
+sim:/s1bit/cen \
+sim:/s1bit/s \
+sim:/s1bit/csal
+add list  \
+sim:/s1bit/x \
+sim:/s1bit/y \
+sim:/s1bit/cen \
+sim:/s1bit/s \
+sim:/s1bit/csal
+force -freeze sim:/s1bit/x 1 0
+force -freeze sim:/s1bit/y 0 0
+force -freeze sim:/s1bit/cen 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+force -freeze sim:/s1bit/x 1 0
+force -freeze sim:/s1bit/y 0 0
+force -freeze sim:/s1bit/cen 1 0
+run
+restart
+force -freeze sim:/s1bit/x 1 {5 ns}
+force -freeze sim:/s1bit/y 0 {5 ns}
+force -freeze sim:/s1bit/cen 1 {5 ns}
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+force -freeze sim:/s1bit/x 1 0
+force -freeze sim:/s1bit/x 0 {5 ns}
+force -freeze sim:/s1bit/y 0 0
+force -freeze sim:/s1bit/cen 1 0
+force -freeze sim:/s1bit/cen 0 {5 ns}
+run
+run
+run
+run
+run
+run
+run
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {D:/LAB1 AC2/QUARTUS/simulation/modelsim/wave.do}
+pwd
+# D:/LAB1 AC2/QUARTUS/simulation/modelsim
+ls
+# modelsim.ini  msim_transcript  rtl_work  s1bit_run_msim_rtl_vhdl.do  vsim.wlf  wave.do                
+do wave.do

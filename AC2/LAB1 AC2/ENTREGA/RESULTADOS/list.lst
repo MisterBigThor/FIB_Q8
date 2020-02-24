@@ -1,0 +1,51 @@
+         ps   /s1bit/x               
+                /s1bit/y             
+                /s1bit/cen           
+                    /s1bit/s         
+                   /s1bit/csal       
+          0          U U U U U 
+      50000          0 0 0 U U --> ENTRADA 0,0,0
+      75000          0 0 0 U 0 --> CSAL ESTABLE EN 25ns
+      80000          0 0 0 0 0 --> S ESTABLE EN 30ns
+     100000          U U U 0 0 
+     115000          U U U U 0 
+     125000          U U U U U 
+     150000          0 0 1 U U --> ENTRADA 0,0,1
+     180000          0 0 1 1 U --> CSAL ESTABLE EN 30ns
+     190000          0 0 1 1 0 --> S ESTABLE EN 40 ns
+     200000          U U U 1 0 
+     215000          U U U U 0 
+     225000          U U U U U 
+     250000          0 1 0 U U --> ENTRADA 0,1,0
+     275000          0 1 0 U 0 --> CSAL ESTABLE EN 25ns
+     280000          0 1 0 1 0 --> S ESTABLE EN 30ns
+     300000          U U U 1 0 
+     315000          U U U U 0 
+     325000          U U U U U 
+     350000          0 1 1 U U --> ENTRADA 0,1,1
+     380000          0 1 1 0 U --> CSAL ESTABLE EN 30ns
+     390000          0 1 1 0 1 --> S ESTABLE EN 40ns
+     400000          U U U 0 1 
+     415000          U U U U 1 
+     425000          U U U U U 
+     450000          1 0 0 U U --> ENTRADA 1,0,0
+     475000          1 0 0 U 0 --> CSAL ESTABLE EN 25ns
+     480000          1 0 0 1 0 --> S ESTABLE EN 30ns
+     500000          U U U 1 0 
+     515000          U U U U 0 
+     525000          U U U U U 
+     550000          1 0 1 U U --> ENTRADA 1,0,1
+     580000          1 0 1 0 U --> CSAL ESTABLE EN 30ns
+     590000          1 0 1 0 1 --> S ESTABLE EN 40ns
+     600000          U U U 0 1 
+     615000          U U U U 1 
+     625000          U U U U U 
+     650000          1 1 0 U U --> ENTRADA 1,1,0
+     675000          1 1 0 U 1 --> CSAL ESTABLE EN 25ns
+     680000          1 1 0 0 1 --> S ESTABLE EN 30ns
+     700000          U U U 0 1 
+     715000          U U U U 1 
+     725000          U U U U U 
+     750000          1 1 1 U U --> ENTRADA 1,1,1
+     775000          1 1 1 U 1 --> CSAL ESTABLE EN 25ns
+     780000          1 1 1 1 1 --> S ESTABLE EN 30ns

@@ -1,0 +1,40 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\LAB1 AC2\QUARTUS\simulation\modelsim
+Es1bit
+Z1 w1569844678
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dD:\LAB1 AC2\QUARTUS\simulation\modelsim
+Z5 8D:/LAB1 AC2/CODIGO/s1bit.vhd
+Z6 FD:/LAB1 AC2/CODIGO/s1bit.vhd
+l0
+L5
+VHbR:Vl?[_GIML`e2<@OzJ2
+!s100 2QW6l[Xb:m7J74o>1MQ:e2
+Z7 OV;C;10.1d;51
+31
+!i10b 1
+Z8 !s108 1569844723.811000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/LAB1 AC2/CODIGO/s1bit.vhd|
+Z10 !s107 D:/LAB1 AC2/CODIGO/s1bit.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+Afuncional
+R2
+R3
+DEx4 work 5 s1bit 0 22 HbR:Vl?[_GIML`e2<@OzJ2
+l13
+L12
+V^d@6X1SOC@zU7R8OO9BN^3
+!s100 o<Y_gcT=P:J=_B0@PHd1N0
+R7
+31
+!i10b 1
+R8
+R9
+R10
+R11
+R12

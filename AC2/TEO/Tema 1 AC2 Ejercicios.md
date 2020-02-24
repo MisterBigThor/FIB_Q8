@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 ### Ejercicio 1.1
 
 El computador C1 con: Procesador de 500 MHz de frecuencia de reloj. Cache de datos de 32 KB, mapeo directo, bloque de 32B, 60 ns de penalización en caso de fallo. Cache de instrucciones ideal. 
@@ -74,9 +78,47 @@ La ganancia es del 11%.
 
 ### Ejercicio 1.8
 
+Un procesador interpreta instrucciones de 3 tipos: enteras (ENT), accesos a memoria (MEM) y saltos (BR). La frecuencia de reloj del procesador es de 800 MHz. 
+
+El primer nivel de la jerarquía de memoria está integrado en el mismo chip del procesador y consta de una cache de instrucciones y una cache de datos (CD). Para reducir la latencia media de accesos a memoria, el procesador dispone de una cache (segundo nivel) externa. En este ejercicio consideraremos que la cache de instrucciones y la cache de segundo nivel son ideales (no hay fallos) y que las instrucciones MEM son bloqueantes. 
+
+La penalización por fallo en la cache de datos es de 12 ciclos. El procesador ejecuta un programa P. La siguiente tabla muestra la distribución de instrucciones y el CPI:
+
+**ENT**->f=40%, CPI=1; 
+
+**MEMhit**->f=20%, CPI = 2;
+
+**MEMmiss**->f=20%, CPI=14; 
+
+**BR**->f=20%, CPI= 2;
+
+<u>Pregunta 1:</u> Calcule el IPC medio, CPI, la cantidad de MIPS, fallos en CD por instrucción, fallos en CD por acceso a memoria al ejecutar el programa P.
+
+
+
+Mejoras tecnológicas permiten integrar la cache de segundo nivel en el chip (reduciendo la latencia de acceso) y aumentar la frecuencia de reloj a 1 GHz. En el nuevo diseño se mantiene la microarquitectura original. La potencia consumida por el chip es de 50 w (vatios). La batería que alimenta el chip tiene una capacidad energética de 25 wh (vatios x hora). Al ejecutar el programa P en el nuevo diseño se obtiene un CPI medio igual a 3.
+
+
+
+<u>Pregunta 2:</u> Calcule el número máximo de instrucciones de P para que el procesador pueda ejecutar completamente el programa sin recargar la batería. 
+
+<u>Pregunta 3:</u> Calcule el CPI de las instrucciones MEM que fallan en CD y deduzca la penalización (en ciclos) por fallo.
+
 ### Ejercicio 1.17
 
+En las siguientes figuras se muestra el IPC y la potencia consumida a medida que se interpretan instrucciones de un programa, en un procesador que funciona a una frecuencia de 2 Ghz.
+
+![img](img1)
+
+<u>Pregunta 1:</u> Calcule el tiempo de ejecución del programa.
+
+<u>Pregunta 2:</u> Calcule la potencia de conmutación media. Recuerde que la potencia es la energía por unidad de tiempo.
+
 ### Ejercicio 1.18
+
+Un procesador convencional tiene un primer nivel de cache de datos de 32 Kbytes 2-asociativa, siendo el tamaño de bloque de 16 bytes. La cache de datos es bloqueante y la latencia de acceso a memoria son 4 ciclos. Por otro lado, supondremos que la cache de instrucciones es ideal; es decir, no se producen fallos de cache.
+
+En este procesador se efectúa el cálculo especificado en el siguiente código:
 
 ### Ejercicio 1.19
 
