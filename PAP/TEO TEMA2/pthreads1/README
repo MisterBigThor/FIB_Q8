@@ -1,0 +1,5 @@
+To compile any code in this directory just type "make progname-pth", 
+where "progname.c" is the name of the file containing your Pthreads 
+program.
+
+Type "make clean" to clean all executables previously compiled.
