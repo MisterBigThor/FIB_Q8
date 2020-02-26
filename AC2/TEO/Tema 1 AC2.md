@@ -61,11 +61,38 @@ Donde podemos usar los fallos de acceso por instrucción o los fallos por refere
 
 > La ley de Amdahl establece que la ganancia por añadir una mejora en un diseño está limitada por la fracción de tiempo original en que se utiliza.
 
+![img](amdahl)
 
+$$
+F_m = T_2/T_0; G_m = T_2/T_3 \\
+G=\frac{T_0}{T_m} = \frac{T_0}{T_1+T_3} = \frac{1}{(1-F_m)*T_0 + F_m/G_m}
+$$
+
+Entonces, la ganancia depende de $F_m$, la fracción de  tiempo original donde se puede usar la mejora y de $G_m$, la ganancia cuando se utiliza el la mejora el 100%..
 
 ### Concurrencia en Instrucciones
 
+Para acelerar la interpretación de instrucciones se pueden usar varias técnicas de concurrencia; el objetivo es reducir el tiempo de ejecución de forma transparente al programador.
+
+Hay que destacar que la ganancia de estas técnicas se ve afectada por dependencias de datos entre instrucciones o limitaciones de recursos.
+
+#### Segmentación
+
+Interpretar  las instrucciones de forma segmentada, es decir, iniciando una instrucción en cada ciclo (o acabando). Una instrucción se divide en etapas, la problemática son los recursos, no se puede solapar su uso. La ganancia ideal es el número de etapas.
+
+#### Paralelismo
+
+El paralelismo es trata de añadir mas recursos de cálculo, para procesar varias instrucciones a la vez, se puede combinar esta técnica con la segmentación. La ganancia ideal es el numero de instrucciones por ciclo por el numero de etapas.
+
 ### Multihilo
+
+El objetivo de las técnicas de multihilo es incrementar el número de programas ejecutados por unidad de tiempo.
+
+La técnica utiliza los espacios de espera a memoria, a E/S o fallos de cache para realizar instrucciones de otro hilo. Se pueden distingir varios tipos de multihilo:
+
+* Grueso: En un intervalo de tiempo, solo se ejecutan instrucciones de un hilo
+* Fino: Existen varios hilos activos, pero en un ciclo solo se ejecutan instrucciones de un hilo.
+* Simultáneo: Varios hilos activos y se pueden ejectuar en un mismo ciclo.
 
 ### Potencia y Energía
 
