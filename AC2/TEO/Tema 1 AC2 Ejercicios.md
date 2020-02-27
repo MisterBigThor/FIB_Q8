@@ -1,7 +1,5 @@
 [TOC]
 
-
-
 ### Ejercicio 1.1
 
 El computador C1 con: Procesador de 500 MHz de frecuencia de reloj. Cache de datos de 32 KB, mapeo directo, bloque de 32B, 60 ns de penalización en caso de fallo. Cache de instrucciones ideal.
@@ -107,11 +105,31 @@ $IPC = CPI^{-1} = 0.25$
 
 $MIPS = \frac{N}{ \Delta T} = \frac{N}{N*CPI*T_c}=IPC*\nu = 0.25*800MHz = 200 MIPS$
 
-$F_{i}=?$
+$F_{i}=0.2$
 
-$F_a=?$
+$F_a=\frac{fallos}{Acesos} = \frac{0.2}{1+0.4} = 0.14$
 
 Mejoras tecnológicas permiten integrar la cache de segundo nivel en el chip (reduciendo la latencia de acceso) y aumentar la frecuencia de reloj a 1 GHz. En el nuevo diseño se mantiene la microarquitectura original. La potencia consumida por el chip es de 50 w (vatios). La batería que alimenta el chip tiene una capacidad energética de 25 wh (vatios x hora). Al ejecutar el programa P en el nuevo diseño se obtiene un CPI medio igual a 3.
+
+<u>Pregunta 2:</u> Calcule el número máximo de instrucciones de P para que el procesador pueda ejecutar completamente el programa sin recargar la batería. 
+
+$E = P * \Delta T = J*S; \space P = \frac{E}{\Delta T } = \frac{1J}{1s} $
+
+$E_b = 25 W*Hora * 3600 s = 90*10^3 J$
+
+$E_c = P*T= 50W*(1GHz)^{-1} = 50 nJ$
+
+> Calculamos la energia de un ciclo, usando el tiempo de ciclo
+
+$Ciclos =\frac{E_b}{E_c} = 1,8*10^9 ciclos\rightarrow Instr = \frac{ciclos}{CPI} = 6*10^{11} instruciones$
+
+> Dividimos la energia de la bateria entre la de un ciclo, obteniendo los ciclos y entonces con el CPI podremos sabes el numero de instrucciones.
+
+<u>Pregunta 3:</u> Calcule el CPI de las instrucciones MEM que fallan en CD y deduzca la penalización (en ciclos) por fallo.
+
+$CPI = 3 = \sum CPI_i*F_i =1.2+0.2*x \rightarrow x=9$ ciclos
+
+Como se tardan 2 ciclos en caso de acierto, **la penalización es de 7 ciclos**.
 
 ### Ejercicio 1.17
 
@@ -120,6 +138,8 @@ En las siguientes figuras se muestra el IPC y la potencia consumida a medida que
 ![img](img1)
 
 <u>Pregunta 1:</u> Calcule el tiempo de ejecución del programa.
+
+
 
 <u>Pregunta 2:</u> Calcule la potencia de conmutación media. Recuerde que la potencia es la energía por unidad de tiempo.
 
