@@ -155,6 +155,13 @@ $P = 22.5 W$
 
 > Para calcular la potencia, necesitaremos la energia por tramos, usando el Ti que se calcula siguiendo la formula de la pregunta 1.
 
+<u>Pregunta 3:</u> Calcule el tiempo de ejecución cuando se utiliza
+escalado tensión-frecuencia para mantener la potencia consumida
+dentro del límite de 80 W en cada región.
+
+<u>Pregunta 4:</u> Calcule la potencia de conmutación media en el
+escenario descrito.
+
 ### Ejercicio 1.18
 
 Un procesador convencional tiene un primer nivel de cache de datos de 32 Kbytes 2-asociativa, siendo el tamaño de bloque de 16 bytes. La cache de datos es bloqueante y la latencia de acceso a memoria son 4 ciclos. Por otro lado, supondremos que la cache de instrucciones es ideal; es decir, no se producen fallos de cache.
