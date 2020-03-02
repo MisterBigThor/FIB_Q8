@@ -24,11 +24,15 @@ L'execucció triga 1.16 segons (amb N = $10^8$ i 6 threads). Podem provar de bus
 
 ## Versió 2 del Garbell
 
+La segona versió l'algoritme divideix els N possibles nombres primers en trossos que apliquen en paral·lel sobre l'*array*  el garbell. Primerament, explorem diversos tamanys de bloc per veure quin valor es mes adient:
+
+
+
+En aquest cas, aplicarem els constructors for i task amb el tamany de bloc mes adient, calculat anteriorment.
+
 //Comentar version parallel for
 
 //Comentar version tasks
 
-### Finding the Block Size
 
-//Grafica
 
