@@ -113,7 +113,7 @@ Mejoras tecnológicas permiten integrar la cache de segundo nivel en el chip (re
 
 <u>Pregunta 2:</u> Calcule el número máximo de instrucciones de P para que el procesador pueda ejecutar completamente el programa sin recargar la batería. 
 
-$E = P * \Delta T = J*S; \space P = \frac{E}{\Delta T } = \frac{1J}{1s} $
+$E = P * \Delta T = J*S; \space P (J/s) = \frac{E}{\Delta T } = \frac{1J}{1s} $
 
 $E_b = 25 W*Hora * 3600 s = 90*10^3 J$
 
@@ -139,9 +139,21 @@ En las siguientes figuras se muestra el IPC y la potencia consumida a medida que
 
 <u>Pregunta 1:</u> Calcule el tiempo de ejecución del programa.
 
-
+$T_{exe} = (\sum \frac{1}{IPC_i}*N_i)*T_c = (\frac{1}{0.8}*1*10^9 + \frac{1}{1.2}*1*10^9 + \frac{1}{1.6}*1*10^9)*(2GHz)^{-1} = 4.06 s$
 
 <u>Pregunta 2:</u> Calcule la potencia de conmutación media. Recuerde que la potencia es la energía por unidad de tiempo.
+
+$P= \frac{E}{T}= \frac{\sum P_i*T_i}{T_{exe}}$ 
+
+$P_1*T_1 = 60W * ((0.8^{-1}*10^9)*2GHz^{-1}) =0.625 * 60W = 37.5 J = E_1$
+
+$P_2*T_2 = 80W*(1.6^{-1}*10^9*2GHz^{-1}) = 5/16*80W = 25J = E_2$
+
+$P_3*T_3 = 70W*(1.2^{-1}*10^9)*2GHz^{-1})= 0.42*70W = 29.17J = E_3 $
+
+$P = 22.5 W$
+
+> Para calcular la potencia, necesitaremos la energia por tramos, usando el Ti que se calcula siguiendo la formula de la pregunta 1.
 
 ### Ejercicio 1.18
 
