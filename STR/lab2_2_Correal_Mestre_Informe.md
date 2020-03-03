@@ -1,46 +1,35 @@
-lab2_2_CORREAL_MESTRE
-
 ## LAB 2 Inertial Measurement Unit sensor
 
-En aquest laboratori tenim l'objectiu de mesura el *worst case execution time* en agafar mostres del sensor inercial.
+##### By Victor Correal and Raimon Mestres
+
+In this lab class we are asked to find the worst case execution time for sampling a inertial sensor.
 
 ### Introduction
 
-Aquest sensor (AltlMU) funciona amb protocol I2C i Sparkfun proporciona una llibreria per poder llegir les dades del giroscopi i del accelerometre.
+The inertial sensor works with I2C communication and a SparkFun library provides a nice interface to pick up the data.
 
-El nostre codi aplica una formula per calcular el pitch i el roll (en funcion de les acceleracions del 3 eixos), ja que les dades extretes del sensor directament no son significatives. Em encapsulat aquest càlcul en una funció que calcula aquest dos valors.
+Our arduino sketch reads the accelerometer raw data and applys two conversions. The first one converts the raw data to 2 readable values (pitch and roll); after that, we apply a RC software filter, to reduce the noise.
 
-Per filtrat les dades, ja que aquests sensors porporcionen dades amb molt de soroll utilitzem un filtre RC *software*.
+We also define a DEBUG symbol, that allows as to print to the serial line the values of pitch and roll.
 
-Aquest es el nostre codi que permet mesura les dades; per últim les dades de pitch i roll s'envien en mode 
-*debug* al serial plotter
+### Execution Time
+
+A first look for the execution time requires add a digital pin to use the oscilloscope; in our case we obtain this:
+
+![](C:\Users\corre\Downloads\WhatsApp Image 2020-03-03 at 13.47.14.jpeg)
+
+We mesure the average time is around 2,8 ms. In the next section we investigate some factors that can afect in the execution time. 
 
 ### Finding the worst case execution time
 
-Tenim diversos factors que ens afecten a aquest cálcul. 
+Finding the worst case execution time is capital to make a good real time sistem. In this case, we have some factors that we need to study:
 
-D'una banda tenim que el sensor esta implementan  el protocol I2C i aquest es un factor de risc, ja que si tenim més dispositius esclaus I2C el temps pot variar.
+* The sensor features: We need to read the datasheet of the sensor, to find features like temperature, maximum values, correct operation voltatge, etc ... that can afect the performance.
 
-El temps d'execucció del codi, també varien en funció de si utilitzem variables globals o retornem els valors
+* The communication: This sensors works with I2C, so if the i2C channel will be busy it can afect the execution time; we need to read about this protocol.
 
+* The result: In this case, we don't do nothing with the calculatet data, but the execution time will depend if we use global variables or we pass the results to the next stage in a bigger system.
 
+* The code: We can count assembly instructions (or even optimize the code) by disassembling the binary and finding the datasheet of the Arduino.
 
-Podem comptar 
-
-
-
-//Breu explicacio del codi
-
-
-
-//Breu explicacio del filtratje 
-
-
-
-//Mesura del temps d'execuccio
-
-
-
-
-
-https://wiki.dfrobot.com/How_to_Use_a_Three-Axis_Accelerometer_for_Tilt_Sensing
+  
