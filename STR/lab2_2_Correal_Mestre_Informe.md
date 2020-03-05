@@ -1,6 +1,6 @@
 ## LAB 2 Inertial Measurement Unit sensor
 
-##### By Victor Correal and Raimon Mestres
+##### By Victor Correal and Raimon Mestre
 
 In this lab class we are asked to find the worst case execution time for sampling a inertial sensor.
 
