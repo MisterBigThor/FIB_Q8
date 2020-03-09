@@ -1,0 +1,110 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\LAB2 AC2\SUMA\SUM4\QUARTUS\simulation\modelsim
+Eprueba_s4bits
+Z1 w1569949505
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dD:\LAB2 AC2\SUMA\SUM4\QUARTUS\simulation\modelsim
+Z5 8D:/LAB2 AC2/SUMA/SUM4/QUARTUS/../PRUEBAS/prueba_s4bits.vhd
+Z6 FD:/LAB2 AC2/SUMA/SUM4/QUARTUS/../PRUEBAS/prueba_s4bits.vhd
+l0
+L10
+VGJ;8?c3hZDFK]RPF<I@>k1
+!s100 D[aG:hhJ0bE5mT6gCYZBD0
+Z7 OV;C;10.1d;51
+31
+!i10b 1
+Z8 !s108 1569949683.656000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/LAB2 AC2/SUMA/SUM4/QUARTUS/../PRUEBAS/prueba_s4bits.vhd|
+Z10 !s107 D:/LAB2 AC2/SUMA/SUM4/QUARTUS/../PRUEBAS/prueba_s4bits.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+Aprueba
+R2
+R3
+DEx4 work 13 prueba_s4bits 0 22 GJ;8?c3hZDFK]RPF<I@>k1
+l29
+L14
+V:j8VG<azOg7f7Yd4j[3<=3
+!s100 IDWA>HO7[;@FaFHMie8nf2
+R7
+31
+!i10b 1
+R8
+R9
+R10
+R11
+R12
+Es1bit
+Z13 w1534675090
+R2
+R3
+R4
+Z14 8d:/lab2 ac2/suma/componentes/sum1bit/codigo/s1bit.vhd
+Z15 Fd:/lab2 ac2/suma/componentes/sum1bit/codigo/s1bit.vhd
+l0
+L9
+V@JNN>7U`jY@9:?[N>7M>a3
+R7
+31
+Z16 !s108 1569949683.444000
+Z17 !s90 -reportprogress|300|-93|-work|work|d:/lab2 ac2/suma/componentes/sum1bit/codigo/s1bit.vhd|
+Z18 !s107 d:/lab2 ac2/suma/componentes/sum1bit/codigo/s1bit.vhd|
+R11
+R12
+!s100 Le`iXATbC6cfm6k0bo`O@0
+!i10b 1
+Aflujodatos
+R2
+R3
+DEx4 work 5 s1bit 0 22 @JNN>7U`jY@9:?[N>7M>a3
+l24
+L20
+VP[M]80W1c_[32C8Ck9U>m3
+R7
+31
+R16
+R17
+R18
+R11
+R12
+!s100 9C6;<]@ERVgdOhGH^z84>0
+!i10b 1
+Es4bits
+Z19 w1569949072
+R2
+R3
+R4
+Z20 8D:/LAB2 AC2/SUMA/SUM4/CODIGO/S4bits.vhd
+Z21 FD:/LAB2 AC2/SUMA/SUM4/CODIGO/S4bits.vhd
+l0
+L13
+V_d0CLzdC;S@UzYVHUNzoD1
+R7
+31
+Z22 !s108 1569949683.171000
+Z23 !s90 -reportprogress|300|-93|-work|work|D:/LAB2 AC2/SUMA/SUM4/CODIGO/S4bits.vhd|
+Z24 !s107 D:/LAB2 AC2/SUMA/SUM4/CODIGO/S4bits.vhd|
+R11
+R12
+!s100 @Cc=49oo21VPKJ0O^`jiX3
+!i10b 1
+Aestructural
+R2
+R3
+DEx4 work 6 s4bits 0 22 _d0CLzdC;S@UzYVHUNzoD1
+l37
+L24
+VCzU5ZbQ>2MUAYC1_djFhV2
+R7
+31
+R22
+R23
+R24
+R11
+R12
+!s100 V:HPcEJQ@8TilaE_Pe5D]1
+!i10b 1

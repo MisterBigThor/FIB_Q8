@@ -18,11 +18,14 @@ end s1bcd;
 
 architecture compor of s1bcd is 
 -- senyales
-
+	signal sumaBinA, resultadoMas9, sumaBinB : st_bcd;
+	signal sumaBinAconcatCsalA: st_bcd_mas_1;
+	signal csalA, csalMas9, csalB: std_logic;
 begin
 
-	S <= (others => '0');
-	csal <= '0';
-
+	sumadorA: snbits port map (X=>X, Y=>Y, cen=> cen, sum=>sumaBinA, csal => csalA);
+	sumaBinAconcatCsalA <= csalA & sumaBinA;
+	m9: mayor9 port map(X=>sumaBinAconcatCsalA, S=>resultadoMas9, csal=> csal);
+	sumadorB: snbits port map(X=>sumaBinA, Y=>resultadoMas9, cen=> '0', sum=>S);
 end;
 

@@ -1,0 +1,14 @@
+|compl9
+X[0] => Z[0].DATAIN
+X[1] => Z.IN0
+X[1] => Z[1].DATAIN
+X[1] => Z.IN0
+X[2] => Z.IN1
+X[2] => Z.IN1
+X[3] => Z.IN1
+Z[0] <= X[0].DB_MAX_OUTPUT_PORT_TYPE
+Z[1] <= X[1].DB_MAX_OUTPUT_PORT_TYPE
+Z[2] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[3] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+
+

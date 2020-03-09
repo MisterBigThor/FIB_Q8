@@ -33,9 +33,6 @@ begin
 
 snentBCD: sAlgeBCD port map(a => A, b =>B, sumres => sumres, s => suma, irre => irre);
   
--- TREURE
-  irre_suma <= irre & suma;
-
 
 estimulos: process
 constant t_rep: time := 40 ns; -- tiempo entre estimulos de entrada
@@ -62,7 +59,7 @@ begin
 
 -- Introduzca codigo de preparacion del circuito para medir retardos
 
-
+				
 				wait for t_rep; -- salidas y senyales internas indefinidas
 			  
 -- Entradas
@@ -92,7 +89,18 @@ begin
 				end loop;
 				wait for t_rep;
 -- Introduzca codigo para actualizar retardos maximo y minimo
-
+				if t_retardo > t_max then
+					t_max := t_retardo;
+					A_tmax := A;
+					B_tmax := B;
+					sumres_tmax := sumares;
+				end if;
+				if t_retardo < t_min then
+					t_min := t_retardo;
+					A_tmin := A;
+					B_tmin := B;
+					sumres_tmin := sumares;
+				end if;
 
 -- Comprovacion funcionamiento logico
 				if sumres = '0' then
@@ -150,8 +158,8 @@ begin
 	report "numero de errores: " & integer'image(errores);
 
 -- ELIMINE los comentarios al medir retardos
---	report "retardo minimo: " & to_string(t_min, ns) & "   estimulos A: " & to_string(A_tmin) & "  B: " & to_string(B_tmin) & "  sumres: " & std_logic'image(sumres_tmin); 
---	report "retardo maximo: " & to_string(t_max, ns) & "   estimulos A: " & to_string(A_tmax) & "  B: " & to_string(B_tmax) & "  sumres: " & std_logic'image(sumres_tmax); 
+	report "retardo minimo: " & to_string(t_min, ns) & "   estimulos A: " & to_string(A_tmin) & "  B: " & to_string(B_tmin) & "  sumres: " & std_logic'image(sumres_tmin); 
+	report "retardo maximo: " & to_string(t_max, ns) & "   estimulos A: " & to_string(A_tmax) & "  B: " & to_string(B_tmax) & "  sumres: " & std_logic'image(sumres_tmax); 
 	wait;
 end process;
 

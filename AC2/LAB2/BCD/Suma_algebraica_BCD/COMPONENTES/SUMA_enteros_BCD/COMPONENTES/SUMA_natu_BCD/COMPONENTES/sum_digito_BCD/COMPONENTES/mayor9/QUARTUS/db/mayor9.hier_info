@@ -1,0 +1,14 @@
+|mayor9
+X[0] => ~NO_FANOUT~
+X[1] => masigual9.IN0
+X[2] => masigual9.IN0
+X[3] => masigual9.IN1
+X[3] => masigual9.IN1
+X[4] => masigual9.IN1
+S[0] <= <GND>
+S[1] <= masigual9.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= masigual9.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= <GND>
+csal <= masigual9.DB_MAX_OUTPUT_PORT_TYPE
+
+

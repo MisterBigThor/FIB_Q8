@@ -16,7 +16,10 @@ end compl9;
 architecture comportamiento of compl9 is
 begin
 
-	Z <= (others => '0');
+	z(0) <= not x(0);
+	z(1) <= x(1);
+	z(2) <= x(1) xor x(2);
+	z(3) <= (not x(1) and not x(2) and not x(3));
 
 end comportamiento;
 

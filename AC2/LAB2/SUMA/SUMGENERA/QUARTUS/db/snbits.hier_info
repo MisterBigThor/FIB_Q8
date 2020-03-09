@@ -1,0 +1,73 @@
+|snbits
+a[0] => s1bit:sumadorN:0:sumi.x
+a[1] => s1bit:sumadorN:1:sumi.x
+a[2] => s1bit:sumadorN:2:sumi.x
+a[3] => s1bit:sumadorN:3:sumi.x
+b[0] => s1bit:sumadorN:0:sumi.y
+b[1] => s1bit:sumadorN:1:sumi.y
+b[2] => s1bit:sumadorN:2:sumi.y
+b[3] => s1bit:sumadorN:3:sumi.y
+cen => s1bit:sumadorN:0:sumi.cen
+s[0] <= s1bit:sumadorN:0:sumi.s
+s[1] <= s1bit:sumadorN:1:sumi.s
+s[2] <= s1bit:sumadorN:2:sumi.s
+s[3] <= s1bit:sumadorN:3:sumi.s
+csal <= s1bit:sumadorN:3:sumi.csal
+
+
+|snbits|s1bit:\sumadorN:0:sumi
+x => xorxy.IN0
+x => andxy.IN0
+x => andxcen.IN0
+y => xorxy.IN1
+y => andxy.IN1
+y => andycen.IN0
+cen => s.IN1
+cen => andxcen.IN1
+cen => andycen.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+csal <= csal.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|snbits|s1bit:\sumadorN:1:sumi
+x => xorxy.IN0
+x => andxy.IN0
+x => andxcen.IN0
+y => xorxy.IN1
+y => andxy.IN1
+y => andycen.IN0
+cen => s.IN1
+cen => andxcen.IN1
+cen => andycen.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+csal <= csal.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|snbits|s1bit:\sumadorN:2:sumi
+x => xorxy.IN0
+x => andxy.IN0
+x => andxcen.IN0
+y => xorxy.IN1
+y => andxy.IN1
+y => andycen.IN0
+cen => s.IN1
+cen => andxcen.IN1
+cen => andycen.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+csal <= csal.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|snbits|s1bit:\sumadorN:3:sumi
+x => xorxy.IN0
+x => andxy.IN0
+x => andxcen.IN0
+y => xorxy.IN1
+y => andxy.IN1
+y => andycen.IN0
+cen => s.IN1
+cen => andxcen.IN1
+cen => andycen.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+csal <= csal.DB_MAX_OUTPUT_PORT_TYPE
+
+

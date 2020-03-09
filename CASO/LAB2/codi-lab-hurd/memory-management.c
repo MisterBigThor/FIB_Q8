@@ -59,7 +59,7 @@ int main ()
       p = NULL;
       printf ("%d: Getting memory at location 0x%x\n", i, p);
       res = vm_map(mach_task_self(), (vm_address_t *) &p, 8192, 0, TRUE,
-              MACH_PORT_NULL, 0, FALSE, VM_PROT_DEFAULT VM_PROT_ALL, FALSE);
+              MACH_PORT_NULL, 0, FALSE, VM_PROT_DEFAULT, VM_PROT_ALL, FALSE);
       if (res != KERN_SUCCESS) {
           printf ("Error getting memory with vm_map(0x%x), %s\n", res,
                     mach_error_string(res));

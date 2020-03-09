@@ -1,0 +1,158 @@
+# Reading C:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do sAlgeBCD_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/tipos_ctes_pkg/retardos_bcd_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package retardos_bcd_pkg
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/tipos_ctes_pkg/cte_tipos_bcd_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package cte_tipos_bcd_pkg
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/componentes_sum_algebraica_pkg/componentes_sum_algebraica_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Compiling package componentes_sum_algebraica_pkg
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/componentes_enteros_pkg/componentes_snBCD_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Compiling package componentes_snBCD_pkg
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/componentes_sum_bcd_pkg/componentes_s1BCD_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Compiling package componentes_s1BCD_pkg
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/componentes_dig_BCD_pkg/componentes_digito_bcd_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Compiling package componentes_digito_bcd_pkg
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/compl9/LOGICA/CODIGO/compl9.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package retardos_bcd_pkg
+# -- Compiling entity compl9
+# -- Compiling architecture comportamiento of compl9
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/sumador_binario/CODIGO/snbits.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package retardos_bcd_pkg
+# -- Compiling entity snbits
+# -- Compiling architecture compor of snbits
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/CODIGO/mayor9.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package retardos_bcd_pkg
+# -- Compiling entity mayor9
+# -- Compiling architecture comportamiento of mayor9
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/s1bit/CODIGO/s1bit.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package retardos_bcd_pkg
+# -- Compiling entity s1bit
+# -- Compiling architecture funcional of s1bit
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/sum_n_digitos_algebraica_BCD/CODIGO/sAlgeBCD.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package retardos_bcd_pkg
+# -- Loading package componentes_sum_algebraica_pkg
+# -- Compiling entity sAlgeBCD
+# -- Compiling architecture estructural of sAlgeBCD
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/sum_n_digitos_enteros_BCD/CODIGO/sentbcd.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package componentes_snBCD_pkg
+# -- Compiling entity sentBCD
+# -- Compiling architecture estructural of sentBCD
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/sum_n_digitos_BCD/CODIGO/snbcd.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package componentes_s1BCD_pkg
+# -- Compiling entity snBCD
+# -- Compiling architecture estructural of snBCD
+# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/suma_dos_digitos_BCD/CODIGO/s1bcd.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package componentes_digito_bcd_pkg
+# -- Compiling entity s1bcd
+# -- Compiling architecture compor of s1bcd
+# 
+# vcom -2008 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/sum_n_digitos_algebraica_BCD/QUARTUS/../PRUEBAS/prueba_sAlgeBCD.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package retardos_bcd_pkg
+# -- Loading package MATH_REAL
+# -- Compiling entity prueba_sAlgeBCD
+# -- Compiling architecture prueba of prueba_sAlgeBCD
+# ** Error: C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/sum_n_digitos_algebraica_BCD/QUARTUS/../PRUEBAS/prueba_sAlgeBCD.vhd(96): (vcom-1136) Unknown identifier "sumares".
+# 
+# ** Error: C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/sum_n_digitos_algebraica_BCD/QUARTUS/../PRUEBAS/prueba_sAlgeBCD.vhd(102): (vcom-1136) Unknown identifier "sumares".
+# 
+# ** Error: C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/sum_n_digitos_algebraica_BCD/QUARTUS/../PRUEBAS/prueba_sAlgeBCD.vhd(166): VHDL Compiler exiting
+# ** Error: C:/altera/13.0/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./sAlgeBCD_run_msim_rtl_vhdl.do line 23
+# C:/altera/13.0/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -2008 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/BCD/Suma_algebraica_BCD/sum_n_digitos_algebraica_BCD/QUARTUS/../PRUEBAS/prueba_sAlgeBCD..."

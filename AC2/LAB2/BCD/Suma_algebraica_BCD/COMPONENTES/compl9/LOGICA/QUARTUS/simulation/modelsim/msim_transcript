@@ -1,0 +1,64 @@
+# Reading D:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do compl9_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {D:/FIBQ7/AC2/LAB2 AC2/BCD/tipos_ctes_pkg/retardos_bcd_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package retardos_bcd_pkg
+# vcom -93 -work work {D:/FIBQ7/AC2/LAB2 AC2/BCD/tipos_ctes_pkg/cte_tipos_bcd_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package cte_tipos_bcd_pkg
+# vcom -93 -work work {D:/FIBQ7/AC2/LAB2 AC2/BCD/Suma_algebraica_BCD/COMPONENTES/compl9/LOGICA/CODIGO/compl9.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package retardos_bcd_pkg
+# -- Compiling entity compl9
+# -- Compiling architecture comportamiento of compl9
+# 
+# vcom -93 -work work {D:/FIBQ7/AC2/LAB2 AC2/BCD/Suma_algebraica_BCD/COMPONENTES/compl9/LOGICA/QUARTUS/../PRUEBAS/prueba_compl9.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package retardos_bcd_pkg
+# -- Compiling entity prueba_compl9
+# -- Compiling architecture prueba of prueba_compl9
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs="+acc"  prueba_compl9
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs=\"+acc\" -t 1ps prueba_compl9 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.cte_tipos_bcd_pkg
+# Loading work.retardos_bcd_pkg
+# Loading work.prueba_compl9(prueba)
+# Loading work.compl9(comportamiento)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all

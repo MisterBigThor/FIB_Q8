@@ -1,0 +1,73 @@
+|S4bits
+A[0] => s1bit:sum0.x
+A[1] => s1bit:sum1.x
+A[2] => s1bit:sum2.x
+A[3] => s1bit:sum3.x
+B[0] => s1bit:sum0.y
+B[1] => s1bit:sum1.y
+B[2] => s1bit:sum2.y
+B[3] => s1bit:sum3.y
+cen => s1bit:sum0.cen
+SUM[0] <= s1bit:sum0.s
+SUM[1] <= s1bit:sum1.s
+SUM[2] <= s1bit:sum2.s
+SUM[3] <= s1bit:sum3.s
+csal <= s1bit:sum3.csal
+
+
+|S4bits|s1bit:sum0
+x => xorxy.IN0
+x => andxy.IN0
+x => andxcen.IN0
+y => xorxy.IN1
+y => andxy.IN1
+y => andycen.IN0
+cen => s.IN1
+cen => andxcen.IN1
+cen => andycen.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+csal <= csal.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|S4bits|s1bit:sum1
+x => xorxy.IN0
+x => andxy.IN0
+x => andxcen.IN0
+y => xorxy.IN1
+y => andxy.IN1
+y => andycen.IN0
+cen => s.IN1
+cen => andxcen.IN1
+cen => andycen.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+csal <= csal.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|S4bits|s1bit:sum2
+x => xorxy.IN0
+x => andxy.IN0
+x => andxcen.IN0
+y => xorxy.IN1
+y => andxy.IN1
+y => andycen.IN0
+cen => s.IN1
+cen => andxcen.IN1
+cen => andycen.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+csal <= csal.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|S4bits|s1bit:sum3
+x => xorxy.IN0
+x => andxy.IN0
+x => andxcen.IN0
+y => xorxy.IN1
+y => andxy.IN1
+y => andycen.IN0
+cen => s.IN1
+cen => andxcen.IN1
+cen => andycen.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+csal <= csal.DB_MAX_OUTPUT_PORT_TYPE
+
+

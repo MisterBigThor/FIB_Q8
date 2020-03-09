@@ -53,8 +53,13 @@ sumadoref: Snref generic map (tam => tam)
 estimulos: process
 variable t_retardo: time;
 -- resto de variables
+variable retMin, retMax: time;
+variable AMin, AMax, BMin, BMax, SMin, SMax: std_logic_vector(tam-1 downto 0);
+variable cenMin, csalMin, cenMax, csalMax: std_logic;
 
 begin
+	retMin := 10000 ns;
+	retMax := 0 ns;
 	for aca in 0 to 1 loop
 		for i in 0 to 5 loop
 			for j in 0 to 5 loop
@@ -68,10 +73,23 @@ begin
 				wait until reloj = '0' and reloj'event;
 
 				t_retardo := periododiv2 - csal_SUM'last_event;
---				report "estimulos A: " & integer'image(i) & "  B: " & integer'image(j) & "  " & to_string(now, us) & "  " & to_string(t_retardo, ns);
+				report "estimulos A: " & integer'image(i) & "  B: " & integer'image(j) & "  " & to_string(now, us) & "  " & to_string(t_retardo, ns);
 
 -- introduzca codigo para actualizar retardos maximo y minimo
-
+    if t_retardo > 0 ns then
+				if (t_retardo > retMax) then
+					retMax := t_retardo;
+					AMax := A;
+					BMax := B;
+					cenMax := cen;
+				end if;
+				if (t_retardo < retMin) then
+					retMin := t_retardo;
+					AMin := A;
+					BMin := B;
+					cenMin := cen;
+				end if;
+		end if;
 				assert ((csal_SUM) = (csalref & SUMref))
 				report "la comprobacion falla" severity error;
 
@@ -91,7 +109,12 @@ begin
 
 
 	report "numero de errores: " & integer'image(errores);
-
+	
+	report "RESULTADOS RETARDO MAXIMO " & to_string(retMax, ns);
+	report "ret max A: " & integer'image(to_integer(unsigned(AMax))) & " B: " & integer'image(to_integer(unsigned(BMax))) & " cen: " & std_logic'image(cenMax);
+	
+	report "RESULTADOS RETARDO MINIMO " & to_string(retMin, ns);
+	report "ret min A: " & integer'image(to_integer(unsigned(AMin))) & " B: " & integer'image(to_integer(unsigned(BMin))) & " cen: " & std_logic'image(cenMin);
 	final <= '1';
 	wait;
 end process;

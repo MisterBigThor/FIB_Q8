@@ -14,9 +14,9 @@ subtype st_bcd is std_logic_vector(num_bcd-1 downto 0);
 subtype st_bcd_mas_1 is std_logic_vector(num_bcd downto 0);
 
 constant ndigitos: positive:= 2; --2, 3 para compresion
-constant num_bits_ndigitos: positive:= num_bcd*ndigitos;
-subtype st_ndig_bcd is std_logic_vector(num_bits_ndigitos-1 downto 0);
-subtype st_ndig_bcd_mas_1 is std_logic_vector (num_bits_ndigitos downto 0);
+constant num_bits_ndigitos: positive:= num_bcd*ndigitos; --8 bits -> 2 numeros BCD
+subtype st_ndig_bcd is std_logic_vector(num_bits_ndigitos-1 downto 0); --8 bits en vector
+subtype st_ndig_bcd_mas_1 is std_logic_vector (num_bits_ndigitos downto 0); --9 bits -> (signo, BCD1, BCD0)
 
 end package cte_tipos_bcd_pkg;
 
