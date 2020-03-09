@@ -94,15 +94,43 @@ Suponga que el retardo de almacenamiento en un registro de desacoplo es cero.
 
 <u>Pregunta 2:</u> ¿Cuál es la máxima productividad, en operaciones por segundo, que se puede obtener al segmentar el circuito?. 
 
-<u>Pregunta 3:</u> Muestre una organización segmentada que maximice la productividad. 
+La productividad depende del tiempo de ciclo, sin contar los retardos por possibles riesgos estructurales. El Tiempo de ciclo correspondera al maximo del retardo entre las etapas
 
-<u>Pregunta 4:</u> Muestre un organización segmentada que minimice el número de etapas y mantenga una productividad de al menos una operación cada 85 ps.
+$P = (Tc)^{-1} = 16.7 G \space Ops/s$
+
+<u>Pregunta 3:</u> Muestre una organización segmentada que maximice la productividad.
+
+$T_c = 60ps$
+
+| TIPO/CICLO | 1    | 2    | 3    | 4    | 5    |
+| ---------- | ---- | ---- | ---- | ---- | ---- |
+| 1          | A    | C    | F    | NOP  | J    |
+| 2          | A    | C    | NOP  | I    | J    |
+| 3          | A    | D    | G    | I    | J    |
+| 4          | A    | D    | H    | NOP  | J    |
+| 5          | B    | D    | G    | I    | J    |
+| 6          | B    | E    | H    | NOP  | J    |
+| 7          | B    | D    | H    | NOP  | J    |
+
+<u>Pregunta 4:</u> Muestre un organización segmentada que minimice el número de etapas y mantenga una productividad de al menos una operación cada 85 ps
+
+
+| TIPO/CICLO | 1    | 2    | 3    |
+| ---------- | ---- | ---- | ---- |
+| 1          | AC   | F    | J    |
+| 2          | AD   | G    | IJ   |
+| 3          | AD   | HJ   |      |
+| 4          | BD   | G    | IJ   |
+| 5          | BE   | HJ   |      |
+| 6          | BD   | HJ   |      |
 
 Entre dos etapas puede haber varios flujos de información. Cada uno de ellos requiere de un registro de desacoplo. La información que hay en la entrada de un registro de desacoplo se transfiere a la salida en el flanco ascendente de la señal de reloj. Suponga la siguiente segmentación.
 
 ![img](2.2Eje2)
 
 <u>Pregunta 5:</u> Muestre en un esquema los registros de desacoplo numerándolos como 1 o 2 para indicar respectivamente si son registro de salida de la 1ª etapa o de la 2ª etapa.
+
+
 
 ### Ejercicio 2.16
 
