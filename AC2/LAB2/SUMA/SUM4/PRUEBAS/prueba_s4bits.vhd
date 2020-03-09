@@ -31,13 +31,13 @@ begin
 	sum4: S4bits port map(A=>Aaux, B=>Baux, cen=>cenaux, SUM=>SUMaux, csal=>csalaux);
 	prueba: process
 		begin
-		Aaux <= "0001";
-		Baux <= "0001";
+		Aaux <= "0010";
+		Baux <= "0000";
 		cenaux <= '0';
-		wait for 100 ns;
-		Aaux <= "0001";
-		Baux <= "0011";
+		wait for 200 ns;
+		Baux <= "0010";
+		wait for 400 ns;
 		wait;
-		end process;
+	end process;
 end prueba;		
 

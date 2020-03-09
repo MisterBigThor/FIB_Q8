@@ -1,0 +1,151 @@
+# Reading D:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do snBCD_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB2/BCD/tipos_ctes_pkg/retardos_bcd_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package retardos_bcd_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB2/BCD/tipos_ctes_pkg/cte_tipos_bcd_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package cte_tipos_bcd_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/componentes_sum_bcd_pkg/componentes_s1BCD_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Compiling package componentes_s1BCD_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/componentes_dig_BCD_pkg/componentes_digito_bcd_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Compiling package componentes_digito_bcd_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/sumador_binario/CODIGO/snbits.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package retardos_bcd_pkg
+# -- Compiling entity snbits
+# -- Compiling architecture compor of snbits
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/CODIGO/mayor9.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package retardos_bcd_pkg
+# -- Compiling entity mayor9
+# -- Compiling architecture comportamiento of mayor9
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/sum_n_digitos_BCD/CODIGO/snBCD.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package componentes_s1BCD_pkg
+# -- Compiling entity snBCD
+# -- Compiling architecture estructural of snBCD
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/suma_dos_digitos_BCD/CODIGO/s1bcd.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package componentes_digito_bcd_pkg
+# -- Compiling entity s1bcd
+# -- Compiling architecture compor of s1bcd
+# 
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/sum_n_digitos_BCD/QUARTUS/../PRUEBAS/prueba_snBCD.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_bcd_pkg
+# -- Loading package retardos_bcd_pkg
+# -- Compiling entity prueba_snBCD
+# -- Compiling architecture prueba of prueba_snBCD
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs="+acc"  prueba_snBCD
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs=\"+acc\" -t 1ps prueba_snBCD 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.cte_tipos_bcd_pkg
+# Loading work.retardos_bcd_pkg
+# Loading work.prueba_snbcd(prueba)
+# Loading work.componentes_s1bcd_pkg
+# Loading work.snbcd(estructural)
+# Loading work.componentes_digito_bcd_pkg
+# Loading work.s1bcd(compor)
+# Loading work.snbits(compor)
+# Loading work.mayor9(comportamiento)
+# 
+# do D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/sum_n_digitos_BCD/QUARTUS/../PRUEBAS/formato_ventanas.do
+# log -r /*
+# do wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate -radix hexadecimal -childformat {{/prueba_snbcd/A(7) -radix unsigned} {/prueba_snbcd/A(6) -radix unsigned} {/prueba_snbcd/A(5) -radix unsigned} {/prueba_snbcd/A(4) -radix unsigned} {/prueba_snbcd/A(3) -radix unsigned} {/prueba_snbcd/A(2) -radix unsigned} {/prueba_snbcd/A(1) -radix unsigned} {/prueba_snbcd/A(0) -radix unsigned}} -subitemconfig {/prueba_snbcd/A(7) {-radix unsigned} /prueba_snbcd/A(6) {-radix unsigned} /prueba_snbcd/A(5) {-radix unsigned} /prueba_snbcd/A(4) {-radix unsigned} /prueba_snbcd/A(3) {-radix unsigned} /prueba_snbcd/A(2) {-radix unsigned} /prueba_snbcd/A(1) {-radix unsigned} /prueba_snbcd/A(0) {-radix unsigned}} /prueba_snbcd/A
+# add wave -noupdate -radix hexadecimal -childformat {{/prueba_snbcd/B(7) -radix unsigned} {/prueba_snbcd/B(6) -radix unsigned} {/prueba_snbcd/B(5) -radix unsigned} {/prueba_snbcd/B(4) -radix unsigned} {/prueba_snbcd/B(3) -radix unsigned} {/prueba_snbcd/B(2) -radix unsigned} {/prueba_snbcd/B(1) -radix unsigned} {/prueba_snbcd/B(0) -radix unsigned}} -subitemconfig {/prueba_snbcd/B(7) {-radix unsigned} /prueba_snbcd/B(6) {-radix unsigned} /prueba_snbcd/B(5) {-radix unsigned} /prueba_snbcd/B(4) {-radix unsigned} /prueba_snbcd/B(3) {-radix unsigned} /prueba_snbcd/B(2) {-radix unsigned} /prueba_snbcd/B(1) {-radix unsigned} /prueba_snbcd/B(0) {-radix unsigned}} /prueba_snbcd/B
+# add wave -noupdate -format Literal /prueba_snbcd/cen
+# add wave -noupdate -radix hexadecimal -childformat {{/prueba_snbcd/suma(7) -radix unsigned} {/prueba_snbcd/suma(6) -radix unsigned} {/prueba_snbcd/suma(5) -radix unsigned} {/prueba_snbcd/suma(4) -radix unsigned} {/prueba_snbcd/suma(3) -radix unsigned} {/prueba_snbcd/suma(2) -radix unsigned} {/prueba_snbcd/suma(1) -radix unsigned} {/prueba_snbcd/suma(0) -radix unsigned}} -subitemconfig {/prueba_snbcd/suma(7) {-radix unsigned} /prueba_snbcd/suma(6) {-radix unsigned} /prueba_snbcd/suma(5) {-radix unsigned} /prueba_snbcd/suma(4) {-radix unsigned} /prueba_snbcd/suma(3) {-radix unsigned} /prueba_snbcd/suma(2) {-radix unsigned} /prueba_snbcd/suma(1) {-radix unsigned} /prueba_snbcd/suma(0) {-radix unsigned}} /prueba_snbcd/suma
+# add wave -noupdate -format Literal /prueba_snbcd/csal
+# add wave -noupdate /prueba_snbcd/error
+# add wave -noupdate -divider {digito 0}
+# add wave -noupdate -radix unsigned /prueba_snbcd/sndigiBCD/sumador(0)/sumi/X
+# add wave -noupdate -radix unsigned /prueba_snbcd/sndigiBCD/sumador(0)/sumi/Y
+# add wave -noupdate -format Literal /prueba_snbcd/sndigiBCD/sumador(0)/sumi/cen
+# add wave -noupdate -radix unsigned /prueba_snbcd/sndigiBCD/sumador(0)/sumi/S
+# add wave -noupdate -format Literal /prueba_snbcd/sndigiBCD/sumador(0)/sumi/csal
+# add wave -noupdate -divider {digito 1}
+# add wave -noupdate -radix unsigned /prueba_snbcd/sndigiBCD/sumador(1)/sumi/X
+# add wave -noupdate -radix unsigned /prueba_snbcd/sndigiBCD/sumador(1)/sumi/Y
+# add wave -noupdate -format Literal /prueba_snbcd/sndigiBCD/sumador(1)/sumi/cen
+# add wave -noupdate -radix unsigned /prueba_snbcd/sndigiBCD/sumador(1)/sumi/S
+# add wave -noupdate -format Literal /prueba_snbcd/sndigiBCD/sumador(1)/sumi/csal
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {128849 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 321
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 1
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 20000
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ps} {820314 ps}
+# run -all

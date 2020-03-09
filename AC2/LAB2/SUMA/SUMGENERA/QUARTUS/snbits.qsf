@@ -58,7 +58,7 @@ set_global_assignment -name EDA_TEST_BENCH_NAME prueba_snbits -section_id eda_si
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id prueba_snbits
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME prueba_snbits -section_id prueba_snbits
 set_global_assignment -name EDA_NATIVELINK_SIMULATION_SETUP_SCRIPT ../PRUEBAS/formato_ventanas.do -section_id eda_simulation
-set_global_assignment -name SEARCH_PATH "c:\\users\\corre\\documents\\fibq8\\ac2\\lab2\\suma\\componentes\\sum1bit\\codigo"
+set_global_assignment -name SEARCH_PATH "d:\\fib_q8\\ac2\\lab2\\suma\\componentes\\sum1bit\\codigo"
 set_global_assignment -name EDA_TEST_BENCH_FILE ../PRUEBAS/prueba_snbits_reloj.vhd -section_id prueba_snbits_reloj -hdl_version VHDL_2008
 set_global_assignment -name EDA_TEST_BENCH_FILE ../PRUEBAS/snref.vhd -section_id prueba_snbits_reloj
 set_global_assignment -name EDA_TEST_BENCH_FILE ../PRUEBAS/prueba_snbits.vhd -section_id prueba_snbits

@@ -1,5 +1,5 @@
 Analysis & Elaboration report for s1bcd
-Mon Oct 07 16:24:19 2019
+Mon Mar 09 20:39:03 2020
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                  ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Mon Oct 07 16:24:19 2019      ;
+; Analysis & Elaboration Status      ; Successful - Mon Mar 09 20:39:03 2020      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; s1bcd                                      ;
 ; Top-level Entity Name              ; s1bcd                                      ;
@@ -172,30 +172,30 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Elaboration
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Mon Oct 07 16:24:18 2019
+    Info: Processing started: Mon Mar 09 20:39:02 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off s1bcd -c s1bcd --analysis_and_elaboration
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 0 entities, in source file /fibq7/ac2/lab2 ac2/bcd/tipos_ctes_pkg/retardos_bcd_pkg.vhd
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab2/bcd/tipos_ctes_pkg/retardos_bcd_pkg.vhd
     Info (12022): Found design unit 1: retardos_bcd_pkg
-Info (12021): Found 1 design units, including 0 entities, in source file /fibq7/ac2/lab2 ac2/bcd/tipos_ctes_pkg/cte_tipos_bcd_pkg.vhd
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab2/bcd/tipos_ctes_pkg/cte_tipos_bcd_pkg.vhd
     Info (12022): Found design unit 1: cte_tipos_bcd_pkg
-Info (12021): Found 1 design units, including 0 entities, in source file /fibq7/ac2/lab2 ac2/bcd/suma_algebraica_bcd/componentes/suma_enteros_bcd/componentes/suma_natu_bcd/componentes/sum_digito_bcd/componentes_dig_bcd_pkg/componentes_digito_bcd_pkg.vhd
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab2/bcd/suma_algebraica_bcd/componentes/suma_enteros_bcd/componentes/suma_natu_bcd/componentes/sum_digito_bcd/componentes_dig_bcd_pkg/componentes_digito_bcd_pkg.vhd
     Info (12022): Found design unit 1: componentes_digito_bcd_pkg
-Info (12021): Found 2 design units, including 1 entities, in source file /fibq7/ac2/lab2 ac2/bcd/suma_algebraica_bcd/componentes/suma_enteros_bcd/componentes/suma_natu_bcd/componentes/sum_digito_bcd/suma_dos_digitos_bcd/codigo/s1bcd.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /fib_q8/ac2/lab2/bcd/suma_algebraica_bcd/componentes/suma_enteros_bcd/componentes/suma_natu_bcd/componentes/sum_digito_bcd/suma_dos_digitos_bcd/codigo/s1bcd.vhd
     Info (12022): Found design unit 1: s1bcd-compor
     Info (12023): Found entity 1: s1bcd
 Info (12127): Elaborating entity "s1bcd" for the top level hierarchy
-Warning (12125): Using design file /fibq7/ac2/lab2 ac2/bcd/suma_algebraica_bcd/componentes/suma_enteros_bcd/componentes/suma_natu_bcd/componentes/sum_digito_bcd/componentes/sumador_binario/codigo/snbits.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+Warning (12125): Using design file /fib_q8/ac2/lab2/bcd/suma_algebraica_bcd/componentes/suma_enteros_bcd/componentes/suma_natu_bcd/componentes/sum_digito_bcd/componentes/sumador_binario/codigo/snbits.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: snbits-compor
     Info (12023): Found entity 1: snbits
 Info (12128): Elaborating entity "snbits" for hierarchy "snbits:sumadorA"
-Warning (12125): Using design file /fibq7/ac2/lab2 ac2/bcd/suma_algebraica_bcd/componentes/suma_enteros_bcd/componentes/suma_natu_bcd/componentes/sum_digito_bcd/componentes/mayor9/codigo/mayor9.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+Warning (12125): Using design file /fib_q8/ac2/lab2/bcd/suma_algebraica_bcd/componentes/suma_enteros_bcd/componentes/suma_natu_bcd/componentes/sum_digito_bcd/componentes/mayor9/codigo/mayor9.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: mayor9-comportamiento
     Info (12023): Found entity 1: mayor9
 Info (12128): Elaborating entity "mayor9" for hierarchy "mayor9:m9"
 Info: Quartus II 64-Bit Analysis & Elaboration was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 4662 megabytes
-    Info: Processing ended: Mon Oct 07 16:24:19 2019
+    Info: Processing ended: Mon Mar 09 20:39:03 2020
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

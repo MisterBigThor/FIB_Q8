@@ -46,8 +46,8 @@ constant base_mod: integer := 2*(10**ndigitos);
 constant emin: integer := -base_mod/2;
 constant emax: integer := (base_mod/2) - 1;
 variable t_retardo: time;
-variable t_max : time := 0 ns;
-variable t_min: time := t_rep;
+variable t_max : time;
+variable t_min: time;
 variable A_tmax, A_tmin, B_tmax, B_tmin :st_ndig_bcd_mas_1;
 variable sumres_tmax, sumres_tmin: std_logic;
 
@@ -59,9 +59,12 @@ begin
 
 -- Introduzca codigo de preparacion del circuito para medir retardos
 
-				
+				A <= (others => 'U');
+				B <= (others => 'U');
+				sumres <= 'U';
 				wait for t_rep; -- salidas y senyales internas indefinidas
-			  
+				
+				
 -- Entradas
     			if aca = 0 then
 					sumres <= '0';
@@ -79,29 +82,34 @@ begin
 
 				iexp := i mod base_mod;
 				jexp := j mod base_mod;        
-       			Adec := iexp;
+       		Adec := iexp;
 				Bdec := jexp;
 				for dig in 0 to ndigitos-1 loop
                 	A((dig+1)*num_bcd-1 downto dig*num_bcd) <= std_logic_vector(to_unsigned(Adec mod 10,num_bcd));
                 	B((dig+1)*num_bcd-1 downto dig*num_bcd) <= std_logic_vector(to_unsigned(Bdec mod 10,num_bcd));
-					Adec := Adec/10;
-					Bdec := Bdec/10;
+						Adec := Adec/10;
+						Bdec := Bdec/10;
 				end loop;
 				wait for t_rep;
+				
+				
+				
 -- Introduzca codigo para actualizar retardos maximo y minimo
+		t_retardo := t_rep -  suma'last_event;	
+		if A /= "UUUUUUUUU" then
 				if t_retardo > t_max then
 					t_max := t_retardo;
 					A_tmax := A;
 					B_tmax := B;
-					sumres_tmax := sumares;
+					sumres_tmax := sumres;
 				end if;
 				if t_retardo < t_min then
 					t_min := t_retardo;
 					A_tmin := A;
 					B_tmin := B;
-					sumres_tmin := sumares;
+					sumres_tmin := sumres;
 				end if;
-
+		end if;
 -- Comprovacion funcionamiento logico
 				if sumres = '0' then
 					sumacompro := i + j; 

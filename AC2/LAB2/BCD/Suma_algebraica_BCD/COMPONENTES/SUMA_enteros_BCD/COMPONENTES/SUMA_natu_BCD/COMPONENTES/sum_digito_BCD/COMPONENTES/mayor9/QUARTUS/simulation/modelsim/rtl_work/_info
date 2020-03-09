@@ -2,15 +2,15 @@ m255
 K3
 13
 cModel Technology
-Z0 dD:\FIBQ7\AC2\LAB2 AC2\BCD\Suma_algebraica_BCD\COMPONENTES\SUMA_enteros_BCD\COMPONENTES\SUMA_natu_BCD\COMPONENTES\sum_digito_BCD\COMPONENTES\mayor9\QUARTUS\simulation\modelsim
+Z0 dD:\FIB_Q8\AC2\LAB2\BCD\Suma_algebraica_BCD\COMPONENTES\SUMA_enteros_BCD\COMPONENTES\SUMA_natu_BCD\COMPONENTES\sum_digito_BCD\COMPONENTES\mayor9\QUARTUS\simulation\modelsim
 Pcte_tipos_bcd_pkg
 Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z4 w1534675090
-Z5 dD:\FIBQ7\AC2\LAB2 AC2\BCD\Suma_algebraica_BCD\COMPONENTES\SUMA_enteros_BCD\COMPONENTES\SUMA_natu_BCD\COMPONENTES\sum_digito_BCD\COMPONENTES\mayor9\QUARTUS\simulation\modelsim
-8D:/FIBQ7/AC2/LAB2 AC2/BCD/tipos_ctes_pkg/cte_tipos_bcd_pkg.vhd
-FD:/FIBQ7/AC2/LAB2 AC2/BCD/tipos_ctes_pkg/cte_tipos_bcd_pkg.vhd
+Z4 w1583778102
+Z5 dD:\FIB_Q8\AC2\LAB2\BCD\Suma_algebraica_BCD\COMPONENTES\SUMA_enteros_BCD\COMPONENTES\SUMA_natu_BCD\COMPONENTES\sum_digito_BCD\COMPONENTES\mayor9\QUARTUS\simulation\modelsim
+8D:/FIB_Q8/AC2/LAB2/BCD/tipos_ctes_pkg/cte_tipos_bcd_pkg.vhd
+FD:/FIB_Q8/AC2/LAB2/BCD/tipos_ctes_pkg/cte_tipos_bcd_pkg.vhd
 l0
 L10
 V20M<h[m@R4SXS2LcK2YjF2
@@ -20,27 +20,27 @@ Z7 o-93 -work work -O0
 Z8 tExplicit 1
 !s100 VFWYieDLZiD8cHY1>kMcb0
 !i10b 1
-!s108 1570456880.860000
-!s90 -reportprogress|300|-93|-work|work|D:/FIBQ7/AC2/LAB2 AC2/BCD/tipos_ctes_pkg/cte_tipos_bcd_pkg.vhd|
-!s107 D:/FIBQ7/AC2/LAB2 AC2/BCD/tipos_ctes_pkg/cte_tipos_bcd_pkg.vhd|
+!s108 1583782811.711000
+!s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB2/BCD/tipos_ctes_pkg/cte_tipos_bcd_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB2/BCD/tipos_ctes_pkg/cte_tipos_bcd_pkg.vhd|
 Emayor9
-Z9 w1570456860
+Z9 w1583778101
 Z10 DPx4 work 16 retardos_bcd_pkg 0 22 e`5QLbd7FW68aO?lSMcdY2
 R1
 Z11 DPx4 work 17 cte_tipos_bcd_pkg 0 22 20M<h[m@R4SXS2LcK2YjF2
 R2
 R3
 R5
-Z12 8D:/FIBQ7/AC2/LAB2 AC2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/CODIGO/mayor9.vhd
-Z13 FD:/FIBQ7/AC2/LAB2 AC2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/CODIGO/mayor9.vhd
+Z12 8D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/CODIGO/mayor9.vhd
+Z13 FD:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/CODIGO/mayor9.vhd
 l0
 L11
 VbBJ`YQdUcMnE;?9W>NiIi1
 R6
 31
-Z14 !s108 1570456880.996000
-Z15 !s90 -reportprogress|300|-93|-work|work|D:/FIBQ7/AC2/LAB2 AC2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/CODIGO/mayor9.vhd|
-Z16 !s107 D:/FIBQ7/AC2/LAB2 AC2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/CODIGO/mayor9.vhd|
+Z14 !s108 1583782811.838000
+Z15 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/CODIGO/mayor9.vhd|
+Z16 !s107 D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/CODIGO/mayor9.vhd|
 R7
 R8
 !s100 4OGTAV>hSX<;P7k[;Mi8Q3
@@ -65,15 +65,15 @@ R8
 !s100 hD9f@EOdG^3?nB5fbf]<32
 !i10b 1
 Eprueba_mayor9
-R4
+Z17 w1582728574
 R10
 R11
 R1
 R2
 R3
 R5
-Z17 8D:/FIBQ7/AC2/LAB2 AC2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/QUARTUS/../PRUEBA/prueba_mayor9.vhd
-Z18 FD:/FIBQ7/AC2/LAB2 AC2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/QUARTUS/../PRUEBA/prueba_mayor9.vhd
+Z18 8D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/QUARTUS/../PRUEBA/prueba_mayor9.vhd
+Z19 FD:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/QUARTUS/../PRUEBA/prueba_mayor9.vhd
 l0
 L13
 VY_1??Bl;@M3HJUn;dkea11
@@ -81,9 +81,9 @@ VY_1??Bl;@M3HJUn;dkea11
 R6
 31
 !i10b 1
-Z19 !s108 1570456881.216000
-Z20 !s90 -reportprogress|300|-93|-work|work|D:/FIBQ7/AC2/LAB2 AC2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/QUARTUS/../PRUEBA/prueba_mayor9.vhd|
-Z21 !s107 D:/FIBQ7/AC2/LAB2 AC2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/QUARTUS/../PRUEBA/prueba_mayor9.vhd|
+Z20 !s108 1583782812.040000
+Z21 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/QUARTUS/../PRUEBA/prueba_mayor9.vhd|
+Z22 !s107 D:/FIB_Q8/AC2/LAB2/BCD/Suma_algebraica_BCD/COMPONENTES/SUMA_enteros_BCD/COMPONENTES/SUMA_natu_BCD/COMPONENTES/sum_digito_BCD/COMPONENTES/mayor9/QUARTUS/../PRUEBA/prueba_mayor9.vhd|
 R7
 R8
 Aprueba
@@ -100,18 +100,18 @@ VI:BaHJ@ZWI3Y_:e2=eGUk3
 R6
 31
 !i10b 1
-R19
 R20
 R21
+R22
 R7
 R8
 Pretardos_bcd_pkg
 R2
 R3
-w1548950259
+R4
 R5
-8D:/FIBQ7/AC2/LAB2 AC2/BCD/tipos_ctes_pkg/retardos_bcd_pkg.vhd
-FD:/FIBQ7/AC2/LAB2 AC2/BCD/tipos_ctes_pkg/retardos_bcd_pkg.vhd
+8D:/FIB_Q8/AC2/LAB2/BCD/tipos_ctes_pkg/retardos_bcd_pkg.vhd
+FD:/FIB_Q8/AC2/LAB2/BCD/tipos_ctes_pkg/retardos_bcd_pkg.vhd
 l0
 L9
 Ve`5QLbd7FW68aO?lSMcdY2
@@ -119,8 +119,8 @@ R6
 31
 R7
 R8
-!s100 MnUk<a42GaUnfl8fJI30c2
+!s100 FWZTYlPdDP0;N^WkM?>M?1
 !i10b 1
-!s108 1570456880.655000
-!s90 -reportprogress|300|-93|-work|work|D:/FIBQ7/AC2/LAB2 AC2/BCD/tipos_ctes_pkg/retardos_bcd_pkg.vhd|
-!s107 D:/FIBQ7/AC2/LAB2 AC2/BCD/tipos_ctes_pkg/retardos_bcd_pkg.vhd|
+!s108 1583782811.525000
+!s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB2/BCD/tipos_ctes_pkg/retardos_bcd_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB2/BCD/tipos_ctes_pkg/retardos_bcd_pkg.vhd|

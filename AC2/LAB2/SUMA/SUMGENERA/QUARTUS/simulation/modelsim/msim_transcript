@@ -1,24 +1,24 @@
-# Reading C:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
+# Reading D:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
 # do snbits_run_msim_rtl_vhdl.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
 # vlib rtl_work
 # vmap work rtl_work
-# Copying C:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Copying D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# ** Warning: Copied C:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+# ** Warning: Copied D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/SUMA/SUMGENERA/CODIGO/snbits.vhd}
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB2/SUMA/SUMGENERA/CODIGO/snbits.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity snbits
 # -- Compiling architecture estructural of snbits
-# ** Warning: [4] C:/Users/corre/Documents/FIBQ8/AC2/LAB2/SUMA/SUMGENERA/CODIGO/snbits.vhd(37): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# vcom -93 -work work {c:/users/corre/documents/fibq8/ac2/lab2/suma/componentes/sum1bit/codigo/s1bit.vhd}
+# ** Warning: [4] D:/FIB_Q8/AC2/LAB2/SUMA/SUMGENERA/CODIGO/snbits.vhd(37): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# vcom -93 -work work {d:/fib_q8/ac2/lab2/suma/componentes/sum1bit/codigo/s1bit.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -26,7 +26,7 @@
 # -- Compiling entity s1bit
 # -- Compiling architecture flujodatos of s1bit
 # 
-# vcom -2008 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/SUMA/SUMGENERA/QUARTUS/../PRUEBAS/prueba_snbits_reloj.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB2/SUMA/SUMGENERA/QUARTUS/../PRUEBAS/prueba_snbits_reloj.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -35,7 +35,7 @@
 # -- Loading package MATH_REAL
 # -- Compiling entity prueba_snbits_reloj
 # -- Compiling architecture prueba of prueba_snbits_reloj
-# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB2/SUMA/SUMGENERA/QUARTUS/../PRUEBAS/snref.vhd}
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB2/SUMA/SUMGENERA/QUARTUS/../PRUEBAS/snref.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -56,7 +56,7 @@
 # Loading work.s1bit(flujodatos)
 # Loading work.snref(referencia)
 # 
-# do C:/Users/corre/Documents/FIBQ8/AC2/LAB2/SUMA/SUMGENERA/QUARTUS/../PRUEBAS/formato_ventanas.do
+# do D:/FIB_Q8/AC2/LAB2/SUMA/SUMGENERA/QUARTUS/../PRUEBAS/formato_ventanas.do
 # log -r /*
 # do wave_reloj.do
 # onerror {resume}

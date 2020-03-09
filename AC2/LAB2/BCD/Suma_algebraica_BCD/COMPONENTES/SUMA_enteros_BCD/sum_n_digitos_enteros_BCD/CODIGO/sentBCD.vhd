@@ -25,7 +25,7 @@ architecture estructural of sentBCD is
 begin
 
 	sumBDC0: snBCD port map(a=>a(7 downto 0), b=>b(7 downto 0), cen=>cen, s=>sum0, csal=>c0);	
-	sum1bit: s1bit port map(x=>a(8), y=>a(8), cen=>c0, s=>sumSign);
+	sum1bit: s1bit port map(x=>a(8), y=>b(8), cen=>c0, s=>sumSign);
 	s <= sumSign & sum0;
 	irre <= ((not a(8)) and (not b(8)) and sumSign) or (a(8) and b(8) and (not sumSign));
 end estructural;
