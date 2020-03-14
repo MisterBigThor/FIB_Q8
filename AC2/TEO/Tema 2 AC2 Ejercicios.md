@@ -88,41 +88,33 @@ Considere el siguiente circuito donde se muestran bloques combinacionales y el f
 
 <u>Pregunta 1:</u> ¿Cuál es la latencia del circuito?. Marque con trazo grueso las conexiones del camino crítico. Suponga que el retardo de almacenamiento en un registro de desacoplo es cero. 
 
-La latencia del circuito es 170 ps.
+La latencia del circuito es 170 ps.(Tiempo en realizar una operacion desde el inicio)
 
 Suponga que el retardo de almacenamiento en un registro de desacoplo es cero.
 
 <u>Pregunta 2:</u> ¿Cuál es la máxima productividad, en operaciones por segundo, que se puede obtener al segmentar el circuito?. 
 
-La productividad depende del tiempo de ciclo, sin contar los retardos por possibles riesgos estructurales. El Tiempo de ciclo correspondera al maximo del retardo entre las etapas
-
-$P = (Tc)^{-1} = 16.7 G \space Ops/s$
+$P_{max} = (Tc)^{-1} = (60ps)^{-1} = 16.7 G \space Ops/s$
 
 <u>Pregunta 3:</u> Muestre una organización segmentada que maximice la productividad.
 
 $T_c = 60ps$
 
-| TIPO/CICLO | 1    | 2    | 3    | 4    | 5    |
-| ---------- | ---- | ---- | ---- | ---- | ---- |
-| 1          | A    | C    | F    | NOP  | J    |
-| 2          | A    | C    | NOP  | I    | J    |
-| 3          | A    | D    | G    | I    | J    |
-| 4          | A    | D    | H    | NOP  | J    |
-| 5          | B    | D    | G    | I    | J    |
-| 6          | B    | E    | H    | NOP  | J    |
-| 7          | B    | D    | H    | NOP  | J    |
+Etapa 1: ABDE
 
-<u>Pregunta 4:</u> Muestre un organización segmentada que minimice el número de etapas y mantenga una productividad de al menos una operación cada 85 ps
+Etapa 2: CHG
 
+Etapa 3: FI
 
-| TIPO/CICLO | 1    | 2    | 3    |
-| ---------- | ---- | ---- | ---- |
-| 1          | AC   | F    | J    |
-| 2          | AD   | G    | IJ   |
-| 3          | AD   | HJ   |      |
-| 4          | BD   | G    | IJ   |
-| 5          | BE   | HJ   |      |
-| 6          | BD   | HJ   |      |
+Etapa 4: J
+
+<u>Pregunta 4:</u> Muestre un organización segmentada que minimice el número de etapas y mantenga una productividad de al menos una operación cada 85 ps.
+
+Etapa 1: ABCDE
+
+Etapa 2: FGHI
+
+Etapa 3: J
 
 Entre dos etapas puede haber varios flujos de información. Cada uno de ellos requiere de un registro de desacoplo. La información que hay en la entrada de un registro de desacoplo se transfiere a la salida en el flanco ascendente de la señal de reloj. Suponga la siguiente segmentación.
 
@@ -134,7 +126,56 @@ Entre dos etapas puede haber varios flujos de información. Cada uno de ellos re
 
 ### Ejercicio 2.16
 
+Una reducción en la tensión de alimentación da lugar a un ahorro cuadrático en la potencia consumida y por tanto, es una alternativa muy atractiva para reducir el consumo de potencia. 
+
+$P=C*V^2*f$
+
+Sin embargo, dentro de un rango de funcionamiento, el retardo (r = 1/f) de las puertas CMOS se incrementa inversamente con la tensión de alimentación. En la siguiente tabla las filas muestran relaciones entre la tensión de alimentación y el retardo. La tensión de alimentación y el retardo original se denominan V0 y r0 respectivamente.
+
+| Tension Alimentacion | Retardo |
+| -------------------- | ------- |
+| 0.58*Vo              | 2*Ro    |
+| 0.40*Vo              | 4*Ro    |
+
+Disponemos de un módulo sumador alimentado con una tensión de alimentación Vs , una capacidad efectiva equivalente Cs y con un retardo Ts = 1/fs , donde fs es la frecuencia de funcionamiento.
+
+![img](img2.jpg)
+
+Suponga que se replica el sumador. La capacidad efectiva equivalente aumenta por un factor de 2. Además, este factor se incrementa en un 7% debido al necesario encaminamiento y multiplexación de los datos.
+
+![img](2.16Eje)
+
+<u>Pregunta 1:</u> Calcule la potencia consumida respecto del original cuando el sistema con dos réplicas tiene la misma productividad que el dispositivo original. 
+
+> Si la productividad es la misma, implica que se dividen el trabajo los dos sumadores, el retardo es el mismo Ts en cada una de las etapas, por tanto la frequencia que podemos utilizar en cada modulo es la mitad de la original.
+
+$P^S = OPs/Tiempo = 1/Tc \rightarrow 2 * Ops / Tc/2$
+
+$C'=2.07*C_s $ 
+
+$f'= f_s * 0.5$
+
+$V' = 2 * V_S$
+
+$P_{cons} = C_S * V^2 *f = P_{cons}^S * 2.07 * 2 * 0.5$
+
+<u>Pregunta 2:</u> El área del diseño con dos réplicas se incrementa en un factor de 3. Calcule la densidad de potencia respecto del original.
+
+$D^s= \frac{Area^s}{Potencia} = $
+
+El sumador original se puede seccionar en dos sumadores cada uno de tamaño mitad y segmentar el diseño.
+
+![img](16.2.2)
+
+Esta alternativa incrementa la capacidad efectiva un 15% debido a los registros adicionales necesarios.
+
+<u>Pregunta 3:</u> Calcule la potencia consumida respecto del original cuando el sistema segmentado tiene la misma productividad que el dispositivo original. 
+
+<u>Pregunta 4:</u> Suponga un sistema donde se utiliza la técnica de replicación y segmentación: 2 réplicas y 2 etapas en cada réplica. Calcule la potencia consumida respecto del original cuando este sistema tiene la misma productividad que el dispositivo original.
+
 ### Ejercicio 2.8
+
+
 
 ### Ejercicio 2.9
 

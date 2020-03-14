@@ -169,3 +169,27 @@ Un procesador convencional tiene un primer nivel de cache de datos de 32 Kbytes 
 En este procesador se efectúa el cálculo especificado en el siguiente código:
 
 ### Ejercicio 1.19
+
+
+
+### Ejercicio 1.3
+
+Deduzca 1) la cantidad de MIPS, 2) el CPI medio y 3) el tiempo total para cada una de las tres preguntas siguientes.
+
+<u>Pregunta 1:</u> Procesador con reloj de 900 MHz que ejecuta 1000 iteraciones de un bucle de 12 instrucciones y tarda 18 ciclos en cada iteración. 
+
+$MIPS = \frac{Instruciones}{Tiempo} * 10^{-6} = \frac{1000*12}{18 ciclos*(900MHz)^{-1}}*10^{-6} = $
+
+$CPI_m = \frac{Ciclos}{Instr} = \frac{18 \space ciclos}{12 \space instructiones} = 1.5$
+
+$T= N*CPI*Tc = (1000*12) * 1.5 * (900MHz)^{-1} =$
+
+<u>Pregunta 2:</u> Procesador con reloj de 450 MHz que ejecuta 2000 iteraciones de un bucle de 12 instrucciones y tarda 18 ciclos en cada iteración.
+
+
+
+<u>Pregunta 3:</u> Procesador con reloj de 900 MHz que ejecuta 2000 iteraciones de un bucle de 12 instrucciones y tarda 36 ciclos en cada iteración.
+
+Sabemos que un procesador emplea la mitad de su tiempo en hacer accesos a cache. Queremos reducir el tiempo total del procesador en un 20% del original.
+
+<u>Pregunta 4:</u> Deduzca cuanto más rápida debería ser la nueva cache para conseguirlo, expresando la respuesta como el valor del cociente: tiempo cache vieja / tiempo cache nueva
