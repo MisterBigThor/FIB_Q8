@@ -1,7 +1,5 @@
 ## Practica 2
 
-#### 
-
 2. **Quin processador indica que tenim el programa proc.c? Busqueu a <mach/machines.h>  els codis de “CPU Type” i “CPU Subtype”.**
 
    El CPU type es 19 i el CPI subtype es 1. Mirant al machines.h veiem que es l'ultim valor possible; podem deduïr que no sap quin tipus de CPU hi ha darrera.
@@ -55,6 +53,15 @@
    7. **Després, afegiu una crida a vm_protect (…) per tal de desprotegir la memòria per escriptura i que el programa torni a permetre les escriptures en la memòria assignada. Proveu la nova versió i comproveu que ara torna a funcionar correctament.**
 
       vm_protect(mach_task_self(), (vm_address_t) &p);
+      
+      
 
-8,9,10 i 12
+9,10 
 
+8.  **Feu un programa que creï un flux (thread_create) i li canviï l'estat (uesp, eip) amb les crides thread_get_state i thread_set_state, per engegar-lo posteriorment (thread_resume). Trobareu els tipus genèrics (independents de l'arquitectura) relacionats amb el context d'un flux en el fitxer . La informació específica de com és l'estat d'un thread en la nostra arquitectura i386 la trobareu a : struct i386_thread_state, i #defines i386_THREAD_STATE(flavor), i i386_THREAD_STATE_COUNT**
+
+   **Ara feu que el thread faci un printf(...). Per què us dóna un "bus error"? Podeu esbrinar què passa?** 	
+
+   
+
+9. **Observar que en el fitxer  tenim dues definicions de funcions interessants per resoldre el problema de la pregunta anterior:**

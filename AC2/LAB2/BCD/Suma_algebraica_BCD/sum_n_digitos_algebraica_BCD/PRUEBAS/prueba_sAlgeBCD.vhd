@@ -46,8 +46,8 @@ constant base_mod: integer := 2*(10**ndigitos);
 constant emin: integer := -base_mod/2;
 constant emax: integer := (base_mod/2) - 1;
 variable t_retardo: time;
-variable t_max : time;
-variable t_min: time;
+variable t_max : time := 0 ns;
+variable t_min : time := 10000000  ns;
 variable A_tmax, A_tmin, B_tmax, B_tmin :st_ndig_bcd_mas_1;
 variable sumres_tmax, sumres_tmin: std_logic;
 
@@ -95,8 +95,8 @@ begin
 				
 				
 -- Introduzca codigo para actualizar retardos maximo y minimo
-		t_retardo := t_rep -  suma'last_event;	
-		if A /= "UUUUUUUUU" then
+		t_retardo := t_rep -  irre'last_event;	
+		if t_retardo > 0ns then
 				if t_retardo > t_max then
 					t_max := t_retardo;
 					A_tmax := A;
