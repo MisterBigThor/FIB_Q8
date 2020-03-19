@@ -32,13 +32,13 @@ Las celdas trabajan por nivel de la señal de reloj. Se implementa con multiplex
 
 Los registros funcionan por flanco, se utilizan dos celdas unidas, haciendo que en el flanco que no se lee, la primera celda 'guarde' la señal y en el flanco se transmite a la segunda celda que no se actualizara hasta el siguiente flanco.
 
-![img](registroD)
+![img](rsc\registroD)
 
 ### Tipos de U.F. Segmentadas
 
 La segmentación de cada U.F. puede responder a varios patrones:
 
-![imgUF](tiposUF)
+![imgUF](rsc\tiposUF)
 
 
 

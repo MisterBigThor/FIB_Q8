@@ -61,7 +61,7 @@ Donde podemos usar los fallos de acceso por instrucción o los fallos por refere
 
 > La ley de Amdahl establece que la ganancia por añadir una mejora en un diseño está limitada por la fracción de tiempo original en que se utiliza.
 
-![img](amdahl)
+![img](rsc\amdahl)
 
 $$
 F_m = T_2/T_0; G_m = T_2/T_3 \\
