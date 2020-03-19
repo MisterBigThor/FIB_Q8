@@ -27,9 +27,9 @@ int main(int argc, char *argv[]) {
    for (int t=0; t<numThreads; t++) {
        pthread_join(threads[t], &status);
        printf("Completed join with thread %ld %ld\n", (long)threads[t], (long)status);
-       }
+   }
 
    printf("All threads finished\n");
- 
+
    return(0);
 }

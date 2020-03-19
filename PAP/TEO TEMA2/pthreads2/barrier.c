@@ -29,7 +29,7 @@ void * PrintHello(void * arg) {
 int main() {
    pthread_t threads[numThreads];
    pthread_barrier_init(&barrier, NULL, numThreads+1); // number of threads to wait
-   for (int t=0; t<numThreads; t++) 
+   for (int t=0; t<numThreads; t++)
        pthread_create(&threads[t], NULL, &PrintHello, (void *)(long) t );
 
    printf("Done creating threads\n");
@@ -44,7 +44,7 @@ int main() {
    ret = pthread_barrier_wait(&barrier);
    printf("Done executing threads with ret=%d\n", ret);
 #endif
-   
+
    pthread_barrier_destroy(&barrier);
    pthread_exit(NULL);
 }
