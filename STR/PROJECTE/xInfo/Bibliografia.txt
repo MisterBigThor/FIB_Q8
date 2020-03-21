@@ -1,0 +1,3 @@
+https://wiki.beyondlogic.org/index.php?title=Understanding_RaspberryPi_Boot_Process
+
+https://gist.github.com/Liryna/10710751
