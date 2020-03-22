@@ -8,7 +8,10 @@ static inline uint32_t mmio_read(uint32_t reg){
     return *(volatile uint32_t*)reg;
 }
 
-
+void delay(int32_t count){
+    asm volatile("__delay_%=: subs %[count], %[count], #1; bne __delay_%=\n"
+            : "=r"(count): [count]"0"(count) : "cc");
+}
 
 void uart_init(){
     mmio_write(UART0_CR, 0x00000000);
