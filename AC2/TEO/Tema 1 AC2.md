@@ -1,6 +1,8 @@
-## Tema 1 AC2
+# Tema 1 AC-2
 
 [TOC]
+
+## Teoria
 
 ### Maquina von Neumann
 
@@ -61,7 +63,7 @@ Donde podemos usar los fallos de acceso por instrucción o los fallos por refere
 
 > La ley de Amdahl establece que la ganancia por añadir una mejora en un diseño está limitada por la fracción de tiempo original en que se utiliza.
 
-![img](amdahl)
+![img](rsc\amdahl)
 
 $$
 F_m = T_2/T_0; G_m = T_2/T_3 \\
@@ -80,9 +82,17 @@ Hay que destacar que la ganancia de estas técnicas se ve afectada por dependenc
 
 Interpretar  las instrucciones de forma segmentada, es decir, iniciando una instrucción en cada ciclo (o acabando). Una instrucción se divide en etapas, la problemática son los recursos, no se puede solapar su uso. La ganancia ideal es el número de etapas.
 
+![image](rsc\segmentado)
+
+$G_{ideal} = \frac{n.etapas*t_c}{t_c} = \text{numero etapas}$
+
 #### Paralelismo
 
 El paralelismo es trata de añadir mas recursos de cálculo, para procesar varias instrucciones a la vez, se puede combinar esta técnica con la segmentación. La ganancia ideal es el numero de instrucciones por ciclo por el numero de etapas.
+
+![image-20200320113012847](D:\FIB_Q8\AC2\TEO\rsc\paral.jpg)
+
+$G_{ideal} = \frac{num.etapas*t_c}{t_c/num.etapas} = \text{instr por ciclo * numero etapas}$
 
 ### Multihilo
 
@@ -94,11 +104,60 @@ La técnica utiliza los espacios de espera a memoria, a E/S o fallos de cache pa
 * Fino: Existen varios hilos activos, pero en un ciclo solo se ejecutan instrucciones de un hilo.
 * Simultáneo: Varios hilos activos y se pueden ejectuar en un mismo ciclo.
 
+Todas las ganancias teoricas sobre la concurrencia de instrucciones tienen mermas, por  falta de recursos o dependencias de datos. En estos casos se emula un funcionamiento serie, ya que el <u>resultado de una ejecuccion segmentada/paralela debe ser igual que un a ejecucción serie.</u>
+
+
+
 ### Potencia y Energía
 
 La energía se mide en unidades de trabajo (Julios) y la Potencia es la energía consumida por unidad de tiempo(Julio/s o W).
 
-> Pcom = C * V^2 * freq
+> $P_{com} = C * V^2 * f = Watt = \frac{Julio}{s}$
+>
+> $E = P * \Delta t = \frac{Julio}{s} * s = Julios$
+>
+> $E_{bateria} = amperio * segundos * voltios = J$
 
 
 
+##  Problemas Resueltos
+
+### Energia
+
+Un programa tiene un bucle que en cada iteración ejecuta 1 millón de instrucciones. El computador donde se ejecuta el programa funciona a una frecuencia de 700 Mhz y consume una potencia de 70 W (vatios). La batería que alimenta al procesador suministra 2.5 AH (amperios-hora) a 10 voltios.
+
+**a) ¿Cuántas iteraciones del bucle se pueden ejecutar antes de que la batería se quede sin carga, suponiendo que se ejecuta 1 instrucción en cada ciclo de procesador (CPI=1)?.**
+
+> $E_B = 2,5 Amperios*Hora * \frac{3600s}{1Hora}*10V = 90.000 J$
+>
+> Calculamos la energia del procesador en un ciclo(con su tiempo de ciclo)
+>
+> $E_{CPU}^{ciclo} = P * t_c = 70W * (700MHz)^{-1} s = 10^{-7} J$
+>
+> El cociente entre la energia de la bateria y los ciclos CPU seran el total de iteraciones.
+>
+> $It= \frac{E_B}{E_{CPU*Instr}} = \frac{90.000}{10^{-7}*10^6} = 9*10^5 Iteraciones$
+
+Supongamos que se reduce la frecuencia de funcionamiento del computador a 600 Mhz y el consumo de potencia se reduce a 60W. 
+
+**b) ¿Cuántos ciclos tarda en descargarse la batería?.** 
+
+> Hay que calcular la $E_{CPU}^{ciclo}$. Los ciclos seran el cociente de la energia de la bateria entre la energia del procesador por ciclo:
+>
+> $Ciclos = \frac{E_B}{E_{CPU}^{ciclo}} = \frac{90.000}{60W*(600MHz)^{-1}} = 9*10^{11} ciclos$
+
+**c) ¿Cuántas iteraciones del bucle se pueden ejecutar?.** 
+
+> Las iteraciones del bucle serán los ciclos antes de que se descarge la bateria y el numero de instrucciones.
+>
+> $It = \frac{Ciclos}{Instruciones} * \frac{1 instr}{1 Ciclo} = \frac{9*10^{11}}{10^6} = 9*10^5 Iteraciones$
+
+**d) Compare los resultados obtenidos en las preguntas a) y c) y coméntelos.**
+
+> Se pueden ejectuar el mismo número de iteraciones del bucle, pero los tiempos de ejecución varian:
+>
+> $T_{it} = Instruciones * CPI * T_c$
+>
+> $T_{it}^{700MHz}= 10^6 * 1 * \frac{1}{700MHz}=1.43ms$
+>
+> $T_{it}^{600MHz} =10^6 * 1 * \frac{1}{600MHz}=1.66ms$

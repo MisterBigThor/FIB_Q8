@@ -44,7 +44,7 @@ $$
 
 <u>Ganancia Usando ley de Amdhal:</u>
 
-![img](img1)
+![img](rsc\img1)
 $$
 F_m := \text{Fracción de tiempo original donde se usa la mejora} =\frac{T_2}{T_0}=\frac{150\mu s}{300 \mu s} = 0.5\\
 G_m := \text{Ganancia de la mejora.} = \frac{T_2}{T_3} = \frac{150 \mu s}{150\mu s }*\frac{1.5ns}{2ns}=1+1/3\\
@@ -135,7 +135,7 @@ Como se tardan 2 ciclos en caso de acierto, **la penalización es de 7 ciclos**.
 
 En las siguientes figuras se muestra el IPC y la potencia consumida a medida que se interpretan instrucciones de un programa, en un procesador que funciona a una frecuencia de 2 Ghz.
 
-![img](img1)
+![img](rsc\img1)
 
 <u>Pregunta 1:</u> Calcule el tiempo de ejecución del programa.
 
