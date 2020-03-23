@@ -2,9 +2,11 @@
 
 ## STR - mini project by Victor Correal
 
+## Project coordination
+
 ### Project Motivation
 
-The aim of this project is to build a Real Time Kernel to run in a Rasperry Pi 3 (in my case, Raspberry Pi 3 model B rev1.2). 
+The aim of this project is to build a Real Time Kernel to run in a Rasperry Pi 3 (in my case, Raspberry Pi 3 model B rev1.2).
 
 The kernel will be able to schedule tasks (with freeRTOS), work with serial line, GPIO's ports and to receive instructions through the Ethernet RJ45 connection. In *Sistemes Operatius 2* we built a similar operating system in C (with a few syscalls to allocate data, create threads), based in Linux kernel, for this reason I consider it would be affordable to implement this Real Time Kernel.
 
@@ -14,7 +16,7 @@ I am motivated and eager to work with the ARM architecture inside the raspberry 
 
 I append a tutorial that I would use in the begging of the project to set up a development enviroment: https://jsandler18.github.io/ .
 
-### Implementations Steps
+### Initial implementations steps
 
 1. Set up the development enviroment.
 2. Learn about the ARM architecture and the instructions set.
@@ -26,5 +28,9 @@ I append a tutorial that I would use in the begging of the project to set up a d
 
 ### Dietari
 
-Dia 21/03/2020: Instal·lació de la màquina virtual, compilador i entorn.
+Dia 22/03/2020: Instal·lació de la màquina virtual, compilador i entorn. Primers passos en la implementacio de la gestio de memoria.
+Dia 23/03/2020: Primeres passes en el Sistema operatiu en la gestio de memoria. He decidit en aquest punt parar l'implementació i estudiar sobre la gestió
+de memoria i l'arquitectua del procesador ARM, el codi de jsandler18 no m'ha acabat de convencer.
+
+## ARMv7 architecture
 

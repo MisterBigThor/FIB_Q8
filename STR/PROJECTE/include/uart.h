@@ -1,6 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdlib.h>
+/*
+page 177 of the BCM2835 arm
+*/
 enum
 {
     // The GPIO registers base address.

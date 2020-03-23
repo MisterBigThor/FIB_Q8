@@ -44,6 +44,9 @@ void uart_putc(unsigned char c){
 
 unsigned char uart_getc(){
     while ( mmio_read(UART0_FR) & (1 << 4) ) { }
+	#ifndef DEPLOY
+	uart_puts("[GreenTreeOS][UART] : read char:");
+	#endif
     return mmio_read(UART0_DR);
 }
 

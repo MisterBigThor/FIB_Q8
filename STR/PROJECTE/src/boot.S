@@ -1,16 +1,17 @@
+//linker notes:
 .section ".text.boot"
 
 .global _start
 
 _start:
-    mrc p15, #0, r1, c0,c0, #5
+    mrc p15, #0, r1, c0,c0, #5 //three cores to halt state
     and r1,r1, #3
     cmp r1, #0
     bne halt
-    mov sp, #0x8000
+    mov sp, #0x8000             //set stack pointer 0x8000
 
-    ldr r4, =__bss_start
-    ldr r9, =__bss_end
+    ldr r4, =__bss_start        //bss: global variables uninitialized from the OS.
+    ldr r9, =__bss_end          //bss: end of the section
     mov r5, #0
     mov r6, #0
     mov r7, #0
