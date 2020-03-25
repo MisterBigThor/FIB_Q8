@@ -15,8 +15,10 @@
   Al cluster tenim que els flops de pic son 2.88 GFLOPS/cycle,  els periferics que tenim son:
 
   * 2 ports QPI@2.93 GHz serveixen ($2.93GHz*2bits/Hz*16bits*2direction*2portsQPI$) 46.88GBytes/s 
-  * 6 DIMM de 4GB, DDR-1333, 
+  * 6 DIMM de 4GB, DDR-1333,  ??
   * 4 HDD 2T SATA amb 6GB/s
+
+  > Em sap greu Eduard pero no soc capaç de fer el dibuix del roofline.
 
 - Calcular **l'eficiència energètica** del node senser obtinguda si considerem que el TDP de cadascun dels DIMMs és 5W, de cadascun dels discs HDD és 4 W i que la placa base amb la resta de components té un TDP de 35W.
 
