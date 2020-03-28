@@ -14,7 +14,9 @@ $Ciclos = Instruciones * Latencia = 9 * 6 = 54 \space Ciclos$
 
 > Debemos ver el grafo de dependencias para contar los ciclos perdidos y el cronograma:
 >
-> 
+> <img src="rsc\eje37.jpeg" style="zoom: 33%;"/>
+>
+> <img src="D:\FIB_Q8\AC2\TEO\rsc\eje38.jpeg" style="zoom:67%;" />
 >
 > Vemos que la instrucción c depenede de a y b (perderá 2 ciclos de RD), la instrucción h depende de la instruccion i (perderá 2 ciclos de RD). Además, la instruccion i representa un RS, donde se perderan 4 ciclos(considero que no forma parte de este ciclo).
 >
