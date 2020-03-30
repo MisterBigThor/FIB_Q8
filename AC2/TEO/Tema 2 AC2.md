@@ -28,11 +28,15 @@ $$
 
 Las celdas trabajan por nivel de la señal de reloj. Se implementa con multiplexor, donde la salida alimenta una de las entradas, haciendo que si el reloj esta en el nivel de la entrada realimentada, no se lee la entrada.
 
+![image](rsc\celda.jpg)
+
 #### Registro D (Flip-flop D)
 
 Los registros funcionan por flanco, se utilizan dos celdas unidas, haciendo que en el flanco que no se lee, la primera celda 'guarde' la señal y en el flanco se transmite a la segunda celda que no se actualizara hasta el siguiente flanco.
 
 ![img](rsc\registroD)
+
+![image-20200328171818201](rsc\cronograma.jpg)
 
 ### Tipos de U.F. Segmentadas
 
@@ -46,7 +50,7 @@ La segmentación de cada U.F. puede responder a varios patrones:
 
 Trabajaremos sobre este simple lenguaje maquina:
 
-![img-caminoDatos](rsc\lm.jpg)
+![image-lm](D:\FIB_Q8\AC2\TEO\rsc\lm2.jpg)
 
 El camino de datos constara de un banco de registros, una memoria de instrucciones y datos, ALU, CP y un modulo de control/decodificación. En esta primera aproximación, tenemos que hay recursos que se utilizan mas de una vez en un mismo ciclo (p.e. BR). En el entorno serie, no se empieza a ejectura una instrucción hasta que se ha terminado con la interpretación anterior.
 
@@ -62,7 +66,7 @@ Una primera aproximación en la segmentación nos lleva a tener tablas de reserv
 
 ![image-segmentacion1](rsc\segm1.jpg)
 
-![image-20200320115833608](D:\FIB_Q8\AC2\TEO\rsc\grafLat.jpg)
+![image-](rsc\grafLat.jpg)
 
 La latencia media de inicio en este caso seria $LMI = (1+4)/2 = 2.5$. Podemos ver que el minimo de la LMI sera el numero de 'X' en una fila de la tabla de reservas. Los ciclos perdios entonces se pueden calcular como:
 

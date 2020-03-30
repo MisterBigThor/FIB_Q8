@@ -234,6 +234,35 @@ En la figura se muestra una segmentación del proceso de interpretación de inst
 
 Las fases de lectura y escritura al banco de registros requieren 2 ciclos y están segmentadas. El número de caminos de lectura y escritura al banco de registros son 2 y 1 respectivamente. En las etapas BUS y M se accede a memorias distintas (MI y MD). Las situaciones de riesgo se detectan en la etapa D/L y la instrucción no prosigue su interpretación hasta que desaparece el riesgo.
 
+<u>Pregunta 1:</u> Dada la siguiente secuencia de instrucciones, muestre en un diagrama temporal las acciones que se toman en el camino de datos para resolver riesgos estructurales. En el diagrama temporal utilice una nueva línea cuando una instrucción se bloquea en una etapa. Así mismo, indique la inserción de instrucciones nop y su avance en las etapas del procesador.
+
+<u>Pregunta 2:</u> Añada las conexiones necesarias en el camino de datos, para gestionar riesgos estructurales. Diseñe el circuito de control de riesgos estructurales, especificando las entradas y salidas.
+
+![exe](rsc/eje29.jpeg)
+
 ### Ejercicio 2.19
 
+Un procesador segmentado utiliza la siguiente segmentación y recursos, describiéndose la funcionalidad de las etapas en la tabla que se adjunta. En este ejercicio no se consideran las instrucciones de secuenciamiento. 
+
+El número de caminos de acceso al banco de registros es 1 para lecturas y 1 para escrituras. El número de caminos de acceso a la memoria MID es uno de lectura/escritura. Los recursos cuyo retardo se considera distinto de cero son los siguientes:
+
+El número máximo de operandos fuente de una instrucción que deben leerse del banco de registros es 2. Una instrucción actualiza como máximo una posición de memoria o un registro del banco de registros.
+
+<u>Pregunta 1:</u> Cuando se interpreta una secuencia de instrucciones, el recurso MID puede producir riesgos estructurales. Determine las latencias prohibidas.
+
+> Teniendo en cuenta solamente el recurso MID, obtenemos que la latencia prohibida es 3. El riesgo viene dado por las instrucciones load y store (por el uso de MID) y una instruccion cualquiera posterior.
+
+<u>Pregunta 2:</u> ¿Existen en el camino de datos otros recursos que puedan producir riesgos estructurales?. Justifique la respuesta.
+
+> El BRE es el recurso en que tambien puede producir riesgos estructurales, ya que es utilizado por diferentes tipos de instrucciones en diferentes ciclos de su interpretación.
+
+<u>Pregunta 3:</u> Añada al camino de datos, mostrado previamente, las conexiones que faltan para transportar datos y gestionar los riesgos debidos al recurso MID. Indique también desde dónde se inyectan las instrucciones nop. Un cable que cruce un registro de desacoplo se considerará afectado por el funcionamiento del registro de descoplo.
+
+<u>Pregunta 4:</u> Diseñe la lógica de control de los multiplexores MUX1, MUX2, MUX3 y MUX4.
+
+![eje](rsc\eje30.jpeg)
+
 ### Ejercicio 2.14
+
+
+

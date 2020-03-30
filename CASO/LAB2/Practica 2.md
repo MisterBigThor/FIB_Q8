@@ -8,7 +8,7 @@
 
    Mirant el kernel interface em trobat la definicio de les caracteristiques que ens diu el executable proc.  
 
-   En primer lloc veiem els ports privilegiats( 0x35 i 0x36) que hi han. Tambe veiem que actualment tenim un unic procesador, amb un identificador (0x37)
+   En primer lloc veiem els ports privilegiats( 0x35 i 0x36 ) que hi han. Tambe veiem que actualment tenim un unic procesador, amb un identificador (0x37)
 
    A part del CPU type & subtype tenem un bolean que ens diu si la CPU esta *running*, un altre bolean que diu si aquest es el procesador master () i un numero d'Slot ().
 
@@ -112,7 +112,7 @@
            return 0;
    }
    
-    ````
+   ````
 
    
 
