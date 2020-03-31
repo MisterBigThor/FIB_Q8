@@ -110,15 +110,15 @@ bne r0, 1$ 			;si (r0≠0) salta a 1$
 
 En la siguiente figura se muestra la segmentación en etapas del proceso de interpretación de las instrucciones en un procesador.
 
-![image-20200331050413082](C:\Users\corre\Documents\FIBQ8\AC2\TEO\rsc\eje310.jpg)
+![](rsc\eje310.jpg)
 
 El conjunto de instrucciones del procesador puede interpretarse sin que se produzcan riesgos estructurales. En el mismo ciclo se puede escribir y leer, en este orden, un registro del banco de registros. Las instrucciones de secuenciamiento actualizan el registro CP en la etapa ES.
 
 <u>Pregunta 1:</u> Dibuje un diagrama temporal que muestre la interpretación de una iteración del bucle. En el diagrama temporal debe mostrarse la inyección de instrucciones nop cuando se gestiona un riesgo. Indique los ciclos perdidos por cada tipo de riesgo y calcule el CPI de una iteración.
 
-<img src="rsc\eje40.jpeg" style="zoom:50%;" />
+![image-20200331195416287](rsc\cronograma3101)
 
-> Se pierden 4 ciclos por RD. No asumo los 4 ciclos que se perderian por el RS del final del bucle.
+> Se pierden 3 ciclos por riesgo de datos y 4 por riesgo de secuenciamiento.
 >
 > El $CPI = \frac{4+3+4}{4} = 2.75$
 
