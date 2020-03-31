@@ -16,31 +16,37 @@ $Ciclos = Instruciones * Latencia = 9 * 6 = 54 \space Ciclos$
 >
 > <img src="rsc\eje37.jpeg" style="zoom: 33%;"/>
 >
-> <img src="D:\FIB_Q8\AC2\TEO\rsc\eje38.jpeg" style="zoom:67%;" />
+> <img src="rsc\eje38.jpeg" style="zoom:67%;" />
 >
 > Vemos que la instrucción c depenede de a y b (perderá 2 ciclos de RD), la instrucción h depende de la instruccion i (perderá 2 ciclos de RD). Además, la instruccion i representa un RS, donde se perderan 4 ciclos(considero que no forma parte de este ciclo).
 >
-> Entonces, los ciclos de una iteración son 18, Se pierden 4 ciclos en Riesgos de Datos. El CPI resultante es $CPI =\frac{Ciclos}{Instruciones} = \frac{14+4}{9} = 2$
+> Entonces, los ciclos de una iteración son 18, Se pierden 4 ciclos en Riesgos de Datos. El $CPI =\frac{Instruciones+CiclosPerdidos}{Instruciones} = \frac{9+4}{9} = 1.44$
 
 <u>Pregunta 3:</u> Suponga que las frecuencias de funcionamiento del procesador serie y segmentado son iguales. Calcule la ganancia de una interpretación segmentada respecto de una interpretación serie al ejecutar una iteración del bucle.
 
-> $G= \frac{T_{ori}}{T_{new}}=\frac{N*CPI*T_c}{N*CPI^{seg}*T_c} = \frac{CPI}{CPI_{seg}}=\frac{6}{2} = 3$
+> $G= \frac{T_{ori}}{T_{new}}=\frac{N*CPI*T_c}{N*CPI^{seg}*T_c} = \frac{CPI}{CPI_{seg}}=\frac{6}{1.44} = 4.17$
 
 Una nueva versión del procesador segmentado tiene una frecuencia de funcionamiento 1.5X mayor. En estas condiciones, es necesario todo el ciclo de reloj para escribir o leer un registro del banco de registros.
 
 <u>Pregunta 4:</u> En esta versión del procesador, calcule los ciclos de ejecución por iteración. Así mismo, indique los ciclos perdidos por tipo de riesgo y calcule el CPI.
 
-> En este caso, los ciclos por riesgo de datos perdidos seran 3 por cada RD, dado lugar a 6 ciclos perdidos por RD en cada iteración. El $CPI = \frac{14+6}{9} = 2.22$
+> En este caso, los ciclos por riesgo de datos perdidos seran 3 por cada RD, dado lugar a 6 ciclos perdidos por RD en cada iteración.  El total de ciclos sera de 20
 >
-> En este caso, la ganancia es de 2.22 veces
+> El $CPI=\frac{9+6}{9}=1.67$
 
 <u>Pregunta 5:</u> Calcule la ganancia de la nueva versión del procesador segmentado respecto de la versión previa.
 
-> $G= \frac{T_{ori}}{T_{new}}=\frac{N*CPI*T_c}{N*CPI*1.5*T_c} = \frac{CPI}{CPI*1.5}=\frac{2}{2.22*1.5} = 2/3.33 = 0.6$ 
+> $G= \frac{T_{ori}}{T_{new}}=\frac{N*CPI*T_c}{N*CPI*1.5*T_c} = \frac{CPI}{CPI*1.5}=\frac{1.44}{1.67*1.5} = 0.57$ 
 >
-> En este caso, se pierde tiempo con esta nueva versión. (1-0.6)*100 = 40% de perdida
+> En este caso, se pierde tiempo con esta nueva versión. (1-0.57)*100 = 43% de perdida
 
 ### Ejercicio 3.7
+
+Un procesador, que interpreta las siguientes instrucciones(INT, Load, Store, BR) esta segmentado en 6 etapas (CP, B, DL, ALU, M, ES).
+
+El banco de registros permite la escritura y la lectura, en este orden, de un mismo registro en un ciclo de reloj. El camino de datos dispone de recursos suficientes para que no se produzcan riesgos estructurales.
+
+![image-3.7](rsc\eje377)
 
 <u>Pregunta 1:</u> Indique las entradas de los multiplexores del camino de datos que hay que seleccionar para cada tipo de instrucción en los ciclos 4, 5 y 6 del proceso de interpretación. Por ejemplo, para una instrucción Store, donde la marca x denota indistinto:
 
@@ -51,6 +57,8 @@ Una nueva versión del procesador segmentado tiene una frecuencia de funcionamie
 | Load                | 5      | 6      | 9      | 11     | 0      | 2      |
 | Int                 | 5      | 7      | 9      | 10     | 0      | 2      |
 | BR                  | 4      | 6      | EV     | 10     | 1      | EV     |
+
+Supongamos que el retardo de propagación (en ps) de los componentes mostrados en el camino de datos es: Sumador(150), ALU(200), EV(100), MD(350), mx(100), ri(50).
 
 <u>Pregunta 2:</u> Calcule el tiempo de etapa máximo y mínimo de CP, ALU y M. Considerando sólo las etapas CP, ALU y M, calcule el tiempo de ciclo de reloj.
 
@@ -64,19 +72,55 @@ Una nueva versión del procesador segmentado tiene una frecuencia de funcionamie
 >
 > El tiempo de ciclo deberá ser el máximo de los tiempos calculados: 550ps.
 
+En la etapa DL se detectan los riesgos de datos y de secuenciamiento. Cuando se detecta un riesgo de datos, la lógica de control bloquea la interpretación de las instrucciones que estan en las etapas DL, B i CP mientras perdura el riesgo. 
+
+En caso de riesgo de secuenciamiento, la lógica de control descarta las instrucciones buscadas hasta que se actualiza el Contador de Programa con la dirección de la siguiente instrucción. 
+
+El procesador ejecuta un programa que localiza el elemento máximo de una lista.
+
+````asm
+1$: load r2, 8(r0) 	;r2 ← mem[r0+8]
+cmpgt r3, r2, r1 	;r3 ← (r2 > r1)
+beq r3, 2$ 			;si (r3=0) salta a 2$
+add r1, r2, r10 	;r1 ← r2
+add r5, r0, r10 	;r5 ← r0
+2$: load r0, 0(r0) 	;r0 ← mem[r0+0]
+bne r0, 1$ 			;si (r0≠0) salta a 1$
+
+;Valores iniciales:
+;r0 = dirección del primer elemento de la lista
+;r1 = 0; r10 = 0
+````
+
+
+
 <u>Pregunta 3:</u> Muestre el cronograma de ejecución de las instrucciones de una iteración entera del bucle y de la primera instrucción de la siguiente iteración, en el caso en que p->dat > max. Identifique los ciclos perdidos en el cronograma e indique cuál es el motivo.
+
+> Hay dos riesgos de secuenciamiento (C y G) que hacen perder 8 ciclos.
+>
+> Hay 3 riesgos de datos(B, C y G)  que hacen perder 6 ciclos
+
+![](rsc\eje39.jpeg)
 
 <u>Pregunta 4:</u> Calcule el CPI medio suponiendo que la condición p->dat > max se cumple en el 10% de las iteraciones.
 
-> $CPI=0.1*CPI_{salto}+0.9*CPI_{NoSalto} = 0.1*\frac{22}{7}+0.9*\frac{20}{7}$
+> $CPI=0.1*CPI_{salto}+0.9*CPI_{NoSalto} = 0.1*\frac{8+14}{8}+0.9*\frac{6+12}{6} = 2.97$
 
 ### Ejercicio 3.10
 
+En la siguiente figura se muestra la segmentación en etapas del proceso de interpretación de las instrucciones en un procesador.
+
+![image-20200331050413082](C:\Users\corre\Documents\FIBQ8\AC2\TEO\rsc\eje310.jpg)
+
+El conjunto de instrucciones del procesador puede interpretarse sin que se produzcan riesgos estructurales. En el mismo ciclo se puede escribir y leer, en este orden, un registro del banco de registros. Las instrucciones de secuenciamiento actualizan el registro CP en la etapa ES.
+
 <u>Pregunta 1:</u> Dibuje un diagrama temporal que muestre la interpretación de una iteración del bucle. En el diagrama temporal debe mostrarse la inyección de instrucciones nop cuando se gestiona un riesgo. Indique los ciclos perdidos por cada tipo de riesgo y calcule el CPI de una iteración.
+
+<img src="rsc\eje40.jpeg" style="zoom:50%;" />
 
 > Se pierden 4 ciclos por RD. No asumo los 4 ciclos que se perderian por el RS del final del bucle.
 >
-> El $CPI = 13/4 = $ 
+> El $CPI = \frac{4+4}{4} = 2$ 
 
 El computador donde se ejecuta el programa funciona a una frecuencia de 500 Mhz y consume una potencia de 30 W (vatios). La batería que alimenta al procesador suministra 1 A . H (amperios por hora) a 5 voltios.
 
@@ -84,17 +128,61 @@ El computador donde se ejecuta el programa funciona a una frecuencia de 500 Mhz 
 
 > $E = P * \Delta T, P = V*I$
 >
-> $E_B = 1 A*H *\frac{3600s}{1 hora}* 5 V= J$
+> $E_B = 1 A*H *\frac{3600s}{1 hora}* 5 V= 18.000J$
 
 <u>Pregunta 3:</u> Calcule la energía consumida por el procesador en un ciclo.
 
-> $E_{procesador}^{ciclo} = Potencia * T_c = 30W(\frac{J}{S})*(500MHz)^{-1} =$
+> $E_{procesador}^{ciclo} = Potencia * T_c = 30W(\frac{J}{S})*(500MHz)^{-1} = 6*10^{-8}J$
 
 <u>Pregunta 4:</u> ¿Cuántas iteraciones del bucle se pueden ejecutar antes de que la carga de la batería se reduzca a la mitad?. Exprese el resultado en millones de iteraciones.
 
-> $Iteraciones = \frac{E_{P}^{Ciclos}*CPI^{it}}{0.5*E_B} = $
+> $Iteraciones = \frac{0.5*E_B}{E_{P}^{C}*CPI} = \frac{9.000}{6*10^{-8}*2} = 75.000\space Millones \space It.$
 
 ### Ejercicio 3.3(80)
+
+En un procesador segmentado con 7 etapas (CP, BUS, D/L, ALU, ET, DT, ES), el proceso de interpretación de instrucciones se ha segmentado de la forma que se muestra en la siguiente figura.
+
+![img3.3t1](rsc\3.380.jpg)
+
+La única diferencia con el procesador segmentado lineal descrito en el capítulo 3 es la segmentación del acceso a memoria de datos. Los posibles riesgos de datos debidos a registros y riesgos de secuenciamiento se gestionan de la misma forma que en el capítulo 3, dando lugar a que el inicio de la fase de ejecución de las instrucciones sea en orden de programa. 
+
+El procesador dispone en el primer nivel de la jerarquía de memoria de una cache para instrucciones y una cache para datos. Nosotros supondremos que un acceso a cualquiera de las dos cache de primer nivel siempre es un acierto. Tanto el acceso al campo etiqueta como al campo dato de un contenedor de cache requiere un ciclo. En una instrucción load los campos etiqueta y dato de un contenedor se leen en paralelo (ciclo 5) y en el siguiente ciclo el dato leído se escribe en el banco de registros (ciclo 6). 
+
+En el caso de una instrucción store es necesario en primer lugar acceder al campo etiqueta para comprobar si el dato está almacenado en cache antes de actualizar el campo dato. Como es necesario un ciclo para acceder a cada campo de información de un contenedor de cache y hay que efectuarlo secuencialmente son necesarios dos ciclos (ciclos 5 y 6). Supondremos que no existen riesgos estructurales cuando se interpretan de forma solapada varias instrucciones. En particular supondremos que la cache de datos dispone de un puerto de lectura y un puerto de escritura. Estos puertos de acceso son independientes y una acción de lectura o escritura en cualquiera de los campos del contenedor requiere todo el ciclo de la señal de reloj.
+
+<u>Pregunta 1:</u> Analice los posibles riesgos de datos al acceder a la memoria de datos. 
+
+> Los tres tipos de riesgos de datos en memoria de datos pueden ser de tres tipos, vamos a analizarlos:
+>
+> (refactor for:
+>
+> ​	• una instrucción store siempre escribe antes de que lea una instrucción load más joven. 
+>
+> ​	• una instrucción load siempre lee antes de que escriba una instrucción store más joven. 
+>
+> ​	• una instrucción store siempre escribe antes de que escriba una instrucción store más joven.)
+>
+> * Dependencia Vertadera (**R1**= R2+R3, R5 = **R1**+R5)
+>
+>   Como en la anterior segmentación, es posible que el banco de registros no tenga el valor correcto en el banco de registros para alimentar a la instrucción joven que lo precisa.
+>
+> * Antidependencia (R1=**R2**+R3, **R2**=R3+R5)
+>
+>   Para comprobar que no podemos tener RD aqui, debemos demostrar que  una instrucción siempre lee antes de que escriba una instrucción posterior en orden de programa. Si tenemos un store y seguidamente un load, se lee de memoria antes de que se haya actualizado la posicion de memoria (load lee en el ciclo 5 y store la actualiza en su 6 ciclo). Deberemos cuidar este tipo de riesgo. Con las instrucciones aritmeticas no hay problema en este caso.
+>
+>   Ej: Store #8, 0(r2), Load r5, 0(r2).
+>
+> * Dependencia de Salida(R1=2+R4, R1=LOAD(R5))
+>
+>   Debemos comprobar que una instrucción siempre escribe antes que escriba una instrucción posterior en orden de programa. Con la tabla de reserva vemos que todas las escrituras son el mismo ciclo(ciclo 6), no existirá este tipo de riesgo.
+
+<u>Pregunta 2:</u> Indique las acciones que deben efectuarse y el ciclo en el cual pueden efectuarse, para detectar el riesgo de datos al acceder a memoria.
+
+
+
+En el procesador segmentado que se utiliza, la última etapa del proceso de interpretación de una instrucción donde se puede retener una instrucción es la etapa D/L.
+
+<u>Pregunta 3:</u> Describa un mecanismo para controlar los posibles riesgos de datos al acceder a memoria. Posteriormente muestre en un diagrama temporal, utilizando la siguiente secuencia de instrucciones, el mecanismo de control de riesgo descrito. Justifique de forma detallada las retenciones o bloqueos en la etapa D/L.
 
 ### Ejercicio 3.5
 
