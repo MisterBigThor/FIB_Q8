@@ -120,7 +120,7 @@ El conjunto de instrucciones del procesador puede interpretarse sin que se produ
 
 > Se pierden 4 ciclos por RD. No asumo los 4 ciclos que se perderian por el RS del final del bucle.
 >
-> El $CPI = \frac{4+4}{4} = 2$ 
+> El $CPI = \frac{4+3+4}{4} = 2.75$
 
 El computador donde se ejecuta el programa funciona a una frecuencia de 500 Mhz y consume una potencia de 30 W (vatios). La batería que alimenta al procesador suministra 1 A . H (amperios por hora) a 5 voltios.
 
@@ -136,7 +136,7 @@ El computador donde se ejecuta el programa funciona a una frecuencia de 500 Mhz 
 
 <u>Pregunta 4:</u> ¿Cuántas iteraciones del bucle se pueden ejecutar antes de que la carga de la batería se reduzca a la mitad?. Exprese el resultado en millones de iteraciones.
 
-> $Iteraciones = \frac{0.5*E_B}{E_{P}^{C}*CPI} = \frac{9.000}{6*10^{-8}*2} = 75.000\space Millones \space It.$
+> $Iteraciones = \frac{0.5*E_B}{E_{P}^{C}*CPI} = \frac{9.000}{6*10^{-8}*2.75} = \space Millones \space It.$
 
 ### Ejercicio 3.3(80)
 
@@ -178,11 +178,15 @@ En el caso de una instrucción store es necesario en primer lugar acceder al cam
 
 <u>Pregunta 2:</u> Indique las acciones que deben efectuarse y el ciclo en el cual pueden efectuarse, para detectar el riesgo de datos al acceder a memoria.
 
-
+> Como la dirección de memoria se calcula en la etapa ALU, debemos efectuar las acciones en esta etapa. Las acciones deberan emular un funcionamiento serie.
 
 En el procesador segmentado que se utiliza, la última etapa del proceso de interpretación de una instrucción donde se puede retener una instrucción es la etapa D/L.
 
 <u>Pregunta 3:</u> Describa un mecanismo para controlar los posibles riesgos de datos al acceder a memoria. Posteriormente muestre en un diagrama temporal, utilizando la siguiente secuencia de instrucciones, el mecanismo de control de riesgo descrito. Justifique de forma detallada las retenciones o bloqueos en la etapa D/L.
+
+> La gestion conservadora contra la ejecucion a distancia 1 de un store y un load
+
+<u>Pregunta 4:</u> Diseñe un circuito combinacional que, con las señales descritas, controle los multiplexores MUXCPBloq, MUXBUSBloq y MUXDLNop de la figura previa, en el caso de que se detecte un riesgo de datos, ya sea debido a registros o a memoria.
 
 ### Ejercicio 3.5
 
