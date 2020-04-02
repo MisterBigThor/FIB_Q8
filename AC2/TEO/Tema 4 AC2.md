@@ -22,6 +22,22 @@ end
 
 Sobre un conjunto de instrucciones, puede existir una ordenación que no afecete en el resultado final y tolere la latencia de segmentación. Entre una instrucción productora y una consumidora se colocan otras instrucciones que no afecten el resultado y que 'den tiempo' a la productora a escribir el resultado. 
 
+> Tres ordenaciones diferentes de las instrucciones, que dan el mismo resultado
+>
+> ````asm
+> add r4, r1, r3 		add r4, r1, r3 		add r4, r1, r3
+> sub r5, r2, r4 		sub r9, r8, r6 		sub r9, r8, r6
+> sub r9, r8, r6 		sub r5, r2, r4 		cmple r12, r13, r14
+> add r10, r0,r9 		add r10, r0,r9 		sub r5, r2, r4
+> cmple r12, r13, r14 cmple r12, r13, r14 add r10, r0, r9
+> CP = 2 + 2			CP = 1				CP = 0
+> ````
+>
+> El diagrama resultante es:
+>
+
+El grafo de dependencias expresa un orden parcial.
+
 #### Bloque básico estático BB
 
 Los bloques de instrucciones a ordenar a traves de un algoritmo de planificación se llaman bloques básicos estáticos. 
@@ -55,19 +71,29 @@ Cualquier ordenanción del grafo del BB es una planificación correcta. El objet
   //PSEUDOCODIGO:
   int t = 0;
   List<ints> ret; Graph<inst> dep; List<inst> ele;
+  ele = init(dep); //inicializar lista elegibles
   while(!dep.isEmpty()){
-      ele = selecionar(dep);
+      if(ele.isEmpty()) ++t, break;
       inst n = heuristica(ele);
       del_graph_list(n);
       append(ret, n);
       ++t;
   	for_each(node s: n->succesors) 
           s.tag = max(s.tag, t+s.arco);
+      for_each(node s: dep)
+          if(s->tag < 0) ele.add(s);
+     	ele.add(dep.roots);
   }
   return ret;
   ````
 
 ## Cortocircuitos
+
+Observamos que el resultado de una operación ya se conoce antes de que se escriba.
+
+> Ejemplo: 
+>
+> 
 
 ## Reducción de la penalización del secuenciamiento
 

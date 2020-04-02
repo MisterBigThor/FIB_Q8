@@ -4,7 +4,9 @@
 
 ## Camino de datos
 
+### Segmentación base
 
+### Faltaran mas apartados?
 
 <u>Lazo o bucle hardware.</u> Es una comunicación entre etapas que permite que en una etapa se utilice información suministrada desde etapas posteriores. La latencia puede verse como los ciclos que tardara la información en volver.
 
@@ -51,7 +53,10 @@ La actuación de la logica será emular el funcionamiento serie, al coste de per
 
 ToDo:
 
-#### Circuitos de control
+#### Circuitos de control - Implementación de gestión de RD
 
 ToDo:
 
+#### Circuitos de control - Implementación de gestión de RS
+
+ToDo:
