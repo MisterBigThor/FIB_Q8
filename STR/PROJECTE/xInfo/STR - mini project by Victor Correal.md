@@ -32,5 +32,9 @@ Dia 22/03/2020: Instal·lació de la màquina virtual, compilador i entorn. Prim
 Dia 23/03/2020: Primeres passes en el Sistema operatiu en la gestio de memoria. He decidit en aquest punt parar l'implementació i estudiar sobre la gestió
 de memoria i l'arquitectua del procesador ARM, el codi de jsandler18 no m'ha acabat de convencer.
 
+https://github.com/bztsrc/raspi3-tutorial
+
+https://github.com/s-matyukevich/raspberry-pi-os
+
 ## ARMv7 architecture
 
