@@ -39,7 +39,8 @@ int main(int argc, char *argv[]){
 	max, min, avg, total = 0.0;
 	for(int i =0 ; i< N; ++i){
 		SETTIME(tv0)
-		sbrk(0);
+		void * r = sbrk(0);
+//		printf("sbrk @ %p", r);
 		SETTIME(tv1)
 		calc(getDif(tv0, tv1), i);
 	}
