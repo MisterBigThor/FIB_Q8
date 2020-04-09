@@ -4,9 +4,9 @@
 
 1. **Escriviu un programa que calculi el temps que triga una crida a sistema senzilla. Feu una taula amb els temps d'execució que obteniu. Per què els temps d'execució són tan diferents?**
 
-  | Syscall                         | sbrk(0) | sbrk(inc) | sched_yield() | getpid() | fork()/waitpid() |
-  | ------------------------------- | ------- | --------- | ------------- | -------- | ---------------- |
-  | **Execution time (microsecs.)** |         |           |               |          |                  |
+  | Syscall                         | sbrk(0) | sbrk(inc)  | sched_yield() | getpid() | fork()/waitpid() |
+  | ------------------------------- | ------- | ---------- | ------------- | -------- | ---------------- |
+  | **Execution time (microsecs.)** |         | man sbrk.2 |               |          |                  |
 
 2. **Podeu comprovar d'alguna manera que els programes executen realment la crida a sistema? (I no aprofiten el resultat retornat per la crida anterior).**
 
@@ -18,5 +18,4 @@
 5. **Si executeu el programa com a administradors (root), obteniu alguna diferència en els**
    **resultats?**
 6. **Escriviu i executeu una aplicació similar a la del punt 2, però que llegeixi del disc. Feu una gràfica similar a la del punt 2, que mostri ara el bandwidth obtingut per les lectures. Compareu els resultats.**
-7. **Useu les eines del sistema vmstat i iostat per veure el bandwidth obtingut en lectura i**
-  **escriptura de fitxers quan executeu els programes write-to-disk i read-from-disk, per separat i alhora. Per una mida concreta (p. ex. 500 Mb), coincideixen amb els vostres números?**
+7. **Useu les eines del sistema vmstat i iostat per veure el bandwidth obtingut en lectura i escriptura de fitxers quan executeu els programes write-to-disk i read-from-disk, per separat i alhora. Per una mida concreta (p. ex. 500 Mb), coincideixen amb els vostres números?**

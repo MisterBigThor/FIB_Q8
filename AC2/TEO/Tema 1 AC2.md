@@ -67,7 +67,7 @@ Donde podemos usar los fallos de acceso por instrucción o los fallos por refere
 
 $$
 F_m = T_2/T_0; G_m = T_2/T_3 \\
-G=\frac{T_0}{T_m} = \frac{T_0}{T_1+T_3} = \frac{1}{(1-F_m)*T_0 + F_m/G_m}
+G=\frac{T_0}{T_m} = \frac{T_0}{T_1+T_3} = \frac{1}{(1-F_m) + \frac{F_m}{G_m}}
 $$
 
 Entonces, la ganancia depende de $F_m$, la fracción de  tiempo original donde se puede usar la mejora y de $G_m$, la ganancia cuando se utiliza el la mejora el 100%..

@@ -176,20 +176,99 @@ En este procesador se efectúa el cálculo especificado en el siguiente código:
 
 Deduzca 1) la cantidad de MIPS, 2) el CPI medio y 3) el tiempo total para cada una de las tres preguntas siguientes.
 
+$$
+MIPS = \frac{Instruciones * 10^{-6}}{Tiempo} = \frac{IteracionesInstruciones}{ciclos\frac{Tiempo}{ciclos}}
+\\CPI_m = \frac{Ciclos}{Instr}
+\\T = N*CPI*T_c = \frac{Instrucciones}{Programa}*\frac{Ciclos}{Instruccion}*\frac{Tiempo}{1 Ciclo} = \frac{Tiempo}{Programa}(s)
+$$
 <u>Pregunta 1:</u> Procesador con reloj de 900 MHz que ejecuta 1000 iteraciones de un bucle de 12 instrucciones y tarda 18 ciclos en cada iteración. 
-
-$MIPS = \frac{Instruciones}{Tiempo} * 10^{-6} = \frac{1000*12}{18 ciclos*(900MHz)^{-1}}*10^{-6} = $
-
-$CPI_m = \frac{Ciclos}{Instr} = \frac{18 \space ciclos}{12 \space instructiones} = 1.5$
-
-$T= N*CPI*Tc = (1000*12) * 1.5 * (900MHz)^{-1} =$
+$$
+MIPS = \frac{1000 \space iteraciones *12 \space instrucciones *10^{-6}}{18 \space ciclos*(900MHz)^{-1}} =600.000 \space MIPS
+\\CPI_m  = 18 \space Ciclos/12 \space Instrucciones = 1.5 \space Ciclos/Instr
+\\T = (1000*12)*1.5*(900MHz)^{-1} = 2*10^{-5} s
+$$
 
 <u>Pregunta 2:</u> Procesador con reloj de 450 MHz que ejecuta 2000 iteraciones de un bucle de 12 instrucciones y tarda 18 ciclos en cada iteración.
-
-
-
+$$
+MIPS = \frac{2000*12*10^{-6}}{18*(450MHz)^{-1}} = 600.000 \space MIPS
+\\CPI = \frac{18\space Ciclos}{12\space Instrucciones} = 1.5
+\\T = (2000*12)*CPI*(450MHz)^{-1} = 8*10^{-5} s
+$$
 <u>Pregunta 3:</u> Procesador con reloj de 900 MHz que ejecuta 2000 iteraciones de un bucle de 12 instrucciones y tarda 36 ciclos en cada iteración.
-
+$$
+MIPS=\frac{2000*12*10^{-6}}{36*(900MHz)^{-1}} = 600.000 \space MIPS
+\\ CPI = \frac{36}{12} = 3
+\\ T = 2000*12*CPI*(900MHz)^{-1} = 8*10^{-5} s
+$$
 Sabemos que un procesador emplea la mitad de su tiempo en hacer accesos a cache. Queremos reducir el tiempo total del procesador en un 20% del original.
 
 <u>Pregunta 4:</u> Deduzca cuanto más rápida debería ser la nueva cache para conseguirlo, expresando la respuesta como el valor del cociente: tiempo cache vieja / tiempo cache nueva
+
+> La ley de Amdahl nos ayudara, buscaremos la ganancia para $G=\frac{T}{T*0.2} = 5$. Deberemos calcular $F_m$ y $G_m$, la fracción de tiempo que se utiliza el component a mejorar y la ganacia cuando se utiliza al 100%. Gm es justo el cociente que pide el enunciado.
+
+$$
+\\G_m = T_{cache}/T_{cache}'
+\\F_m = 0.5T/T = 0.5
+\\G= \frac{1}{(1-F_m) + F_m/G_m}=\frac{1}{0.5 + 0.5/G_m}=2+\frac{G_n}{0.5}
+\\G_m= (G-2)*0.5 = 1.5
+$$
+
+> El resultado es que debera ser 1.5 veces más rápida la nueva cache.
+
+### Ejercicio 1.4
+
+Un programa de prueba P contiene 20 millones de operaciones en coma flotante.
+Una estación de trabajo E tiene un procesador a 90 MHz, incluye un coprocesador numérico y usa un compilador con optimizaciones. Este compilador permite que E efectúe los cálculos coma flotante bien en modo 1 (habilitando el coprocesador), o bien en modo 2 (inhabilitando el coprocesador y usando rutinas software). La ejecución de P tarda 1.5 s cuando E funciona en modo 1, mientras que tarda 13.6 s en modo 2.
+
+Se ha medido que CPI = 5 en modo 1, mientras que CPI = 3 en modo 2.
+
+<u>Pregunta 1:</u> Deduzca la velocidad en MIPS para cada uno de los dos modos.
+
+>$MIPS=\frac{Instrucciones*10^{-6}}{Tiempo} = IPC * Freq* 10^{-6}$
+>$MIPS= \frac{instr}{ciclos}*\frac{1 ciclo}{Tiempo} = instr/tiempo$
+>$MIPS^1 = (5)^{-1}*90MHz=18$ MIPS
+>$MIPS^2= (3)^{-1}*90MHZ = 30$ MIPS
+
+<u>Pregunta 2:</u> Deduzca el número total de instrucciones ejecutadas en cada uno de los dos modos.
+
+> Tenemos el tiempo de ciclo, CPI y el tiempo total, por tanto:
+>
+> $T = N*CPI*T_C \rightarrow N = T/(CPI*T_C)$
+>
+> $N_1=1.5s/(5*(90MHz)^{-1}) = 2.7*10^7$ instrucciones
+>
+> $N_2=13.6s/(3*(90MHz)^{-1}) = 4.08*10^8$ instrucciones
+
+<u>Pregunta 3:</u> En el modo 2, deduzca el promedio de instrucciones necesarias para ejecutar una operación coma flotante.
+
+> Como el programa contiene 20 millones de operaciones y conocemos el numero de instrucciones que se ejecutan en el modo 2:
+> $408 \text{ milones de instr}/20 * \text{ milones de ops} = 20.4$
+>
+> Obtemos que se necesitan 20.4 instrucciones de promedio.
+
+<u>Pregunta 4:</u> En el modo 1, deduzca la velocidad en MFLOPS.
+
+> El enunciado nos da el tiempo que tarda en ejecutarse y el numero de operaciones:
+>
+> $MFLOPS = \frac{FloatsOp * 10^-6}{Tiempo} =\frac{20}{1.5} = 13.3\space MFLOPS$ 
+
+Se puede modificar el modo 1, cambiando el coprocesador por otro que es capaz de acelerar F veces la ejecución de las operaciones responsables del 30% del tiempo total de ejecución de P.
+
+<u>Pregunta 5:</u> Deduzca el valor que debe tener F para que el tiempo de ejecución se reduzca a la mitad. Deduzca cuál sería el nuevo tiempo de ejecución si sabemos que F = 2.
+
+> Aplicaremos la ley de Amdahl, tenemos que el tiempo de mejora es 'F' y se aplica en el 30% de las instrucciones:
+>
+> $F_m := \text{fracción de uso respecto el total} = 0.3$
+>
+> $G_m := T_{Componente}^0/T_{Componente}' = F$
+>
+> $G = \frac{1}{(1-F_m)+\frac{F_m}{G_m}} =\frac{1}{(1-0.3)+\frac{0.3}{F}}$
+>
+> Para reducir el tiempo a la mitad, necesitamos $G = \frac{T_0}{T_0*0.5}=2$, substituimos y buscamos F:
+>
+> ...
+>
+> Con F=2 obtenemos que la G = 1.18, entonces el tiempo de ejecucción será:
+>
+> $G = \frac{T_0}{T'}=1.18\rightarrow T'= 1.5/1.18 = 1.27 s$
+
