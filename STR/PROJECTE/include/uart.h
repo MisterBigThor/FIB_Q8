@@ -7,7 +7,8 @@ page 177 of the BCM2835 arm
 enum
 {
     // The GPIO registers base address.
-    GPIO_BASE = 0x3F200000, // for raspi2 & 3, 0x20200000 for raspi1
+    MMIO_BASE = 0x3F000000,
+    GPIO_BASE = (MMIO_BASE+ 0x200000), // for raspi2 & 3, 0x20200000 for raspi1
 
     GPPUD = (GPIO_BASE + 0x94),
     GPPUDCLK0 = (GPIO_BASE + 0x98),
