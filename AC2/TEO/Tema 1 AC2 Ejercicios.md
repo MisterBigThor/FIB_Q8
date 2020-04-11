@@ -244,7 +244,7 @@ Se ha medido que CPI = 5 en modo 1, mientras que CPI = 3 en modo 2.
 > Como el programa contiene 20 millones de operaciones y conocemos el numero de instrucciones que se ejecutan en el modo 2:
 > $408 \text{ milones de instr}/20 * \text{ milones de ops} = 20.4$
 >
-> Obtemos que se necesitan 20.4 instrucciones de promedio.
+> ###### Obtemos que se necesitan 20.4 instrucciones de promedio.
 
 <u>Pregunta 4:</u> En el modo 1, deduzca la velocidad en MFLOPS.
 
