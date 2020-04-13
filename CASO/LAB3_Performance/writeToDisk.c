@@ -9,8 +9,6 @@
 
 #include "myChrono.c"
 
-#define WRITESIZE 500*1024*1024
-
 const char * USAGE = "./writeToDis pathToWrite\n";
 
 struct timeval tv0, tv1;
@@ -25,7 +23,7 @@ int main(int argc, char *argv[]){
 	printf("Write to %s\n", argv[1]);
 
 	int fd = open(argv[1], O_CREAT|O_RDWR, S_IRWXU);
-
+	long long WRITESIZE = 1024.0*1024.0*1024.0*4.0;
 	long long written;
 	int a[1024];
 	memset(a, '*', 1024);

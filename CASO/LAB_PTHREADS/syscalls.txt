@@ -1,0 +1,13 @@
+Syscalls per crear un thread:
+
+clone(child_stack=0x7f187d6e3fb0,flags=CLONE_VM|CLONE_FS|CLONE_FILES CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f187d6e49d0, tls=0x7f187d6e4700, child_tidptr=0x7f187d6e49d0) = 6828
+
+mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f187c6e3000
+mprotect(0x7f187c6e4000, 8388608, PROT_READ|PROT_WRITE) = 0
+
+
+Es fa servir la crida de clone, reservant memoria amb protecció total (PROTO_NONE) i nomès permetent al thread escriure i llegir aquesta regió de memòria. Futex ens permet esperar a que acabin tots els threads.
+
+Syscalls per entrar a exclusió mútua:
+
+Futex es fa servir per les exclusions mutues.
