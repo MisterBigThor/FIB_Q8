@@ -272,3 +272,96 @@ Se puede modificar el modo 1, cambiando el coprocesador por otro que es capaz de
 >
 > $G = \frac{T_0}{T'}=1.18\rightarrow T'= 1.5/1.18 = 1.27 s$
 
+### Ejercicio 1.10
+
+Al interpretar un programa se mide la siguiente distribución de
+instrucciones y CPI asociado.
+
+| TIPO                      | DIST | CPI  |
+| ------------------------- | ---- | ---- |
+| STORE                     | 15%  | 1    |
+| LOAD                      | 25%  | 2    |
+| SECUENCIAMIENTO           | 15%  | 4    |
+| ARITMÉTICAS, ENTEROS      | 35%  | 1    |
+| DESPLAZAMIENTO ARITMÉTICO | 5%   | 1    |
+| MULTIPLICACIÓN            | 5%   | 10   |
+
+<u>Pregunta 1:</u> Calcule el CPI.
+
+> $CPI = 0.15*1+0.25*2+0.15*4+0.35*1+0.05*1+0.05*10=2.15$
+
+Una optimización efectuada por el compilador reemplaza operaciones complejas o difíciles por operaciones más simples, con el objetivo de reducir el tiempo de ejecución. Un ejemplo es reemplazar una multiplicación por una constante por una secuencia de instrucciones de desplazamiento aritmético y de suma. En el programa anterior se ha medido que el 50% de las multiplicaciones se pueden convertir en secuencias de instrucciones de desplazamiento aritmético y de suma, siendo el número medio de instrucciones de la secuencia igual a 3.
+
+<u>Pregunta 2:</u> Calcule el incremento relativo en el número de instrucciones.
+
+> El 50% de las operaciones de multiplicación (suponian el 5%) tendran un CPI = 3. Entonces el nuevo número de instrucciones N' será el anterior número de instrucciones mas 3 instrucciones por cada operación de multiplicación que podemos transformar:
+>
+> $N' = N+(N*0.05*0.5*3)= N + (N*0.075)$
+>
+> $N' = 1.075*N$ 
+
+<u>Pregunta 3:</u> Calcule el CPI cuando se interpreta el código
+optimizado. Previamente calcule la distribución de instrucciones.
+
+> Para la nueva distribución, podemos suponer cualquier combinación de desplazamiento aritmetico y suma, pues el CPI de las dos es 1, añadimos esta optimización como un tipo 'operación' y calculamos el CPI:
+>
+> multiplicación -> dist = 0.05*0.5 = 0.025 = 2.5%, CPI = 10
+>
+> multiplicaciónOptimizada -> dist = 0.05*0.5 = 2.5%, CPI  = 1
+>
+> $CPI' = 0.15*1+0.25*2+0.15*4+0.35*1+0.05*1+0.025*10+0.025*1=1.925$
+
+<u>Pregunta 4:</u> Calcule la ganancia que aporta la optimización de
+código. Efectúe el cálculo utilizando la ley de Amdahl. Previamente calcule la fracción de tiempo en la cual se utiliza la mejora.
+
+> $G = \frac{1}{(1-F_m)+\frac{F_m}{G_m}}$
+>
+> $F_m := \text{Fracción de uso original } = 0.025$
+>
+> $G_m:= \text{Ganancia en el 100%}$
+>
+> $G_m = \frac{1N*10Ciclos*T_c}{3N*1Ciclos*Tc}= 10/3$
+>
+> $G = \frac{1}{(1-0.025)+\frac{0.025}{10/3}} =1.02$
+>
+> Comprobando con la otra formula de la ganáncia:
+>
+> $G= T_0/T_N =\frac{N*CPI_0}{1.075*N*CPI'}=1.03$
+
+### Ejercicio 1.14
+
+Un procesador con una frecuencia de reloj f MHz ejecuta una carga de trabajo de n programas. Sea N el número total de instrucciones ejecutadas y CIC el número total de ciclos de ejecución del conjunto de programas. De cada programa se conoce:
+
+$p_i:= \text{fracción de tiempo (CIC_i/CIC)}$
+
+donde CIC_i es el número de ciclos de ejecuccion
+
+$CPI_i:= CPI \space medio, MIPS_i = \text{media de MIPS}$
+
+$W_i:= \text{potencia meda W consumida por P}$
+
+$T=\sum f_i*T_i$
+
+<u>Pregunta 1:</u> Deduzca una expresión para evaluar el CPI medio de la carga de trabajo en función del CPI de cada programa.
+
+$CPI_{carga} = \sum CPI_i*p_i$
+
+<u>Pregunta 2:</u> Deduzca una expresión para evaluar el rendimiento
+en MIPS de la carga de trabajo en función de los MIPS de cada
+programa.
+
+$MIPS_{carga} = \sum MIPS_i*p_i$
+
+<u>Pregunta 3:</u> Calcule la potencia media W consumida por el proce-sador (vatios) al ejecutar la carga de trabajo en función de la
+potencia en cada programa.
+
+$W_{carga} = \sum W_i*p_i$
+
+<u>Pregunta 4:</u> Calcule la energía (julios) por millón de instrucciones (EPMI) en función del rendimiento en MIPS.
+
+$EMPI = \frac{Energia}{10⁶Inst}, Potencia_{total} = \sum W_i*p_i, E = P_t*TiempoTotal$
+
+$(MIPS\frac{Instrucciones}{Segundo}*10⁶)^{-1}*Potencia_{total}$
+
+
+
