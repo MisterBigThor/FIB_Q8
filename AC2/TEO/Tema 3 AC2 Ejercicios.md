@@ -184,13 +184,84 @@ En el procesador segmentado que se utiliza, la última etapa del proceso de inte
 
 <u>Pregunta 3:</u> Describa un mecanismo para controlar los posibles riesgos de datos al acceder a memoria. Posteriormente muestre en un diagrama temporal, utilizando la siguiente secuencia de instrucciones, el mecanismo de control de riesgo descrito. Justifique de forma detallada las retenciones o bloqueos en la etapa D/L.
 
-> La gestion conservadora contra la ejecucion a distancia 1 de un store y un load
+> La gestion conservadora controla la ejecucion a distancia 1 de un store y un load
 
 <u>Pregunta 4:</u> Diseñe un circuito combinacional que, con las señales descritas, controle los multiplexores MUXCPBloq, MUXBUSBloq y MUXDLNop de la figura previa, en el caso de que se detecte un riesgo de datos, ya sea debido a registros o a memoria.
 
+<u>Pregunta 5:</u> Calcule el CPI medio en el nuevo procesador que funciona a una frecuencia de 1 Ghz.
+
+<u>Pregunta 6:</u> Calcule la ganancia del nuevo procesador respecto del diseño previo.
+
 ### Ejercicio 3.5
 
+Un procesador segmentado lineal, con las 6 etapas típicas (CP,  BUS, D/L, ALU, M, ES) sin riesgos estructurales, que NO puede escribir y leer un registro en el mismo ciclo y pone el siguiente valor en el CP en el PENULTIMO ciclo cuando interpreta una instrucción de salto, ejecuta el siguiente código:
+
+`````assembly
+L : 	r8 <--- M [ r7 + 0 ]	A
+		r9 <--- M [ r7 + 4 ]	B	
+		si (r9) saltar a T		C
+		M[ r7 + 0 ] <--- r9		D
+		M [ r7 + 4 ] <--- r8	E
+T : 	r6 <--- r6 + 1			F
+		r7 <--- r7 + 4			G
+        si (r6) saltar a L		H
+`````
+
+<u>Pregunta 1:</u> Presente el cronograma de una iteración, suponiendo que las dos instrucciones de salto condicional rompen la secuencia (siempre saltan).
+
+
+
+> Debemos ver el grafo de dependencias debidas a registros:
+>
+> (Dependencia verdadera: flecha continua, antidependencia: felcha discontinua, dep de salida: flecha sin punta)
+>
+> `````mermaid
+> graph TB;
+> B ==> C
+> B ==> D 
+> A ==> E
+> F ==> H
+> A-.->G
+> B-.->G
+> D-.->G
+> E-.->G
+> `````
+>
+> ![image-20200414165453897](image-20200414165453897.png)
+
+<u>Pregunta 2:</u> Presente el cronograma de una iteración , suponiendo que la primera instrucción de salto no rompe la secuencia (no salta a T) y que la segunda instrucción de salto rompe la secuencia (siempre salta a L).
+
+> ![image-20200414165507260](image-20200414165507260.png)
+
+<u>Pregunta 3:</u> Calcule el número de ciclos perdidos en una iteración, indicando cuántos son por Riesgo de Datos y cuántos son por Riesgo de Secuenciamiento, en cada uno de las dos preguntas anteriores.
+
+> En el primer caso(siempre saltan) se pierden 5 por riesgo de datos y 6 por riesgo de secuenciamiento.
+>
+> En el segundo caso(no salta T) se pierden los mismos ciclos, las instrucciones que se ejecutan no aportan perdida de ciclos.
+
+<u>Pregunta 4:</u> Calcule el valor del CPI medio en una iteración, sabiendo que el primer salto condicional rompe la secuencia el 20% de las veces.
+
+>Hay que dividir los ciclos totales ponderados por el numero de instrucciones ponderado:
+>
+>$CPI=\frac{0.2*(6+5)+0.8*(5+6)}{0.2*(6)+0.8*(8)} = 1.45$
+
+<u>Pregunta 5:</u> Calcule la ganancia de este procesador sobre otro procesador con la misma frecuencia de reloj, pero que opera en serie porque no está segmentado, y que interpreta este mismo código suponiendo que el primer salto condicional rompe la secuencia el 30% de las veces.
+
+> El CPI del procesador serie sera 6(1 instrución tarda 6 ciclos). 
+>
+> $G = \frac{T_0}{T_n} = \frac{N*CPI*T_c}{N*CPI'*T_c} = \frac{CPI}{CPI'}=6/1.45=4.13$
+
 ### Ejercicio 3.16
+
+El camino de datos de un procesador con frecuencia de reloj de 2 GHz, segmentado en 6 etapas, dispone de un único puerto para acceder a la memoria de instrucciones y de datos (MID), tal como se muestra en la figura.
+
+Para contestar a las preguntas 1) y 2) suponga que los riesgos estructurales se pueden resolver retardando el inicio de la interpretación de las instrucciones. También, supondremos que no hay riesgos de datos y de secuenciamiento entre las instrucciones.
+
+<u>Pregunta 1:</u> Analice los posibles riesgos estructurales durante la interpretación de una secuencia de instrucciones. Indique la latencia de inicio prohibida.
+
+
+
+<u>Pregunta 2:</u> Deduzca una secuencia de instrucciones periódica (i1, i2, i3, i4) e ilimitada que produzca un rendimento de 1600 MIPS.
 
 ### Ejercicio 3.14
 

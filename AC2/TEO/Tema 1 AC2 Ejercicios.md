@@ -1,3 +1,5 @@
+# TEMA 1 EJERCICIOS
+
 [TOC]
 
 ### Ejercicio 1.1
@@ -155,12 +157,9 @@ $P = 22.5 W$
 
 > Para calcular la potencia, necesitaremos la energia por tramos, usando el Ti que se calcula siguiendo la formula de la pregunta 1.
 
-<u>Pregunta 3:</u> Calcule el tiempo de ejecución cuando se utiliza
-escalado tensión-frecuencia para mantener la potencia consumida
-dentro del límite de 80 W en cada región.
+<u>Pregunta 3:</u> Calcule el tiempo de ejecución cuando se utiliza escalado tensión-frecuencia para mantener la potencia consumida dentro del límite de 80 W en cada región.
 
-<u>Pregunta 4:</u> Calcule la potencia de conmutación media en el
-escenario descrito.
+<u>Pregunta 4:</u> Calcule la potencia de conmutación media en el escenario descrito.
 
 ### Ejercicio 1.18
 
@@ -204,7 +203,7 @@ Sabemos que un procesador emplea la mitad de su tiempo en hacer accesos a cache.
 
 <u>Pregunta 4:</u> Deduzca cuanto más rápida debería ser la nueva cache para conseguirlo, expresando la respuesta como el valor del cociente: tiempo cache vieja / tiempo cache nueva
 
-> La ley de Amdahl nos ayudara, buscaremos la ganancia para $G=\frac{T}{T*0.2} = 5$. Deberemos calcular $F_m$ y $G_m$, la fracción de tiempo que se utiliza el component a mejorar y la ganacia cuando se utiliza al 100%. Gm es justo el cociente que pide el enunciado.
+> La ley de Amdahl nos ayudara, buscaremos la ganancia para $G=\frac{T}{T*0.2} = 5$ Deberemos calcular $F_m$ y $G_m$, la fracción de tiempo que se utiliza el component a mejorar y la ganacia cuando se utiliza al 100%. Gm es justo el cociente que pide el enunciado.
 
 $$
 \\G_m = T_{cache}/T_{cache}'
@@ -217,8 +216,9 @@ $$
 
 ### Ejercicio 1.4
 
-Un programa de prueba P contiene 20 millones de operaciones en coma flotante.
-Una estación de trabajo E tiene un procesador a 90 MHz, incluye un coprocesador numérico y usa un compilador con optimizaciones. Este compilador permite que E efectúe los cálculos coma flotante bien en modo 1 (habilitando el coprocesador), o bien en modo 2 (inhabilitando el coprocesador y usando rutinas software). La ejecución de P tarda 1.5 s cuando E funciona en modo 1, mientras que tarda 13.6 s en modo 2.
+Un programa de prueba P contiene 20 millones de operaciones en coma flotante. Una estación de trabajo E tiene un procesador a 90 MHz, incluye un coprocesador numérico y usa un compilador con optimizaciones. 
+
+Este compilador permite que E efectúe los cálculos coma flotante bien en modo 1 (habilitando el coprocesador), o bien en modo 2 (inhabilitando el coprocesador y usando rutinas software). La ejecución de P tarda 1.5 s cuando E funciona en modo 1, mientras que tarda 13.6 s en modo 2.
 
 Se ha medido que CPI = 5 en modo 1, mientras que CPI = 3 en modo 2.
 
@@ -258,7 +258,7 @@ Se puede modificar el modo 1, cambiando el coprocesador por otro que es capaz de
 
 > Aplicaremos la ley de Amdahl, tenemos que el tiempo de mejora es 'F' y se aplica en el 30% de las instrucciones:
 >
-> $F_m := \text{fracción de uso respecto el total} = 0.3$
+> $F_m := \text{fracción de uso respecto el total} = 0.3\text{ (30% del tiempo de ejecución)}$
 >
 > $G_m := T_{Componente}^0/T_{Componente}' = F$
 >
@@ -266,7 +266,9 @@ Se puede modificar el modo 1, cambiando el coprocesador por otro que es capaz de
 >
 > Para reducir el tiempo a la mitad, necesitamos $G = \frac{T_0}{T_0*0.5}=2$, substituimos y buscamos F:
 >
-> ...
+> $2=\frac{1}{0.7+(\frac{0.3}{F})} \rightarrow F = -1.5$
+>
+> Podemos ver que el resultado es negativo, esto es porque no existe un valor, ya que estamos limitados al 30% de tiempo total de ejecución.
 >
 > Con F=2 obtenemos que la G = 1.18, entonces el tiempo de ejecucción será:
 >
