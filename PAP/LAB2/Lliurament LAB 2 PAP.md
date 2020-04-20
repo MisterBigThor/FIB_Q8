@@ -1,10 +1,8 @@
-## Lliurament LAB 2 PAP
+## Lliurament LAB 2 PAP per Victor Correal Ramos
 
-En aquest document s'explica l'implementació del itinerari 1: worksharing model. Seguidament també veiem els programes que s'han utilitzat per comprobar el funcionament .
+En aquest document s'explica l'implementació del itinerari 1: worksharing model. Seguidament també veiem els programes que s'han utilitzat per comprobar el funcionament i les conclusions després de fer la meva implementació.
 
 ### Decisions d'implementació
-
-Detallare seguidament els trets mes importants sobre cada secció de la llibreria:
 
 Primerament, la llibreria inicialitza les estructures de dades de totes les possibles parts implicades i crea el thread amb identificador -1.
 
@@ -61,6 +59,8 @@ El control coneix en cada moment i per cada thread, en quin loop es troba i pot 
 
 En el moment de definir el descriptor, es calculen els chunks necesaris i un array permet saber quines regions han sigut adjudicades ja. Els procediments de dynamic_start i allocate_iterations es fa protegit amb mutex, ja que hi ha condicions de carrera sobre la llista global de descriptors.
 
+A més, a l'implementació s'ha afegit una compilació condicionada, per poder generar missatges de traça. Cal compilar amb el simbol _DEBUG=1 o cridar a make dbg=1 per compilar la llibreria.
+
 ### Possibles millores
 
 Hi ha certes opcions de diseny, que podrien aportart millor rendiment peró que son mes complicades d'implementar:
@@ -76,21 +76,45 @@ S'ha definit una macro(LOG) per tal de poder veure el funcionament global i coor
 
 Els programas de prova que s'han utilitzat, i els resultats comparats amb la versió real es resumeixen en aquesta taula.
 
-| NOM TEST   | RESULTAT | TEMPS GOMP | TEMPS OMP |
-| ---------- | -------- | ---------- | --------- |
-| tparallel  |          |            |           |
-| tparallel1 |          |            |           |
-|            |          |            |           |
-|            |          |            |           |
-|            |          |            |           |
-|            |          |            |           |
-|            |          |            |           |
+| NOM TEST   | RESULTAT | Descripció                                                 |
+| ---------- | -------- | ---------------------------------------------------------- |
+| tparallel  | Correcte | Diferents regions paral·leles amb diferents threads        |
+| tbarrier   | Correcte | Barreres consecutives                                      |
+| tbarrier1  | Correcte | Barreres consecutives, en diferents regions paral·leles    |
+| tsynch     | Correcte | Diferents barreres i seccions critiques                    |
+| tsingle1   | Correcte | Un unic single                                             |
+| tsingle2   | Correcte | Dos single nowait amb el máxim de threads possibles        |
+| tsingle3   | Correcte | Bucle(de 1000) amb single no wait, amb el 24 threads       |
+| tworkshare | Correcte | Diversos tipus de for consecutius                          |
+| tloop1     | Correcte | Dos bucles amb barreres i single                           |
+| tloop2     | Correcte | Mes complicat que tloop2                                   |
+| tloop3     | Correcte | Diverses operacions dinter dels bucles, amb sincronització |
+| tmandel1   | Correcte | L                                                          |
 
-S'han realitzat 5 execuccions i s'ha prés la mitjana. La descripció de cada test està a un document apart, per tal de simplificar la taula.
+El rendiment que veiem al tmandel es presenta a la seguent taula (temps en segons):
+
+|                          | TEMPS EXECUCIÓ(mitjana de 5 temps) amb 5 threads |             |
+| ------------------------ | ------------------------------------------------ | ----------- |
+| H                        | 1,417                                            |             |
+| myOMP                    | 1,421                                            |             |
+| **ESCALABILITAT(myOMP)** | **ESCALABILITAT(GOMP)**                          | **THREADS** |
+| 1,688                    | 1,687                                            | **2**       |
+| 1,418                    | 1,412                                            | **4**       |
+| 1,411                    | 1,411                                            | **8**       |
+| 1,424                    | 1,414                                            | **10**      |
+| 1,434                    | 1,411                                            | **12**      |
+| 1,431                    | 1,436                                            | **14**      |
+| 1,428                    | 1,424                                            | **16**      |
+| 1,427                    | 1,412                                            | **18**      |
+| 1,433                    | 1,421                                            | **20**      |
+
+S'han realitzat 5 execuccions i s'ha prés la mitjana.
 
 ### Conclusions i valoracions
 
 Un cop acabat la meva modesta implementació d'openMP he pogut aprende molt millor les eines que proporciona POSIX threads. També el funcionament de la llibreria real d'openMP.
 
+Els resultats son força próxims a l'implementació real, tot i que n'hi han situacions de certes sentències pragma que fan que la meva implementació caigui en un bucle infinit d'espera o problemes similars. 
 
+Malgrat els problemes puc concloure que realitzat una implementació força funcional. A millorar potser 
 
