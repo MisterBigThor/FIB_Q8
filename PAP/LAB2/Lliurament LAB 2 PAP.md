@@ -1,6 +1,8 @@
 ## Lliurament LAB 2 PAP per Victor Correal Ramos
 
-En aquest document s'explica l'implementació del itinerari 1: worksharing model. Seguidament també veiem els programes que s'han utilitzat per comprobar el funcionament i les conclusions després de fer la meva implementació.
+En aquest document s'explica l'implementació del itinerari 1: worksharing model. 
+
+Seguidament veiem els programes que s'han utilitzat per comprobar el funcionament i les conclusions després de fer l'implementació.
 
 ### Decisions d'implementació
 
@@ -72,41 +74,41 @@ Hi ha certes opcions de diseny, que podrien aportart millor rendiment peró que 
 
 ### Resultats
 
-S'ha definit una macro(LOG) per tal de poder veure el funcionament global i coordinat de cada part de la llibreria.
+S'ha definit una macro (LOG) per tal de poder veure el funcionament global i coordinat de cada part de la llibreria.
 
 Els programas de prova que s'han utilitzat, i els resultats comparats amb la versió real es resumeixen en aquesta taula.
 
-| NOM TEST   | RESULTAT | Descripció                                                 |
-| ---------- | -------- | ---------------------------------------------------------- |
-| tparallel  | Correcte | Diferents regions paral·leles amb diferents threads        |
-| tbarrier   | Correcte | Barreres consecutives                                      |
-| tbarrier1  | Correcte | Barreres consecutives, en diferents regions paral·leles    |
-| tsynch     | Correcte | Diferents barreres i seccions critiques                    |
-| tsingle1   | Correcte | Un unic single                                             |
-| tsingle2   | Correcte | Dos single nowait amb el máxim de threads possibles        |
-| tsingle3   | Correcte | Bucle(de 1000) amb single no wait, amb el 24 threads       |
-| tworkshare | Correcte | Diversos tipus de for consecutius                          |
-| tloop1     | Correcte | Dos bucles amb barreres i single                           |
-| tloop2     | Correcte | Mes complicat que tloop2                                   |
-| tloop3     | Correcte | Diverses operacions dinter dels bucles, amb sincronització |
-| tmandel1   | Correcte | L                                                          |
+| Test       | Resultat | Descripció                                                   |
+| ---------- | -------- | ------------------------------------------------------------ |
+| tparallel  | Correcte | Diferents regions paral·leles amb diferents threads          |
+| tbarrier   | Correcte | Barreres consecutives                                        |
+| tbarrier1  | Correcte | Barreres consecutives, en diferents regions paral·leles      |
+| tsynch     | Correcte | Diferents barreres i seccions critiques                      |
+| tsingle1   | Correcte | Un unic single                                               |
+| tsingle2   | Correcte | Dos single nowait amb el máxim de threads possibles          |
+| tsingle3   | Correcte | Bucle(de 1000) amb single no wait, amb el 24 threads         |
+| tworkshare | Correcte | Diversos tipus de for consecutius                            |
+| tloop1     | Correcte | Dos bucles amb barreres i single                             |
+| tloop2     | Correcte | Mes complicat que tloop2                                     |
+| tloop3     | Correcte | Diverses operacions dinter dels bucles, amb sincronització   |
+| tmandel1   | Correcte | S'han comparat les dos sortides del executable i són correctes |
 
 El rendiment que veiem al tmandel es presenta a la seguent taula (temps en segons):
 
-|                          | TEMPS EXECUCIÓ(mitjana de 5 temps) amb 5 threads |             |
-| ------------------------ | ------------------------------------------------ | ----------- |
-| H                        | 1,417                                            |             |
-| myOMP                    | 1,421                                            |             |
-| **ESCALABILITAT(myOMP)** | **ESCALABILITAT(GOMP)**                          | **THREADS** |
-| 1,688                    | 1,687                                            | **2**       |
-| 1,418                    | 1,412                                            | **4**       |
-| 1,411                    | 1,411                                            | **8**       |
-| 1,424                    | 1,414                                            | **10**      |
-| 1,434                    | 1,411                                            | **12**      |
-| 1,431                    | 1,436                                            | **14**      |
-| 1,428                    | 1,424                                            | **16**      |
-| 1,427                    | 1,412                                            | **18**      |
-| 1,433                    | 1,421                                            | **20**      |
+|                          | Temps d'execucció       | **Threads** |
+| ------------------------ | ----------------------- | :---------: |
+| GOMP                     | 1,417                   |      5      |
+| myOMP                    | 1,421                   |      5      |
+| **Escalabilitat(myOMP)** | **Escalabilitat(GOMP)** |             |
+| 1,688                    | 1,687                   |      2      |
+| 1,418                    | 1,412                   |      4      |
+| 1,411                    | 1,411                   |      8      |
+| 1,424                    | 1,414                   |     10      |
+| 1,434                    | 1,411                   |     12      |
+| 1,431                    | 1,436                   |     14      |
+| 1,428                    | 1,424                   |     16      |
+| 1,427                    | 1,412                   |     18      |
+| 1,433                    | 1,421                   |     20      |
 
 S'han realitzat 5 execuccions i s'ha prés la mitjana.
 
