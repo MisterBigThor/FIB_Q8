@@ -14,13 +14,20 @@ $Ciclos = Instruciones * Latencia = 9 * 6 = 54 \space Ciclos$
 
 > Debemos ver el grafo de dependencias para contar los ciclos perdidos y el cronograma:
 >
-> <img src="rsc\eje37.jpeg" style="zoom: 33%;"/>
+> ````mermaid
+> 	graph TB;
+> 	A==>C
+> 	B==>C==>D
+> 	A-.->E
+> 	B-.->F
+> 	D.->G
+> 	H==>I
+> ````
 >
-> <img src="rsc\eje38.jpeg" style="zoom:67%;" />
+> Se perderan 6 ciclos por las dependencias verdaderas AC, BC i CD i HI. Se perderan 4 ciclos por el riesgo de secuenciamineto.
 >
-> Vemos que la instrucción c depenede de a y b (perderá 2 ciclos de RD), la instrucción h depende de la instruccion i (perderá 2 ciclos de RD). Además, la instruccion i representa un RS, donde se perderan 4 ciclos(considero que no forma parte de este ciclo).
+> Entonces, el $CPI = 9inst+10ciclos/9 instr = 2.11$
 >
-> Entonces, los ciclos de una iteración son 18, Se pierden 4 ciclos en Riesgos de Datos. El $CPI =\frac{Instruciones+CiclosPerdidos}{Instruciones} = \frac{9+4}{9} = 1.44$
 
 <u>Pregunta 3:</u> Suponga que las frecuencias de funcionamiento del procesador serie y segmentado son iguales. Calcule la ganancia de una interpretación segmentada respecto de una interpretación serie al ejecutar una iteración del bucle.
 

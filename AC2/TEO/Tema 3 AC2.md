@@ -2,11 +2,24 @@
 
 [TOC]
 
-## Camino de datos
+## Segmentación lineal
 
-### Segmentación base
+Esta es una posible segmentación de un procesador, con su lenguaje maquina:
 
-### Faltaran mas apartados?
+| 1                           | 2                                     | 3                                         | 4                                  | 5                    | 6                                          |
+| --------------------------- | ------------------------------------- | ----------------------------------------- | ---------------------------------- | -------------------- | ------------------------------------------ |
+| CP                          | BUS                                   | D/L                                       | ALU                                | M                    | ES                                         |
+| Control del secuenciamiento | Busqueda en memoria de la Instrucción | Decodificación + busqueda operandos en BR | Operar con los datos suministrados | Aceso a MD o retardo | Escritura en BR y actualización CP(op. BR) |
+
+| NEMO  | Descripción                        | Semántica instrucción |
+| ----- | ---------------------------------- | --------------------- |
+| RR    | Instruccion Registro Registros     | ra op rb => rc        |
+| RI    | Instruccion Registro Literal       | ra op lit => rc       |
+| LOAD  | Carga de memoria                   | MEM[rb+lit] => ra     |
+| STORE | Guarda en memoria                  | MEM[rb+lit] <= ra |
+| BR    | Saltos condicionales/incondiciones | PC = PC'              |
+
+
 
 <u>Lazo o bucle hardware.</u> Es una comunicación entre etapas que permite que en una etapa se utilice información suministrada desde etapas posteriores. La latencia puede verse como los ciclos que tardara la información en volver.
 
@@ -14,49 +27,101 @@
 
 Una ejecucción segmentada debe dar el mismo resultado que una serie, por eso es importante que se respete la semántica que ha expresado el programador en el programa; es decir, que se respete el orden de las lecturas y escrituras a posiciones de almacenamiento.
 
-Respetar este orden viene caracterizado por <u>latencia efectiva de la segmentación</u>, los ciclos entre el inicio de un calculo y el ciclo donde se puede utilizar ese calculo.
+Respetar este orden viene caracterizado por <u>latencia efectiva de la segmentación</u>, los ciclos entre el inicio de un calculo y el ciclo donde se puede utilizar ese calculo. Se producen riesgos por los necesarios bucles hardware presentes, pueden ser de varios tipos:
 
 ### Riesgos de datos
 
-Modificación del orden de escrituras/lecturas especificado sobre una posición de almacenamiento.
+Modificación del orden de escrituras/lecturas especificado sobre una posición de almacenamiento, debido a que el procesador tarda en actualizar los valores de las posiciones de almacenamiento(latencia efectiva de la segmentación).
 
-> Ejemplo: Un dato que es calculado, en nuestro procesador, tarda unos ciclos en guardarse en el banco de registros.
+| TIPO                  | EJEMPO                             |
+| --------------------- | ---------------------------------- |
+| Dep. Vertadera        | **r1** = r2 + r3; r5 = **r1** + r7 |
+| Antidependencia       | r1 = **r2** + r3; **r2** = r1 + r7 |
+| Dependencia de salida | **r1** = r2 + r3; **r1** = 6 + r7  |
 
-* Dependencia verdadera
-* Antidependencia
-* Dependencia de salida
+Existen riesgos de datos por posiciones de memoria y por registros, que son los dos tipos de posiciones de almacenamiento que existen.
+
+#### Debidos a registros
+
+Si existen alguna de las dependencias, entonces es possible que tengamos que emular el funcionamiento série para respetar la semántica del procesador.
+
+#### Debidos a memoria
+
+Segmentando el camino de datos, es possible que se modifique el orden de las lecturas/escrituras. Siempre debemos cumplir:
+
+* Un store siempre escribe antes de que lea un load posterior
+* Un load siempre lee antes que escriba un store posterior
+* Un store siempre escribe que un store posterior
 
 ### Riesgos de secuenciamiento
 
 Interpretación de instrucciones distinta a la especificada por el programador.
 
-> Ejemplo: Mientras se evalua una instrucción de salto condicional, este procesador puede estar ejecutando instrucciones que modifican el estado de la maquina.
-
-En nuestro procesador tenemos dos bucles HW, uno realimenta la etapa CP y otro desde la etapa ES hasta CP(lat. 5); un bucle HW de latencia mayor que 1 provocara riesgo. Se perderán (latencia del bucle - 1) ciclos.
-
-En este diseño de procesador, detectamos el RS en la etapa D/L y deberemos: 
-
-* <u>descartar</u> las dos instrucciones mas jovenes que ya habrian empezado su CP y BUS.
-* <u>Suspender</u> la interpretación de nuevas instrucciones hasta que desaparezca el RS.
-
-![image-](rsc\rs1.jpg)
-
-En la practica CP y BUS seguiran haciendo su trabajo, pero a la etapa D/L se inyectara una 'NOP'.  En la misma etapa que se escriba el CP correcto, ya podemos reanudar la interpretación série.
+Mientras se evalua una instrucción de salto condicional, este procesador puede estar ejecutando instrucciones que modifican el estado de la maquina. Deberemos detener la interpretación hasta resolver el riesgo.
 
 ### Lógica de interbloqueos - Gestión de riesgos
 
-Para gestionar estos riesgos hay que añadir unidades de control(lógica interbloqueos), trataremos los riesgos en la etapa D/L, la primera donde podemos 'saber' si hay riesgo. 
+Para gestionar estos riesgos hay que añadir unidades de control(lógica interbloqueos), trataremos los riesgos en la etapa D/L, la primera donde podemos 'saber' si hay riesgo. La actuación de la logica será emular el funcionamiento serie, al coste de perder ciclos.
 
-La actuación de la logica será emular el funcionamiento serie, al coste de perder ciclos.
 
-#### Solapamiento de riesgos
 
-ToDo:
+## Segmentación lineal con control de riesgos
 
-#### Circuitos de control - Implementación de gestión de RD
+### Riesgos de secuenciamiento
 
-ToDo:
+![image-lazosHWSEQ](image-20200424202451434.png)
 
-#### Circuitos de control - Implementación de gestión de RS
+El bucle HW A es de latencia 1, no tendremos problemas aqui. Sin embargo, el bucle B tiene latencia 5 y hara perder 5-1=4 ciclos.
 
-ToDo:
+En este diseño de procesador, al detectar el Riesgo de secuenciamiento en la etapa D/L deberemos: 
+
+* <u>Descartar</u> las dos instrucciones mas jovenes que ya habrian empezado su CP y BUS.
+* <u>Suspender</u> la interpretación de nuevas instrucciones hasta que desaparezca el RS.
+
+![img-RS](image-20200424202354937.png)
+
+En la practica CP y BUS seguiran haciendo su trabajo, pero a la etapa D/L se inyectara una 'NOP'.  En la misma etapa que se escriba el CP correcto, ya podemos reanudar la interpretación série.
+
+El circuito de deteción de Riesgo de secuenciamiento controlara la inyecicción de NOP a la etapa DL( registro BUS_DL ).
+
+````vhdl
+RD<= BR_DL or BR_DL_ALU or BR_ALU_MEM or BR_MEM_ES;
+--BR_DL : operacion de BR en la etapa DL
+--BR_et_* : operacion de BR en la etapa *
+````
+
+### Riesgos de Datos
+
+Tenemos comprobar cada tipo de dependencia de datos para ver si realmente genera riesgo de datos.
+
+* Riesgo de datos por dependencia vertadera
+
+  Existe riesgo si una instrucción mas vieja aun no ha actualizado la posición de almacenamiento para una instrucción mas nueva. Esto se da por que se tardan 3 ciclos en actualizar el banco de registros.
+
+* Riesgo de datos por antidependencia
+
+  Existe riesgo si una instrucción más nueva actualiza una posicion antes que una instrucción antigua haya usado este dato; es decir, una instruccion siempre lee antes de que escriba una instrucción anterior. No se da en esta segmentación
+
+* Resigo de datos por dependencia de salida
+
+  Igual que la antidependencia, una instrucción siempre escribe antes de una instrucción posterior. No se da en esta segmentación
+
+* Riesgos debidos a memoria
+
+  En cualquier secuencia de instrucciones, el acceso a memoria siempre se efectúa en el mismo ciclo. No habrá problemas en esta segmentación
+
+En la segmentación por etapas, vemos que la latencia real de la segmentación es de 3 ciclos, desde que se calcula el resultado (etapa ALU) hasta que se actualiza el banco de registros (etapa ES).
+
+![image-20200424210538620](image-20200424210538620.png)
+
+Para solventar los riesgos de datos deberemos bloquear la interpretación de instruciones en la etapa DL y las posteriores ademas de inyectar NOP en la etapa DL. 
+
+![imgRD](image-20200424210222273.png)
+
+El circuito de control tomará los registros fuente (A y B) de la instrucción en la etapa DL y los comparamos con los registros destino de las instrucciones en las etapas ALU y M; si alguna comparación es cierta, activaremos la señal de riesgo de datos. Además de señales de validación de control.
+
+<Foto de control Riesgo de datos>
+
+### Solapamiento de riesgos
+
+Si tenemos a la vez, riesgo de datos y riesgo de secuenciamiento; debera primar resolver el riesgo de datos ya que este bloquea la interpretación de instrucciones; una vez resuelto este riesgo, se actuará sobre el riesgo de secuenciamiento.

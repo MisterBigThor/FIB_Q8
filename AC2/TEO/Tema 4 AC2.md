@@ -18,7 +18,7 @@ D-->G(Hipotesis sobre un cálculo)
 end
 ```
 
-## Planificación de instrucciones
+## Planificación de instrucciones - Tolerar latencia segmentación
 
 Sobre un conjunto de instrucciones, puede existir una ordenación que no afecete en el resultado final y tolere la latencia de segmentación. Entre una instrucción productora y una consumidora se colocan otras instrucciones que no afecten el resultado y que 'den tiempo' a la productora a escribir el resultado. 
 
@@ -87,15 +87,31 @@ Cualquier ordenanción del grafo del BB es una planificación correcta. El objet
   return ret;
   ````
 
-## Cortocircuitos
+## Cortocircuitos - Reducir laténcia segmentación
 
-Observamos que el resultado de una operación ya se conoce antes de que se escriba.
+Observamos que el resultado de una operación ya se conoce antes de que se escriba, entonces se puede enviar este resultado a etapas posteriores para su uso. Tomando la segmentación clásica, tenemos los siguientes cortocircuitos:
 
-> Ejemplo: 
+````mermaid
+graph LR;
+subgraph Etapas
+	CP ==> BUS ==> D/L ==> ALU ==> M ==> ES
+end
+````
+
+> Cortocircuito M -> DL
 >
-> 
+> Cortocircuito ALU -> DL
+
+#### Características de los cortocircuitos
+
+Un cortocircuito añade un bucle hardware, y almenos un multilpexor para poder selecionar la información.
+
+La comunicación entre etapas puede hacerse al final de una etapa:
+
+* Finalizando el ciclo : El tiempo de la etapa solo se suma el tiempo del multiplexor.
+* Al inicio del ciclo: El tiempo total es la suma de los dos tiempos de lógica.
 
 ## Reducción de la penalización del secuenciamiento
 
-## Predicción fija del sentido
+### Predicción fija del sentido
 

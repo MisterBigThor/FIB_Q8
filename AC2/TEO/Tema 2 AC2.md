@@ -44,7 +44,7 @@ La segmentación de cada U.F. puede responder a varios patrones:
 
 ![imgUF](rsc\tiposUF)
 
-
+En el caso de las U.F. multiclico y no lineal, podemos tener riesgos estructurales en la interpretacción succesiva de instrucciones.
 
 ### Interpretación de instrucciones Serie
 
@@ -62,11 +62,13 @@ a) Recuros hardware disponibles
 
 b) Respetar la semántica del lenguaje
 
+Para diseñar un sistema segmentado primeramente hay que identificar los recursos que interviene y seguidamente las etapas en las que lo podemos dividir.
+
 Una primera aproximación en la segmentación nos lleva a tener tablas de reserva no lineales, que pueden llevar a conflicto (riesgo estructural). La latencia de inicio son aquellos ciclos que hay que esperar entre dos tareas para que no se produzcan riesgos, en el diagrama podemos ver los ciclos que se perderian:
 
 ![image-segmentacion1](rsc\segm1.jpg)
 
-![image-](rsc\grafLat.jpg)
+![image](rsc\grafLat.jpg)
 
 La latencia media de inicio en este caso seria $LMI = (1+4)/2 = 2.5$. Podemos ver que el minimo de la LMI sera el numero de 'X' en una fila de la tabla de reservas. Los ciclos perdios entonces se pueden calcular como:
 
@@ -76,7 +78,48 @@ Ciclos perdidos: $LMI-1$
 
 ### Conflicto instrucciones con diferente|mismo patrón
 
-Si nos interesa eliminar riesgos estructurales en un diseño, deberemos o bien añadir ciclos de retardo o añadir recursos hardware; el objetivo es que las tablas de reserva sean lineales.
+Si nos interesa eliminar riesgos estructurales en un diseño, deberemos 
 
-### Control del camino de datos segmentado
+* añadir ciclos de retardo
+* añadir recursos hardware
 
+El objetivo es que las tablas de reserva sean lineales e iguales para todas las instrucciones. 
+
+* Si un recurso se utiliza en mas de un ciclo, entonces habra que intentar replicar el recurso.
+* Para que todas las instrucciones tengan las mismas tablas de reservas, habra que añadir etapas de retardo para semejar las tablas.
+
+Para el diseño anterior, una solución sera:
+
+![image-20200425021221056](image-20200425021221056.png)
+
+En este diseño, se ha añadido un sumador (+) para el primer ciclo, dividido la memoria en MD i MI y el banco de registros en BRL y BRE. Además se ha añadido una etapa de retardo en las operaciones de tipo ENT.
+
+### Control de un dispositivo segmentado
+
+Deberemos determinar <u>cuando puede iniciar una nueva tarea</u> y <u>controlar la lógica de cada etapa</u>:
+
+#### Control de iniciaciones
+
+Sobre una tabla de reservas podemos observar las <u>latencias de inicio prohibidas</u>( latencia que da lugar a un riesgo estructural ).
+
+Si se detecta un possible fallo estructural, se debe detener el inicio o detener la interpretación.
+
+<ToDo>
+
+#### Control lógico
+
+Siempre debemos añadir señales de validación de los datos, pues al añadir etapas de retardo debemos evitar que se modifique el estado del procesador.
+
+Para generar las señales de control, podemos optar por dos formatos:
+
+* Control estacionario en el tiempo
+
+  Se trata de un elemento centralizado que en cada ciclo envía las señales necesarias.
+
+* Control estacionario en los datos
+
+  La información de control fluye con los datos y el control esta integrado en la segmentación. 
+
+  Al decodificar la instrucción se generan las señales de control neceasrias de todas las etapas.
+
+  
