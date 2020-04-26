@@ -2,25 +2,25 @@ m255
 K3
 13
 cModel Technology
-Z0 dD:\FIBQ7\AC2\LAB3.tar\LAB3\NUCLEO_camino\ENSAMBLADO\QUARTUS_control_indepe\simulation\modelsim
+Z0 dD:\FIB_Q8\AC2\LAB3\NUCLEO_camino\ENSAMBLADO\QUARTUS_control_indepe\simulation\modelsim
 Ebr
-Z1 w1549631797
+Z1 w1584273612
 Z2 DPx4 work 19 retardos_nucleo_pkg 0 22 :io0;H_FJlXlL?_2EKIa_2
 Z3 DPx4 work 20 cte_tipos_nucleo_pkg 0 22 9Xl=h46VjGA^LC@<SEY<l0
 Z4 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z7 dD:\FIBQ7\AC2\LAB3.tar\LAB3\NUCLEO_camino\ENSAMBLADO\QUARTUS_control_indepe\simulation\modelsim
-Z8 8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/BR/CODIGO/br.vhd
-Z9 FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/BR/CODIGO/br.vhd
+Z7 dD:\FIB_Q8\AC2\LAB3\NUCLEO_camino\ENSAMBLADO\QUARTUS_control_indepe\simulation\modelsim
+Z8 8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/BR/CODIGO/br.vhd
+Z9 FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/BR/CODIGO/br.vhd
 l0
 L13
 VSGVjmDe=1n4@f[a9fjOWU1
 Z10 OV;C;10.1d;51
 33
-Z11 !s108 1571694283.226000
-Z12 !s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/BR/CODIGO/br.vhd|
-Z13 !s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/BR/CODIGO/br.vhd|
+Z11 !s108 1587911839.591000
+Z12 !s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/BR/CODIGO/br.vhd|
+Z13 !s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/BR/CODIGO/br.vhd|
 Z14 o-2008 -work work -O0
 Z15 tExplicit 1
 !s100 @FFl^3gh4UA>HQ@28N=n=2
@@ -45,29 +45,29 @@ R15
 !s100 kT;iGWGzeSYH^a=Q`=m0E0
 !i10b 1
 Ecamino_control
-Z16 w1534675090
-Z17 DPx4 work 22 componentes_nucleo_pkg 0 22 ]4mHRPM<Z:SDW`?1QQ<L_2
+R1
+Z16 DPx4 work 22 componentes_nucleo_pkg 0 22 ]4mHRPM<Z:SDW`?1QQ<L_2
 R3
 R4
 R5
 R6
 R7
-Z18 8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/CODIGO/camino_control.vhd
-Z19 FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/CODIGO/camino_control.vhd
+Z17 8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/CODIGO/camino_control.vhd
+Z18 FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/CODIGO/camino_control.vhd
 l0
 L13
 V9IHMOmBC=6@]3jdQ6f2QJ0
 R10
 33
-Z20 !s108 1571694284.186000
-Z21 !s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/CODIGO/camino_control.vhd|
-Z22 !s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/CODIGO/camino_control.vhd|
+Z19 !s108 1587911840.452000
+Z20 !s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/CODIGO/camino_control.vhd|
+Z21 !s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/CODIGO/camino_control.vhd|
 R14
 R15
 !s100 4VHe_c?][gUzO5cWjV5Qe0
 !i10b 1
 Aestructura
-R17
+R16
 R3
 R4
 R5
@@ -78,9 +78,9 @@ L22
 V]3n4akBK@=:H<37j7iCLo2
 R10
 33
+R19
 R20
 R21
-R22
 R14
 R15
 !s100 Hn00PGn`];m?JWLkL=8IX0
@@ -91,10 +91,10 @@ R3
 R4
 R5
 R6
-R16
+R1
 R7
-8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/componentes_control_pkg/componentes_control_pkg.vhd
-FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/componentes_control_pkg/componentes_control_pkg.vhd
+8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/componentes_control_pkg/componentes_control_pkg.vhd
+FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/componentes_control_pkg/componentes_control_pkg.vhd
 l0
 L12
 V[jbc>RzG=^l?AHoY^an:H3
@@ -104,18 +104,18 @@ R14
 R15
 !s100 j]?n^O_OXn3@[]ejPBI4`0
 !i10b 1
-!s108 1571694282.726000
-!s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/componentes_control_pkg/componentes_control_pkg.vhd|
-!s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/componentes_control_pkg/componentes_control_pkg.vhd|
+!s108 1587911839.108000
+!s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/componentes_control_pkg/componentes_control_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/componentes_control_pkg/componentes_control_pkg.vhd|
 Pcomponentes_nucleo_pkg
 R3
 R4
 R5
 R6
-R16
+R1
 R7
-8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/componentes_nucleo_pkg/componentes_nucleo_pkg.vhd
-FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/componentes_nucleo_pkg/componentes_nucleo_pkg.vhd
+8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/componentes_nucleo_pkg/componentes_nucleo_pkg.vhd
+FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/componentes_nucleo_pkg/componentes_nucleo_pkg.vhd
 l0
 L11
 V]4mHRPM<Z:SDW`?1QQ<L_2
@@ -125,34 +125,34 @@ R14
 R15
 !s100 VgRRCPeCeL9XRUPo@BI2f3
 !i10b 1
-!s108 1571694282.859000
-!s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/componentes_nucleo_pkg/componentes_nucleo_pkg.vhd|
-!s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/componentes_nucleo_pkg/componentes_nucleo_pkg.vhd|
+!s108 1587911839.249000
+!s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/componentes_nucleo_pkg/componentes_nucleo_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/componentes_nucleo_pkg/componentes_nucleo_pkg.vhd|
 Econtrol
-Z23 w1549530348
-Z24 DPx4 work 23 componentes_control_pkg 0 22 [jbc>RzG=^l?AHoY^an:H3
+R1
+Z22 DPx4 work 23 componentes_control_pkg 0 22 [jbc>RzG=^l?AHoY^an:H3
 R2
 R3
 R4
 R5
 R6
 R7
-Z25 8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/control_indep/CODIGO/control.vhd
-Z26 FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/control_indep/CODIGO/control.vhd
+Z23 8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/control_indep/CODIGO/control.vhd
+Z24 FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/control_indep/CODIGO/control.vhd
 l0
 L15
 Vg9FS]DCBiV=jJfCMfdmVA2
 R10
 33
-Z27 !s108 1571694284.388000
-Z28 !s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/control_indep/CODIGO/control.vhd|
-Z29 !s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/control_indep/CODIGO/control.vhd|
+Z25 !s108 1587911840.668000
+Z26 !s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/control_indep/CODIGO/control.vhd|
+Z27 !s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/control_indep/CODIGO/control.vhd|
 R14
 R15
 !s100 Xi_Zk2ScX1o>U84jS6W^B2
 !i10b 1
 Aestructura
-R24
+R22
 R2
 R3
 R4
@@ -164,9 +164,9 @@ L23
 VIZeBPR0YO7g;fRhX3@4o11
 R10
 33
+R25
+R26
 R27
-R28
-R29
 R14
 R15
 !s100 XGNbZ@:;T:@A[dSXF]JlI1
@@ -175,10 +175,10 @@ Pcte_tipos_nucleo_pkg
 R4
 R5
 R6
-R16
+Z28 w1584273613
 R7
-8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/tipos_ctes_pkg/cte_tipos_nucleo_pkg.vhd
-FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/tipos_ctes_pkg/cte_tipos_nucleo_pkg.vhd
+8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/tipos_ctes_pkg/cte_tipos_nucleo_pkg.vhd
+FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/tipos_ctes_pkg/cte_tipos_nucleo_pkg.vhd
 l0
 L10
 V9Xl=h46VjGA^LC@<SEY<l0
@@ -188,38 +188,38 @@ R14
 R15
 !s100 zF;5Ei[BzTlGTgTzi^LUm1
 !i10b 1
-!s108 1571694282.333000
-!s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/tipos_ctes_pkg/cte_tipos_nucleo_pkg.vhd|
-!s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/tipos_ctes_pkg/cte_tipos_nucleo_pkg.vhd|
+!s108 1587911838.791000
+!s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/tipos_ctes_pkg/cte_tipos_nucleo_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/tipos_ctes_pkg/cte_tipos_nucleo_pkg.vhd|
 Pimpri_br_pkg
 R3
-Z30 DPx4 ieee 16 std_logic_textio 0 22 ?Il0a149GV276[?[UMDWh2
-Z31 DPx4 ieee 9 math_real 0 22 :iME`dTX54_U49lJNF5JI3
+Z29 DPx4 ieee 16 std_logic_textio 0 22 ?Il0a149GV276[?[UMDWh2
+Z30 DPx4 ieee 9 math_real 0 22 :iME`dTX54_U49lJNF5JI3
 R4
 R5
 R6
-R16
+R28
 R7
-Z32 8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../../../UTILIDADES_pkg/impri_BR_pkg/impri_BR_pkg.vhd
-Z33 FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../../../UTILIDADES_pkg/impri_BR_pkg/impri_BR_pkg.vhd
+Z31 8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../../../UTILIDADES_pkg/impri_BR_pkg/impri_BR_pkg.vhd
+Z32 FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../../../UTILIDADES_pkg/impri_BR_pkg/impri_BR_pkg.vhd
 l0
 L16
 Ve_a=SfXmO]Dm>EV3BYD5P0
 R10
 33
 b1
-Z34 !s108 1571694284.598000
-Z35 !s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../../../UTILIDADES_pkg/impri_BR_pkg/impri_BR_pkg.vhd|
-Z36 !s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../../../UTILIDADES_pkg/impri_BR_pkg/impri_BR_pkg.vhd|
+Z33 !s108 1587911840.880000
+Z34 !s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../../../UTILIDADES_pkg/impri_BR_pkg/impri_BR_pkg.vhd|
+Z35 !s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../../../UTILIDADES_pkg/impri_BR_pkg/impri_BR_pkg.vhd|
 R14
 R15
 !s100 4[WFh>;<PD6MK?dhc<A4I2
 !i10b 1
 Bbody
-Z37 DPx4 work 12 impri_br_pkg 0 22 e_a=SfXmO]Dm>EV3BYD5P0
+Z36 DPx4 work 12 impri_br_pkg 0 22 e_a=SfXmO]Dm>EV3BYD5P0
 R3
+R29
 R30
-R31
 R4
 R5
 R6
@@ -228,31 +228,31 @@ L25
 Vb6FTdfYMDb=B=0j:88Nk[3
 R10
 33
+R33
 R34
 R35
-R36
 R14
 R15
 nbody
 !s100 _PIHQYnI704hDVznh8UQM2
 !i10b 1
 Emultiplexor
-R16
+R1
 R4
 R3
 R5
 R6
 R7
-Z38 8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor.vhd
-Z39 FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor.vhd
+Z37 8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor.vhd
+Z38 FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor.vhd
 l0
 L10
 V]kW1HzBbgNa@9G59oP@NI0
 R10
 33
-Z40 !s108 1571694282.988000
-Z41 !s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor.vhd|
-Z42 !s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor.vhd|
+Z39 !s108 1587911839.390000
+Z40 !s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor.vhd|
+Z41 !s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor.vhd|
 R14
 R15
 !s100 aI_`fC]c>nhVaOciin53?2
@@ -268,28 +268,28 @@ L17
 VaE<j8mUzFndHehoXY?^8U3
 R10
 33
+R39
 R40
 R41
-R42
 R14
 R15
 !s100 UJV5bob_F[bRzR_aI53P;3
 !i10b 1
 Emultiplexor_1
-R16
+R1
 R5
 R6
 R7
-Z43 8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor_1.vhd
-Z44 FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor_1.vhd
+Z42 8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor_1.vhd
+Z43 FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor_1.vhd
 l0
 L9
 VKMeh@jHP6:eCAXDcg05P^2
 R10
 33
-Z45 !s108 1571694282.471000
-Z46 !s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor_1.vhd|
-Z47 !s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor_1.vhd|
+Z44 !s108 1587911838.905000
+Z45 !s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor_1.vhd|
+Z46 !s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor_1.vhd|
 R14
 R15
 !s100 M]BLFgggXnNQfZ5@_V8ei1
@@ -303,50 +303,50 @@ L15
 V9eTSQc@hXQWcGef^FN9BC3
 R10
 33
+R44
 R45
 R46
-R47
 R14
 R15
 !s100 Jf2J>gih97CSW8R:7ZYfR1
 !i10b 1
 Eprueba_camino_control
-R16
+Z47 w1587911333
 Z48 DPx3 std 3 env 0 22 kU@g3bh3dSQ6SKX7=V`LE3
+R29
 R30
-R31
-R37
+R36
 Z49 DPx4 work 40 prueba_procedimientos_camino_control_pkg 0 22 ^>`8ETSdan67k0RaKI9DB0
 R3
 R4
 R5
 R6
 R7
-Z50 8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../PRUEBAS_control_indepe/prueba_camino_control.vhd
-Z51 FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../PRUEBAS_control_indepe/prueba_camino_control.vhd
+Z50 8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../PRUEBAS_control_indepe/prueba_camino_control.vhd
+Z51 FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../PRUEBAS_control_indepe/prueba_camino_control.vhd
 l0
 L15
-VFl@D=gk59FHCQfgV18LhF1
-!s100 Xhgb<:1_Q`1G]dFgnB9P62
+VTFHGEdC[oXAiERl[R9fb@0
+!s100 O62VGYbz?E`5OPD:l1Ea81
 R10
 33
 !i10b 1
-Z52 !s108 1571694285.126000
-Z53 !s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../PRUEBAS_control_indepe/prueba_camino_control.vhd|
-Z54 !s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../PRUEBAS_control_indepe/prueba_camino_control.vhd|
+Z52 !s108 1587911841.401000
+Z53 !s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../PRUEBAS_control_indepe/prueba_camino_control.vhd|
+Z54 !s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../PRUEBAS_control_indepe/prueba_camino_control.vhd|
 R14
 R15
 Aprueba
 R48
+R29
 R30
-R31
-R37
+R36
 R49
 R3
 R4
 R5
 R6
-DEx4 work 21 prueba_camino_control 0 22 Fl@D=gk59FHCQfgV18LhF1
+DEx4 work 21 prueba_camino_control 0 22 TFHGEdC[oXAiERl[R9fb@0
 l62
 L21
 VDnAA`m6Kmk]:k^>]jRFXd3
@@ -364,19 +364,19 @@ R3
 R4
 R5
 R6
-R16
+R28
 R7
-Z55 8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../UTILIDADES_pkg/prueba_procedimientos_camino_control.vhd
-Z56 FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../UTILIDADES_pkg/prueba_procedimientos_camino_control.vhd
+Z55 8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../UTILIDADES_pkg/prueba_procedimientos_camino_control.vhd
+Z56 FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../UTILIDADES_pkg/prueba_procedimientos_camino_control.vhd
 l0
 L11
 V^>`8ETSdan67k0RaKI9DB0
 R10
 33
 b1
-Z57 !s108 1571694284.884000
-Z58 !s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../UTILIDADES_pkg/prueba_procedimientos_camino_control.vhd|
-Z59 !s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../UTILIDADES_pkg/prueba_procedimientos_camino_control.vhd|
+Z57 !s108 1587911841.172000
+Z58 !s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../UTILIDADES_pkg/prueba_procedimientos_camino_control.vhd|
+Z59 !s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_indepe/../UTILIDADES_pkg/prueba_procedimientos_camino_control.vhd|
 R14
 R15
 !s100 c=LYDASfLHlX0BN:0i[]=2
@@ -401,21 +401,21 @@ nbody
 !s100 gChkgb@4UR_zS6e<7>e0P1
 !i10b 1
 Ereg1
-R16
+R1
 R2
 R5
 R6
 R7
-Z60 8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/reg1.vhd
-Z61 FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/reg1.vhd
+Z60 8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/reg1.vhd
+Z61 FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/reg1.vhd
 l0
 L10
 VAjMDZEYYW3]EeAldQ6EK`3
 R10
 33
-Z62 !s108 1571694283.677000
-Z63 !s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/reg1.vhd|
-Z64 !s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/reg1.vhd|
+Z62 !s108 1587911840.026000
+Z63 !s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/reg1.vhd|
+Z64 !s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/reg1.vhd|
 R14
 R15
 !s100 @gcU>;lP01M7`fiXGAn`e2
@@ -438,21 +438,21 @@ R15
 !s100 jFmAY2`BU3F;Te4GVJ4^12
 !i10b 1
 Eregistro
-R16
+R1
 R2
 R5
 R6
 R7
-Z65 8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/registro.vhd
-Z66 FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/registro.vhd
+Z65 8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/registro.vhd
+Z66 FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/registro.vhd
 l0
 L10
 VL0B5`CVm9@;GEVig`BEEJ3
 R10
 33
-Z67 !s108 1571694283.961000
-Z68 !s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/registro.vhd|
-Z69 !s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/registro.vhd|
+Z67 !s108 1587911840.242000
+Z68 !s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/registro.vhd|
+Z69 !s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/registro.vhd|
 R14
 R15
 !s100 ZK[VVc73CW^6hGXnoUG]O3
@@ -477,10 +477,10 @@ R15
 Pretardos_nucleo_pkg
 R5
 R6
-R16
+R28
 R7
-8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/tipos_ctes_pkg/retardos_nucleo_pkg.vhd
-FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/tipos_ctes_pkg/retardos_nucleo_pkg.vhd
+8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/tipos_ctes_pkg/retardos_nucleo_pkg.vhd
+FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/tipos_ctes_pkg/retardos_nucleo_pkg.vhd
 l0
 L9
 V:io0;H_FJlXlL?_2EKIa_2
@@ -490,27 +490,27 @@ R14
 R15
 !s100 0fE3^AI4860nBAlHfbDj63
 !i10b 1
-!s108 1571694282.083000
-!s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/tipos_ctes_pkg/retardos_nucleo_pkg.vhd|
-!s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/tipos_ctes_pkg/retardos_nucleo_pkg.vhd|
+!s108 1587911838.626000
+!s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/tipos_ctes_pkg/retardos_nucleo_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/tipos_ctes_pkg/retardos_nucleo_pkg.vhd|
 Esumador
-R16
+R1
 R2
 R3
 R4
 R5
 R6
 R7
-Z70 8D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/Sumador/CODIGO/sumador.vhd
-Z71 FD:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/Sumador/CODIGO/sumador.vhd
+Z70 8D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/Sumador/CODIGO/sumador.vhd
+Z71 FD:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/Sumador/CODIGO/sumador.vhd
 l0
 L13
 VV186G9`S2z;ig14??hgRV3
 R10
 33
-Z72 !s108 1571694283.451000
-Z73 !s90 -reportprogress|300|-2008|-work|work|D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/Sumador/CODIGO/sumador.vhd|
-Z74 !s107 D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/Sumador/CODIGO/sumador.vhd|
+Z72 !s108 1587911839.792000
+Z73 !s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/Sumador/CODIGO/sumador.vhd|
+Z74 !s107 D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/Sumador/CODIGO/sumador.vhd|
 R14
 R15
 !s100 _JGN05BZAFa?`Z7aa^OUC3

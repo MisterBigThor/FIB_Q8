@@ -1,0 +1,431 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\simulation\modelsim
+Eacceso
+Z1 w1584273613
+Z2 DPx4 work 22 componentes_acceso_pkg 0 22 NV_[I@DC`^23hYzc:_5XW3
+Z3 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z4 DPx4 work 20 cte_tipos_buffer_pkg 0 22 =J<N>e^O]Z^6T[M9i[HR[3
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 dD:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\simulation\modelsim
+Z8 8D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/acceso/ENSAMBLADO/CODIGO/acceso.vhd
+Z9 FD:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/acceso/ENSAMBLADO/CODIGO/acceso.vhd
+l0
+L12
+V^a6lKGCRDZ7L>h]K[XmT20
+Z10 OV;C;10.1d;51
+31
+Z11 !s108 1587913287.924000
+Z12 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/acceso/ENSAMBLADO/CODIGO/acceso.vhd|
+Z13 !s107 D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/acceso/ENSAMBLADO/CODIGO/acceso.vhd|
+Z14 o-93 -work work -O0
+Z15 tExplicit 1
+!s100 CY_L]:J>LaTgg9z;o41ON0
+!i10b 1
+Aestruc
+R2
+R3
+R4
+R5
+R6
+DEx4 work 6 acceso 0 22 ^a6lKGCRDZ7L>h]K[XmT20
+l26
+L23
+V>Sk:D[ZFf[iB;QOLKaUkP1
+R10
+31
+R11
+R12
+R13
+R14
+R15
+!s100 V_o<?nWH@>`1`eOK0Uz9W2
+!i10b 1
+Ebr
+R1
+Z16 DPx4 work 19 retardos_buffer_pkg 0 22 UeW]zTT`]YRXOiVW@RJJK3
+R4
+R3
+R5
+R6
+R7
+Z17 8D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/BR/CODIGO/br.vhd
+Z18 FD:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/BR/CODIGO/br.vhd
+l0
+L13
+VhWC@zV:2?<;lN5EQ@YC;k2
+R10
+31
+Z19 !s108 1587913286.920000
+Z20 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/BR/CODIGO/br.vhd|
+Z21 !s107 D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/BR/CODIGO/br.vhd|
+R14
+R15
+!s100 C6GhV];Aif6EXl_=gioBA3
+!i10b 1
+Artl
+R16
+R4
+R3
+R5
+R6
+DEx4 work 2 br 0 22 hWC@zV:2?<;lN5EQ@YC;k2
+l26
+L22
+Vmh?F`zKDoM2=Fa_:]Jc[:1
+R10
+31
+R19
+R20
+R21
+R14
+R15
+!s100 nkMUAbA0iLeb0Oio2oW`63
+!i10b 1
+Ebuffer_circular
+R1
+Z22 DPx4 work 31 componentes_buffer_circular_pkg 0 22 3?8S?]aHz:JdmcDi^^^a13
+R4
+R3
+R5
+R6
+R7
+Z23 8D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/CODIGO/buffer_circular.vhd
+Z24 FD:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/CODIGO/buffer_circular.vhd
+l0
+L14
+VecCD_o3M8COD:i^X7l^Yc0
+R10
+31
+Z25 !s108 1587913287.502000
+Z26 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/CODIGO/buffer_circular.vhd|
+Z27 !s107 D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/CODIGO/buffer_circular.vhd|
+R14
+R15
+!s100 ej?W198aF3L]?IjQ?G:hz2
+!i10b 1
+Aestructural
+R22
+R4
+R3
+R5
+R6
+DEx4 work 15 buffer_circular 0 22 ecCD_o3M8COD:i^X7l^Yc0
+l26
+L22
+VDi1JK6CFPVJdg2CJ_VJKh0
+R10
+31
+R25
+R26
+R27
+R14
+R15
+!s100 Fma7Pg8DScfe_Eb4]e0z11
+!i10b 1
+Pcomponentes_acceso_pkg
+R3
+R4
+R5
+R6
+R1
+R7
+8D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/acceso/componentes_acceso_pkg/componentes_acceso_pkg.vhd
+FD:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/acceso/componentes_acceso_pkg/componentes_acceso_pkg.vhd
+l0
+L10
+VNV_[I@DC`^23hYzc:_5XW3
+R10
+31
+R14
+R15
+!s100 JT4JV8KR;d;O^JXRLW;;L0
+!i10b 1
+!s108 1587913286.538000
+!s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/acceso/componentes_acceso_pkg/componentes_acceso_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/acceso/componentes_acceso_pkg/componentes_acceso_pkg.vhd|
+Pcomponentes_buffer_circular_pkg
+R3
+R4
+R5
+R6
+R1
+R7
+8D:/FIB_Q8/AC2/LAB3/buffer_circular/componentes_buffer_circular_pkg/componentes_buffer_circular_pkg.vhd
+FD:/FIB_Q8/AC2/LAB3/buffer_circular/componentes_buffer_circular_pkg/componentes_buffer_circular_pkg.vhd
+l0
+L10
+V3?8S?]aHz:JdmcDi^^^a13
+R10
+31
+R14
+R15
+!s100 A[VH7Gm@IJhFYNXAXmdzT3
+!i10b 1
+!s108 1587913286.796000
+!s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB3/buffer_circular/componentes_buffer_circular_pkg/componentes_buffer_circular_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB3/buffer_circular/componentes_buffer_circular_pkg/componentes_buffer_circular_pkg.vhd|
+Pcomponentes_control_interface_pkg
+R3
+R4
+R5
+R6
+R1
+R7
+8D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/componentes_control_interface_pkg/componentes_control_interface_pkg.vhd
+FD:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/componentes_control_interface_pkg/componentes_control_interface_pkg.vhd
+l0
+L10
+Vaz8QC7i8GZ4cnGI<g^H<_2
+R10
+31
+R14
+R15
+!s100 `7]dHjJ0I<=VXjdm;^BcC2
+!i10b 1
+!s108 1587913286.676000
+!s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/componentes_control_interface_pkg/componentes_control_interface_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/componentes_control_interface_pkg/componentes_control_interface_pkg.vhd|
+Econtrol
+R1
+R16
+R3
+R4
+R5
+R6
+R7
+Z28 8D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/control/CODIGO/control.vhd
+Z29 FD:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/control/CODIGO/control.vhd
+l0
+L12
+VPI:2`[P19i<Um^oh^62kN0
+R10
+31
+Z30 !s108 1587913287.137000
+Z31 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/control/CODIGO/control.vhd|
+Z32 !s107 D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/control/CODIGO/control.vhd|
+R14
+R15
+!s100 >:Fh6c8[YdHQhhmP2_2o;0
+!i10b 1
+Acompor
+R16
+R3
+R4
+R5
+R6
+DEx4 work 7 control 0 22 PI:2`[P19i<Um^oh^62kN0
+l21
+L19
+V9L8eNNe^CAa193IoOoLWL2
+R10
+31
+R30
+R31
+R32
+R14
+R15
+!s100 5b48;cG]]AU<z2;Y9N`z:3
+!i10b 1
+Econtrolinterface
+R1
+Z33 DPx4 work 33 componentes_control_interface_pkg 0 22 az8QC7i8GZ4cnGI<g^H<_2
+R3
+R4
+R5
+R6
+R7
+Z34 8D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/ENSAMBLADO/CODIGO/controlinterface.vhd
+Z35 FD:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/ENSAMBLADO/CODIGO/controlinterface.vhd
+l0
+L12
+VES9TfXEikSH7zoQmaQ[EP3
+R10
+31
+Z36 !s108 1587913287.712000
+Z37 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/ENSAMBLADO/CODIGO/controlinterface.vhd|
+Z38 !s107 D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/ENSAMBLADO/CODIGO/controlinterface.vhd|
+R14
+R15
+!s100 f04dGI<];OB4cCnz9gS?40
+!i10b 1
+Aestruc
+R33
+R3
+R4
+R5
+R6
+DEx4 work 16 controlinterface 0 22 ES9TfXEikSH7zoQmaQ[EP3
+l33
+L24
+V92O_[CWoUN8zz=TF5PCPk0
+R10
+31
+R36
+R37
+R38
+R14
+R15
+!s100 :z1NogbDO1IEOInCNGcc>0
+!i10b 1
+Pcte_tipos_buffer_pkg
+R3
+R5
+R6
+R1
+R7
+8D:/FIB_Q8/AC2/LAB3/buffer_circular/tipos_ctes_pkg/cte_tipos_buffer_pkg.vhd
+FD:/FIB_Q8/AC2/LAB3/buffer_circular/tipos_ctes_pkg/cte_tipos_buffer_pkg.vhd
+l0
+L10
+V=J<N>e^O]Z^6T[M9i[HR[3
+R10
+31
+R14
+R15
+!s100 dkPGI<5KWcU;DV74V6UAF3
+!i10b 1
+!s108 1587913286.394000
+!s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB3/buffer_circular/tipos_ctes_pkg/cte_tipos_buffer_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB3/buffer_circular/tipos_ctes_pkg/cte_tipos_buffer_pkg.vhd|
+Einterface
+R1
+R16
+R5
+R6
+R7
+Z39 8D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/interface/CODIGO/interface.vhd
+Z40 FD:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/interface/CODIGO/interface.vhd
+l0
+L11
+VObOIYlUSz0LKo]XAd;T:i3
+R10
+31
+Z41 !s108 1587913287.311000
+Z42 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/interface/CODIGO/interface.vhd|
+Z43 !s107 D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/interface/CODIGO/interface.vhd|
+R14
+R15
+!s100 >7VQmPjYn4[2hz5YN_3>n1
+!i10b 1
+Acompor
+R16
+R5
+R6
+DEx4 work 9 interface 0 22 ObOIYlUSz0LKo]XAd;T:i3
+l21
+L18
+VN7;V@`TVnI9V]gUmEFS[K2
+R10
+31
+R41
+R42
+R43
+R14
+R15
+!s100 ^7dA3?WIBcJWM?dOB4ICD1
+!i10b 1
+Pprocedimientos_prueba_buffer_pkg
+R4
+R3
+R5
+R6
+R1
+R7
+Z44 8D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/procedimientos_prueba_buffer_pkg.vhd
+Z45 FD:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/procedimientos_prueba_buffer_pkg.vhd
+l0
+L11
+VlS<[[`JM;=JBLezB4_K;J3
+R10
+31
+b1
+Z46 !s108 1587913288.120000
+Z47 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/procedimientos_prueba_buffer_pkg.vhd|
+Z48 !s107 D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/procedimientos_prueba_buffer_pkg.vhd|
+R14
+R15
+!s100 G@i69aQPP4VlESAEb2CLi1
+!i10b 1
+Bbody
+Z49 DPx4 work 32 procedimientos_prueba_buffer_pkg 0 22 lS<[[`JM;=JBLezB4_K;J3
+R4
+R3
+R5
+R6
+l0
+L22
+ViUX5Pe8Z6fPb:ae=Ef8ma1
+R10
+31
+R46
+R47
+R48
+R14
+R15
+nbody
+!s100 IokH5nVKomjo^mY=P:6T61
+!i10b 1
+Eprueba_buffer_circular
+R1
+R49
+R4
+R3
+R5
+R6
+R7
+Z50 8D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd
+Z51 FD:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd
+l0
+L12
+VzU^BoGB8Q@6K3TGP1[WMZ2
+!s100 @D79TJ;^Q`7D5[iOh@75@2
+R10
+31
+!i10b 1
+Z52 !s108 1587913288.344000
+Z53 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd|
+Z54 !s107 D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd|
+R14
+R15
+Aprueba
+R49
+R4
+R3
+R5
+R6
+DEx4 work 22 prueba_buffer_circular 0 22 zU^BoGB8Q@6K3TGP1[WMZ2
+l39
+L15
+VQkESOGKiYNfj=id04I8j90
+!s100 FXoL^i>G[9I0P;92TMcb>3
+R10
+31
+!i10b 1
+R52
+R53
+R54
+R14
+R15
+Pretardos_buffer_pkg
+R5
+R6
+R1
+R7
+8D:/FIB_Q8/AC2/LAB3/buffer_circular/tipos_ctes_pkg/retardos_buffer_pkg.vhd
+FD:/FIB_Q8/AC2/LAB3/buffer_circular/tipos_ctes_pkg/retardos_buffer_pkg.vhd
+l0
+L9
+VUeW]zTT`]YRXOiVW@RJJK3
+R10
+31
+R14
+R15
+!s100 gVeBUg?J0g[XeiiHT5^P;3
+!i10b 1
+!s108 1587913286.255000
+!s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB3/buffer_circular/tipos_ctes_pkg/retardos_buffer_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB3/buffer_circular/tipos_ctes_pkg/retardos_buffer_pkg.vhd|

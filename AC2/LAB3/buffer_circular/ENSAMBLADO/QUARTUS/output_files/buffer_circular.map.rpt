@@ -1,5 +1,5 @@
 Analysis & Elaboration report for buffer_circular
-Tue Oct 22 18:44:19 2019
+Sun Apr 26 17:00:22 2020
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                  ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Tue Oct 22 18:44:19 2019      ;
+; Analysis & Elaboration Status      ; Successful - Sun Apr 26 17:00:22 2020      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; buffer_circular                            ;
 ; Top-level Entity Name              ; buffer_circular                            ;
@@ -161,50 +161,50 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Elaboration
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Tue Oct 22 18:44:18 2019
+    Info: Processing started: Sun Apr 26 17:00:21 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off buffer_circular -c buffer_circular --analysis_and_elaboration
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 0 entities, in source file /fibq7/ac2/lab3.tar/lab3/buffer_circular/componentes/control_interface/componentes/acceso/puntero/componentes/prxval/componentes_prxval_pkg/componentes_prxval_pkg.vhd
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab3/buffer_circular/componentes/control_interface/componentes/acceso/puntero/componentes/prxval/componentes_prxval_pkg/componentes_prxval_pkg.vhd
     Info (12022): Found design unit 1: componentes_prxval_pkg
-Info (12021): Found 1 design units, including 0 entities, in source file /fibq7/ac2/lab3.tar/lab3/buffer_circular/componentes/control_interface/componentes/acceso/puntero/componentes_puntero_pkg/componentes_puntero_pkg.vhd
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab3/buffer_circular/componentes/control_interface/componentes/acceso/puntero/componentes_puntero_pkg/componentes_puntero_pkg.vhd
     Info (12022): Found design unit 1: componentes_puntero_pkg
-Info (12021): Found 1 design units, including 0 entities, in source file /fibq7/ac2/lab3.tar/lab3/buffer_circular/componentes/control_interface/componentes/acceso/componentes_acceso_pkg/componentes_acceso_pkg.vhd
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab3/buffer_circular/componentes/control_interface/componentes/acceso/componentes_acceso_pkg/componentes_acceso_pkg.vhd
     Info (12022): Found design unit 1: componentes_acceso_pkg
-Info (12021): Found 1 design units, including 0 entities, in source file /fibq7/ac2/lab3.tar/lab3/buffer_circular/componentes/control_interface/componentes_control_interface_pkg/componentes_control_interface_pkg.vhd
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab3/buffer_circular/componentes/control_interface/componentes_control_interface_pkg/componentes_control_interface_pkg.vhd
     Info (12022): Found design unit 1: componentes_control_interface_pkg
-Info (12021): Found 1 design units, including 0 entities, in source file /fibq7/ac2/lab3.tar/lab3/buffer_circular/componentes_buffer_circular_pkg/componentes_buffer_circular_pkg.vhd
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab3/buffer_circular/componentes_buffer_circular_pkg/componentes_buffer_circular_pkg.vhd
     Info (12022): Found design unit 1: componentes_buffer_circular_pkg
-Info (12021): Found 1 design units, including 0 entities, in source file /fibq7/ac2/lab3.tar/lab3/buffer_circular/tipos_ctes_pkg/retardos_buffer_pkg.vhd
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab3/buffer_circular/tipos_ctes_pkg/retardos_buffer_pkg.vhd
     Info (12022): Found design unit 1: retardos_buffer_pkg
-Info (12021): Found 1 design units, including 0 entities, in source file /fibq7/ac2/lab3.tar/lab3/buffer_circular/tipos_ctes_pkg/cte_tipos_buffer_pkg.vhd
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab3/buffer_circular/tipos_ctes_pkg/cte_tipos_buffer_pkg.vhd
     Info (12022): Found design unit 1: cte_tipos_buffer_pkg
-Info (12021): Found 2 design units, including 1 entities, in source file /fibq7/ac2/lab3.tar/lab3/buffer_circular/ensamblado/codigo/buffer_circular.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /fib_q8/ac2/lab3/buffer_circular/ensamblado/codigo/buffer_circular.vhd
     Info (12022): Found design unit 1: buffer_circular-estructural
     Info (12023): Found entity 1: buffer_circular
 Info (12127): Elaborating entity "buffer_circular" for the top level hierarchy
-Warning (12125): Using design file /fibq7/ac2/lab3.tar/lab3/buffer_circular/componentes/br/codigo/br.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+Warning (12125): Using design file /fib_q8/ac2/lab3/buffer_circular/componentes/br/codigo/br.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: BR-rtl
     Info (12023): Found entity 1: BR
 Info (12128): Elaborating entity "BR" for hierarchy "BR:bancoregistros"
-Warning (12125): Using design file /fibq7/ac2/lab3.tar/lab3/buffer_circular/componentes/control_interface/ensamblado/codigo/controlinterface.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+Warning (12125): Using design file /fib_q8/ac2/lab3/buffer_circular/componentes/control_interface/ensamblado/codigo/controlinterface.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: controlinterface-estruc
     Info (12023): Found entity 1: controlinterface
 Info (12128): Elaborating entity "controlinterface" for hierarchy "controlinterface:buffercontrol"
-Warning (12125): Using design file /fibq7/ac2/lab3.tar/lab3/buffer_circular/componentes/control_interface/componentes/acceso/ensamblado/codigo/acceso.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+Warning (12125): Using design file /fib_q8/ac2/lab3/buffer_circular/componentes/control_interface/componentes/acceso/ensamblado/codigo/acceso.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: acceso-estruc
     Info (12023): Found entity 1: acceso
 Info (12128): Elaborating entity "acceso" for hierarchy "controlinterface:buffercontrol|acceso:accesoBR"
-Warning (12125): Using design file /fibq7/ac2/lab3.tar/lab3/buffer_circular/componentes/control_interface/componentes/control/codigo/control.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+Warning (12125): Using design file /fib_q8/ac2/lab3/buffer_circular/componentes/control_interface/componentes/control/codigo/control.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: control-compor
     Info (12023): Found entity 1: control
 Info (12128): Elaborating entity "control" for hierarchy "controlinterface:buffercontrol|control:condi_control"
-Warning (12125): Using design file /fibq7/ac2/lab3.tar/lab3/buffer_circular/componentes/control_interface/componentes/interface/codigo/interface.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+Warning (12125): Using design file /fib_q8/ac2/lab3/buffer_circular/componentes/control_interface/componentes/interface/codigo/interface.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: interface-compor
     Info (12023): Found entity 1: interface
 Info (12128): Elaborating entity "interface" for hierarchy "controlinterface:buffercontrol|interface:interfaceC"
 Info: Quartus II 64-Bit Analysis & Elaboration was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4662 megabytes
-    Info: Processing ended: Tue Oct 22 18:44:19 2019
+    Info: Peak virtual memory: 4658 megabytes
+    Info: Processing ended: Sun Apr 26 17:00:22 2020
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

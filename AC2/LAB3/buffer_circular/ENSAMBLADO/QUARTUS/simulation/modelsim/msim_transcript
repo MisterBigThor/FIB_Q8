@@ -1,0 +1,319 @@
+# Reading D:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do buffer_circular_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB3/buffer_circular/tipos_ctes_pkg/retardos_buffer_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package retardos_buffer_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB3/buffer_circular/tipos_ctes_pkg/cte_tipos_buffer_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package cte_tipos_buffer_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/acceso/componentes_acceso_pkg/componentes_acceso_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_buffer_pkg
+# -- Compiling package componentes_acceso_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/componentes_control_interface_pkg/componentes_control_interface_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_buffer_pkg
+# -- Compiling package componentes_control_interface_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB3/buffer_circular/componentes_buffer_circular_pkg/componentes_buffer_circular_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_buffer_pkg
+# -- Compiling package componentes_buffer_circular_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/BR/CODIGO/br.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_buffer_pkg
+# -- Loading package retardos_buffer_pkg
+# -- Compiling entity BR
+# -- Compiling architecture rtl of BR
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/control/CODIGO/control.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_buffer_pkg
+# -- Loading package retardos_buffer_pkg
+# -- Compiling entity control
+# -- Compiling architecture compor of control
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/interface/CODIGO/interface.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package retardos_buffer_pkg
+# -- Compiling entity interface
+# -- Compiling architecture compor of interface
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/CODIGO/buffer_circular.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_buffer_pkg
+# -- Loading package componentes_buffer_circular_pkg
+# -- Compiling entity buffer_circular
+# -- Compiling architecture estructural of buffer_circular
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/ENSAMBLADO/CODIGO/controlinterface.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_buffer_pkg
+# -- Loading package componentes_control_interface_pkg
+# -- Compiling entity controlinterface
+# -- Compiling architecture estruc of controlinterface
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB3/buffer_circular/COMPONENTES/control_interface/COMPONENTES/acceso/ENSAMBLADO/CODIGO/acceso.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_buffer_pkg
+# -- Loading package componentes_acceso_pkg
+# -- Compiling entity acceso
+# -- Compiling architecture estruc of acceso
+# 
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/procedimientos_prueba_buffer_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_buffer_pkg
+# -- Compiling package procedimientos_prueba_buffer_pkg
+# -- Compiling package body procedimientos_prueba_buffer_pkg
+# -- Loading package procedimientos_prueba_buffer_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_buffer_pkg
+# -- Loading package procedimientos_prueba_buffer_pkg
+# -- Compiling entity prueba_buffer_circular
+# -- Compiling architecture prueba of prueba_buffer_circular
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs="+acc"  prueba_buffer_circular
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs=\"+acc\" -t 1ps prueba_buffer_circular 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.cte_tipos_buffer_pkg
+# Loading work.procedimientos_prueba_buffer_pkg(body)
+# Loading work.prueba_buffer_circular(prueba)
+# Loading work.componentes_buffer_circular_pkg
+# Loading work.buffer_circular(estructural)
+# Loading work.retardos_buffer_pkg
+# Loading work.br(rtl)
+# Loading work.componentes_control_interface_pkg
+# Loading work.controlinterface(estruc)
+# Loading work.componentes_acceso_pkg
+# Loading work.acceso(estruc)
+# Loading work.control(compor)
+# Loading work.interface(compor)
+# 
+# do D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/formato_ventanas.do
+# log -r /*
+# do wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /prueba_buffer_circular/cntciclos
+# add wave -noupdate /prueba_buffer_circular/reloj
+# add wave -noupdate /prueba_buffer_circular/pcero
+# add wave -noupdate /prueba_buffer_circular/inicio
+# add wave -noupdate -divider PRODUCTOR
+# add wave -noupdate /prueba_buffer_circular/validoP
+# add wave -noupdate /prueba_buffer_circular/listoB
+# add wave -noupdate -radix hexadecimal /prueba_buffer_circular/datoE
+# add wave -noupdate -divider CONSUMIDOR
+# add wave -noupdate /prueba_buffer_circular/validoB
+# add wave -noupdate /prueba_buffer_circular/listoC
+# add wave -noupdate -radix hexadecimal /prueba_buffer_circular/datoL
+# add wave -noupdate -divider {Salida consumidor}
+# add wave -noupdate -radix hexadecimal /prueba_buffer_circular/valDATcons 
+# add wave -noupdate -radix hexadecimal /prueba_buffer_circular/DATprocesado
+# add wave -noupdate -divider BUFFER_CIRCULAR
+# add wave -noupdate /prueba_buffer_circular/buffercir/buffercontrol/escritura
+# add wave -noupdate -radix hexadecimal /prueba_buffer_circular/buffercir/cola
+# add wave -noupdate /prueba_buffer_circular/buffercir/buffercontrol/lleno
+# add wave -noupdate /prueba_buffer_circular/buffercir/PE
+# add wave -noupdate /prueba_buffer_circular/buffercir/buffercontrol/lectura
+# add wave -noupdate -radix hexadecimal /prueba_buffer_circular/buffercir/cabeza
+# add wave -noupdate /prueba_buffer_circular/buffercir/buffercontrol/vacio
+# add wave -noupdate -divider REGISTROS
+# add wave -noupdate -radix hexadecimal -childformat {{/prueba_buffer_circular/buffercir/bancoregistros/registros(0) -radix hexadecimal} {/prueba_buffer_circular/buffercir/bancoregistros/registros(1) -radix hexadecimal} {/prueba_buffer_circular/buffercir/bancoregistros/registros(2) -radix hexadecimal} {/prueba_buffer_circular/buffercir/bancoregistros/registros(3) -radix hexadecimal} {/prueba_buffer_circular/buffercir/bancoregistros/registros(4) -radix hexadecimal} {/prueba_buffer_circular/buffercir/bancoregistros/registros(5) -radix hexadecimal} {/prueba_buffer_circular/buffercir/bancoregistros/registros(6) -radix hexadecimal} {/prueba_buffer_circular/buffercir/bancoregistros/registros(7) -radix hexadecimal}} -expand -subitemconfig {/prueba_buffer_circular/buffercir/bancoregistros/registros(0) {-height 16 -radix hexadecimal} /prueba_buffer_circular/buffercir/bancoregistros/registros(1) {-height 16 -radix hexadecimal} /prueba_buffer_circular/buffercir/bancoregistros/registros(2) {-height 16 -radix hexadecimal} /prueba_buffer_circular/buffercir/bancoregistros/registros(3) {-height 16 -radix hexadecimal} /prueba_buffer_circular/buffercir/bancoregistros/registros(4) {-height 16 -radix hexadecimal} /prueba_buffer_circular/buffercir/bancoregistros/registros(5) {-height 16 -radix hexadecimal} /prueba_buffer_circular/buffercir/bancoregistros/registros(6) {-height 16 -radix hexadecimal} /prueba_buffer_circular/buffercir/bancoregistros/registros(7) {-height 16 -radix hexadecimal}} /prueba_buffer_circular/buffercir/bancoregistros/registros
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {656144 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 349
+# configure wave -valuecolwidth 40
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 1
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 15000
+# configure wave -gridperiod 30000
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ps} {1228500 ps}
+# set StdArithNoWarnings 1
+# 1
+# set NumericStdNoWarnings 1
+# 1
+# run -all
+# ** Note: 
+# 
+# Insercion. Ciclo: 4   Valor: 1
+#    Time: 105 ns  Iteration: 1  Instance: /prueba_buffer_circular
+# ** Note: 
+# 
+# Insercion. Ciclo: 5   Valor: 2
+#    Time: 135 ns  Iteration: 1  Instance: /prueba_buffer_circular
+# ** Note: 
+# 
+# Insercion. Ciclo: 6   Valor: 3
+#    Time: 165 ns  Iteration: 1  Instance: /prueba_buffer_circular
+# ** Note: 
+# 
+# Insercion. Ciclo: 7   Valor: 4
+#    Time: 195 ns  Iteration: 1  Instance: /prueba_buffer_circular
+# ** Note: 
+# 
+# Insercion. Ciclo: 8   Valor: 5
+#    Time: 225 ns  Iteration: 1  Instance: /prueba_buffer_circular
+# ** Note: 
+# 
+# Insercion. Ciclo: 9   Valor: 6
+#    Time: 255 ns  Iteration: 1  Instance: /prueba_buffer_circular
+# ** Note: 
+# 
+# Insercion. Ciclo: 10   Valor: 7
+#    Time: 285 ns  Iteration: 1  Instance: /prueba_buffer_circular
+# ** Note: 
+# 
+# Insercion. Ciclo: 11   Valor: 8
+#    Time: 315 ns  Iteration: 1  Instance: /prueba_buffer_circular
+# ** Note: 
+# 
+# Insercion. Ciclo: 12   Valor: 9
+#    Time: 345 ns  Iteration: 1  Instance: /prueba_buffer_circular
+# ** Note: 
+# 
+# Extraccion. Ciclo: 13   Valor: 9
+#    Time: 375 ns  Iteration: 1  Instance: /prueba_buffer_circular
+# ** Failure: 
+# 
+#  error en la extraccion   iteracion: 0
+#    Time: 375 ns  Iteration: 1  Process: /prueba_buffer_circular/consumidor File: D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd
+# Break in ForLoop loop at D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd line 109
+# Simulation Breakpoint: Break in ForLoop loop at D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd line 109
+# MACRO D:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\..\PRUEBAS\formato_ventanas.do PAUSED at line 5
+run -all
+# ** Note: 
+# 
+# Insercion. Ciclo: 13   Valor: 10
+#    Time: 375 ns  Iteration: 1  Instance: /prueba_buffer_circular
+# ** Failure: Error Consumidor
+#    Time: 390 ns  Iteration: 2  Process: /prueba_buffer_circular/consumidor File: D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd
+# Break in ForLoop loop at D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd line 116
+# Simulation Breakpoint: Break in ForLoop loop at D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd line 116
+# MACRO D:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\..\PRUEBAS\formato_ventanas.do PAUSED at line 5
+run -all
+# ** Note: 
+# 
+# Extraccion. Ciclo: 14   Valor: 10
+#    Time: 405 ns  Iteration: 1  Instance: /prueba_buffer_circular
+# ** Failure: 
+# 
+#  error en la extraccion   iteracion: 1
+#    Time: 405 ns  Iteration: 1  Process: /prueba_buffer_circular/consumidor File: D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd
+# Break in ForLoop loop at D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd line 109
+# Simulation Breakpoint: Break in ForLoop loop at D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd line 109
+# MACRO D:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\..\PRUEBAS\formato_ventanas.do PAUSED at line 5
+
+
+
+
+
+run -all
+# ** Failure: Error Consumidor
+#    Time: 450 ns  Iteration: 2  Process: /prueba_buffer_circular/consumidor File: D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd
+# Break in ForLoop loop at D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd line 116
+# Simulation Breakpoint: Break in ForLoop loop at D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd line 116
+# MACRO D:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\..\PRUEBAS\formato_ventanas.do PAUSED at line 5
+run -all
+# ** Note: 
+# 
+# Extraccion. Ciclo: 16   Valor: 10
+#    Time: 465 ns  Iteration: 1  Instance: /prueba_buffer_circular
+# ** Failure: 
+# 
+#  error en la extraccion   iteracion: 2
+#    Time: 465 ns  Iteration: 1  Process: /prueba_buffer_circular/consumidor File: D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd
+# Break in ForLoop loop at D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd line 109
+Simulation Breakpoint: Break in ForLoop loop at D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd line 109
+# MACRO D:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\..\PRUEBAS\formato_ventanas.do PAUSED at line 5
+run -allSimulation Breakpoint: Break in ForLoop loop at D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd line 109
+# MACRO D:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\..\PRUEBAS\formato_ventanas.do PAUSED at line 5
+
+# Unknown option: allSimulation
+# ** Error: (vsim-4001) Incorrect number of arguments.
+# Usage: run [<timesteps> [<time_units>]] | -all | -continue | -next | -step | -over | -out | -init | -final
+# MACRO D:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\..\PRUEBAS\formato_ventanas.do PAUSED at line 5
+# MACRO D:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\..\PRUEBAS\formato_ventanas.do PAUSED at line 5
+# MACRO D:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\..\PRUEBAS\formato_ventanas.do PAUSED at line 5
+# MACRO D:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\..\PRUEBAS\formato_ventanas.do PAUSED at line 5
+# MACRO D:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\..\PRUEBAS\formato_ventanas.do PAUSED at line 5
+# MACRO D:\FIB_Q8\AC2\LAB3\buffer_circular\ENSAMBLADO\QUARTUS\..\PRUEBAS\formato_ventanas.do PAUSED at line 5
+run -allSimulation Breakpoint: Break in ForLoop loop at D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd line 109
+# Unknown option: allSimulation
+# ** Error: (vsim-4001) Incorrect number of arguments.
+# Usage: run [<timesteps> [<time_units>]] | -all | -continue | -next | -step | -over | -out | -init | -final
+run -allSimulation Breakpoint: Break in ForLoop loop at D:/FIB_Q8/AC2/LAB3/buffer_circular/ENSAMBLADO/QUARTUS/../PRUEBAS/prueba_buffer_circular.vhd line 109
+# Unknown option: allSimulation
+# ** Error: (vsim-4001) Incorrect number of arguments.
+# Usage: run [<timesteps> [<time_units>]] | -all | -continue | -next | -step | -over | -out | -init | -final
+# Unknown option: allSimulation
+# ** Error: (vsim-4001) Incorrect number of arguments.
+# Usage: run [<timesteps> [<time_units>]] | -all | -continue | -next | -step | -over | -out | -init | -final
+
+# Usage: run [<timesteps> [<time_units>]] | -all | -continue | -next | -step | -over | -out | -init | -final

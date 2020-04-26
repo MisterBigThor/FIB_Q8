@@ -262,13 +262,54 @@ T : 	r6 <--- r6 + 1			F
 
 El camino de datos de un procesador con frecuencia de reloj de 2 GHz, segmentado en 6 etapas, dispone de un único puerto para acceder a la memoria de instrucciones y de datos (MID), tal como se muestra en la figura.
 
+![image-20200425212351371](image-20200425212351371.png)
+
 Para contestar a las preguntas 1) y 2) suponga que los riesgos estructurales se pueden resolver retardando el inicio de la interpretación de las instrucciones. También, supondremos que no hay riesgos de datos y de secuenciamiento entre las instrucciones.
 
 <u>Pregunta 1:</u> Analice los posibles riesgos estructurales durante la interpretación de una secuencia de instrucciones. Indique la latencia de inicio prohibida.
 
-
+> La segmentación de 6 etapas tendra en la tabla de reservas:
+>
+> |      | CP   | BUS  | DL   | ALU  | M    | ES   |
+> | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+> | MID  |      | X    |      |      | X    |      |
+>
+> Entonces las MID es fuente de riesgos estructurales, en una ejecuccion concurrente que usen la etapa M y no sea una etapa de retardo, tendremos:
+>
+> ![image-20200425214449940](image-20200425214449940.png)
+>
+> La latencia prohibida sera 3. Desde la instrucción 1 pasan 3 instrucciones hasta el riesgo estructural, identico para las instrucciones 2 y 3.
+>
+> Entonces una operacion store o load hara que cualquier instruccion que empiece 3 ciclos despues genere un riesgo estructural.
 
 <u>Pregunta 2:</u> Deduzca una secuencia de instrucciones periódica (i1, i2, i3, i4) e ilimitada que produzca un rendimento de 1600 MIPS.
+
+> Sobre los MIPS podemos deducir las instrucciones por ciclo que hay que iniciar/acabar.
+>
+> $Inst/Ciclo= 1600*10^6*\frac{Inst}{Segundo}*\frac{(2GHz)^{-1}Segundos}{1 Ciclo} = 0.8$
+>
+> $CPI = 0.8^{-1} = 1.25$
+>
+> Tenemos que el CPI sin riesgos estructurales (ideal) es 1, entonces hay que añadir 0.25(1/4) al CPI para cumplir los 1600 MIPS. Este 1/4 simboliza que se pierde un ciclo de cada 4 instrucciones, entonces solo queda garantizar que el ciclo solo se pierde entre las instrucciones i1 y i4 de cada 'iteracion de i'.
+>
+> i1 = load rX, 0(rX)
+>
+> i2 = add ...
+>
+> i3 = sub ...
+>
+> i4 = add ...
+
+En este procesador, la latencia efectiva de las instrucciones que actualizan el banco de registros es de 3 ciclos; la latencia efectiva de las instrucciones que modifican el secuenciamiento implícito es
+de 5 ciclos. La figura muestra el esquema de la lógica para controlar los riesgos.
+
+El módulo RE detecta los riesgos estructurales debidos al único camino de acceso a memoria. El módulo RD detecta riesgos de datos y el módulo RS detecta riesgos de secuenciamiento.
+Para resolver un conflicto estructural, el control de la segmentación bloquea las etapas B y CP durante un ciclo de reloj e inyecta una NOP en la salida de la etapa B.
+
+<u>Pregunta 3:</u> Indique el número de ciclos que se puede conocer anticipadamente un riesgo estructural debido al único camino de acceso a memoria. Diseñe el módulo detector de riesgos estructurales RE.
+
+<u>Pregunta 4:</u> Muestre el cronograma de interpretación de la secuencia de instrucciones independentes
+Load, Load, Load, Add.
 
 ### Ejercicio 3.14
 

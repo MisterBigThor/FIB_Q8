@@ -10,27 +10,27 @@
 # ** Warning: Copied D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/tipos_ctes_pkg/retardos_nucleo_pkg.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/tipos_ctes_pkg/retardos_nucleo_pkg.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling package retardos_nucleo_pkg
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/tipos_ctes_pkg/cte_tipos_nucleo_pkg.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/tipos_ctes_pkg/cte_tipos_nucleo_pkg.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling package cte_tipos_nucleo_pkg
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor_1.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor_1.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity multiplexor_1
 # -- Compiling architecture compor of multiplexor_1
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/componentes_control_pkg/componentes_control_pkg.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/componentes_control_pkg/componentes_control_pkg.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -39,7 +39,7 @@
 # -- Loading package cte_tipos_nucleo_pkg
 # -- Loading package retardos_nucleo_pkg
 # -- Compiling package componentes_control_pkg
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/componentes_nucleo_pkg/componentes_nucleo_pkg.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/componentes_nucleo_pkg/componentes_nucleo_pkg.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -47,7 +47,7 @@
 # -- Loading package NUMERIC_STD
 # -- Loading package cte_tipos_nucleo_pkg
 # -- Compiling package componentes_nucleo_pkg
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/multiplexores/CODIGO/multiplexor.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -56,7 +56,7 @@
 # -- Loading package cte_tipos_nucleo_pkg
 # -- Compiling entity multiplexor
 # -- Compiling architecture compor of multiplexor
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/BR/CODIGO/br.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/BR/CODIGO/br.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -66,7 +66,7 @@
 # -- Loading package retardos_nucleo_pkg
 # -- Compiling entity BR
 # -- Compiling architecture compor of BR
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/Sumador/CODIGO/sumador.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/Sumador/CODIGO/sumador.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -76,7 +76,7 @@
 # -- Loading package retardos_nucleo_pkg
 # -- Compiling entity sumador
 # -- Compiling architecture behave of sumador
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/reg1.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/reg1.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -84,7 +84,7 @@
 # -- Loading package retardos_nucleo_pkg
 # -- Compiling entity reg1
 # -- Compiling architecture comportamiento of reg1
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/registro.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/COMPONENTES/registros/CODIGO/registro.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -92,7 +92,7 @@
 # -- Loading package retardos_nucleo_pkg
 # -- Compiling entity registro
 # -- Compiling architecture comportamiento of registro
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/CODIGO/camino_control.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/CODIGO/camino_control.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -102,7 +102,7 @@
 # -- Loading package componentes_nucleo_pkg
 # -- Compiling entity camino_control
 # -- Compiling architecture estructura of camino_control
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/COMPONENTES/control/control_depen/CODIGO/control.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/COMPONENTES/control/control_depen/CODIGO/control.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -114,7 +114,7 @@
 # -- Compiling entity control
 # -- Compiling architecture estructura of control
 # 
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_depen/../../../UTILIDADES_pkg/impri_BR_pkg/impri_BR_pkg.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_depen/../../../UTILIDADES_pkg/impri_BR_pkg/impri_BR_pkg.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -126,7 +126,7 @@
 # -- Compiling package impri_BR_pkg
 # -- Compiling package body impri_BR_pkg
 # -- Loading package impri_BR_pkg
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_depen/../UTILIDADES_pkg/prueba_procedimientos_camino_control.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_depen/../UTILIDADES_pkg/prueba_procedimientos_camino_control.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -136,7 +136,7 @@
 # -- Compiling package prueba_procedimientos_camino_control_pkg
 # -- Compiling package body prueba_procedimientos_camino_control_pkg
 # -- Loading package prueba_procedimientos_camino_control_pkg
-# vcom -2008 -work work {D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_depen/../PRUEBAS_control_depen/prueba_camino_control.vhd}
+# vcom -2008 -work work {D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_depen/../PRUEBAS_control_depen/prueba_camino_control.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -150,7 +150,7 @@
 # -- Loading package ENV
 # -- Compiling entity prueba_camino_control
 # -- Compiling architecture prueba of prueba_camino_control
-# ** Warning: D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_depen/../PRUEBAS_control_depen/prueba_camino_control.vhd(56): (vcom-1236) Shared variables must be of a protected type.
+# ** Warning: D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_depen/../PRUEBAS_control_depen/prueba_camino_control.vhd(56): (vcom-1236) Shared variables must be of a protected type.
 # 
 # 
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs="+acc"  prueba_camino_control
@@ -178,16 +178,16 @@
 # Loading work.reg1(comportamiento)
 # Loading work.registro(comportamiento)
 # 
-# do D:/FIBQ7/AC2/LAB3.tar/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_depen/../PRUEBAS_control_depen/formato_ventanas.do
+# do D:/FIB_Q8/AC2/LAB3/NUCLEO_camino/ENSAMBLADO/QUARTUS_control_depen/../PRUEBAS_control_depen/formato_ventanas.do
 # log -r /*
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 # 
 #           File in use by: victor  Hostname: DESKTOP-CGN987E  ProcessID: 12624
 # 
-#           Attempting to use alternate WLF file "./wlft0ei79i".
+#           Attempting to use alternate WLF file "./wlftj5z6c1".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlft0ei79i
+#           Using alternate file: ./wlftj5z6c1
 # 
 # do wave.do
 # onerror {resume}

@@ -13,7 +13,7 @@ use work.impri_BR_pkg.all;
 use std.env.all;
 
 entity prueba_camino_control is 	
-generic (semiperiodo: time:= 25 ns;
+generic (semiperiodo: time:= 14 ns;
 		imprimir_BR: boolean:= true;
 		pasoapaso: boolean:= false);	
 end prueba_camino_control;		
