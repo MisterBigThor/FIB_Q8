@@ -146,7 +146,7 @@ En distancia 1, la instrucción de hace 1 ciclo estara en la etapa ALU y el dato
 
 En este caso se utiliza el corto entre memoria y la ALU, pues a distancia 2 la instruccion de 2 ciclos antes ya habra leido el dato de memoria o el dato estara en esa etapa.
 
-![image-20200425032648409](image-20200425032648409.png)
+![image-20200425032648409](rsc/image-20200425032648409.png)
 
 Los cortocircuitos necesitaran de multiplexores y señales de control. La leyenda para las señales de control es X.etapa.nombreCorto{.operando}
 
@@ -158,15 +158,13 @@ Dedicada a la gestión de los cortos y de los bloqueos necesarios. Como los cort
 
 Hasta ahora, el bucle HW de las instrucciones de secuenciamiento tenia un latencia de 5 ciclos (perdiendo 4 ciclos) pero el calculo del salto y la actualización del registro CP se puede adelantar(en la etapa M ya se conoce el nuevo CP) :
 
-![image-20200425034306896](image-20200425034306896.png)
+![image-20200425034306896](rsc/image-20200425034306896.png)
 
 ### Secuenciamiento condicional
 
 Al final de la etapa ALU ya se ha evaluado la condición de salto y se puede alimentar la etapa CP (Bucle C). El nuevo bucle HW tiene longuitud de 3  y se perderan 3-1 = 2 ciclos.
 
 ### Secuenciamiento incondicional
-
-* 
 
 En este caso no hace falta esperar a la etapa ALU, pues si o si tomaremos el salto. Añadiendo un sumador en la etapa DL (calculo de la @ efectiva) y alimentando la etapa CP (Bucle B). El nuevo bucle HW tiene longutiud 2 y se perdera 1 ciclo.
 
