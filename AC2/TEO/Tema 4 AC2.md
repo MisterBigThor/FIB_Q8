@@ -38,7 +38,7 @@ Sobre un conjunto de instrucciones, puede existir una ordenación que no afecete
 
 El grafo de dependencias expresa un orden parcial.
 
-#### Bloque básico estático BB
+### Bloque básico estático BB
 
 Los bloques de instrucciones a ordenar a traves de un algoritmo de planificación se llaman bloques básicos estáticos. 
 
@@ -50,7 +50,7 @@ Los bloques de instrucciones a ordenar a traves de un algoritmo de planificació
 
 Cualquier ordenanción del grafo del BB es una planificación correcta. El objetivo es perder el menor numero de ciclos posible.
 
-#### Algoritmo de planificación de instrucciones
+### Algoritmo de planificación de instrucciones
 
 * Una planificación para reducir los ciclos perdidos deben tener en cuenta el retardo/latencia productor-uso. 
 
@@ -166,11 +166,71 @@ Al final de la etapa ALU ya se ha evaluado la condición de salto y se puede ali
 
 ### Secuenciamiento incondicional
 
-En este caso no hace falta esperar a la etapa ALU, pues si o si tomaremos el salto. Añadiendo un sumador en la etapa DL (calculo de la @ efectiva) y alimentando la etapa CP (Bucle B). El nuevo bucle HW tiene longutiud 2 y se perdera 1 ciclo.
+En este caso no hace falta esperar a la etapa ALU, pues si o si tomaremos el salto. Añadiendo un <u>sumador</u> en la etapa DL (calculo de la @ efectiva) y <u>alimentando la etapa CP</u> (Bucle B). 
 
-### Camino completo
+El nuevo bucle HW tiene longutiud 2 y se perdera 1 ciclo.
 
-El camino con estas mejoras de secuenciamiento seguirá con el secuenciamiento por defecto (bucle A) y se añadira un circuito de control para el multiplexor del registro CP. Ademas de señales de detección y actuación de riesgos de secuenciamiento(se debe eliminar las dos instrucciones que se estan interpretando e inyectar una nop).
+### Camino de datos
+
+![](Tema 4 AC2.assets/ReduccionSaltos.png)
+
+El camino con estas mejoras de secuenciamiento seguirá con el secuenciamiento por defecto (bucle A) y se añadira un circuito de control para el multiplexor del registro CP. 
+
+Tambien hay que modificar el circuito de detección y actuación de riesgos de secuenciamiento(se debe eliminar las dos instrucciones que se estan interpretando e inyectar una nop).
 
 ## Secuenciamiento - Hipotesis / Predicción fija del sentido
+
+En este caso, reduciremos la penalización de las instrucciones de secuenciamiento sin reducir la latencia efectiva de la segmentación.
+
+La idea es efectuar una <u>predicción</u> (fija, siempre la misma en este caso) sobre el salto y seguir en secuencia. En caso de hacer una hipotesis erronea, se perderan ciclos. Debemos garantizar :
+
+* Verificar la predicción (etapa ALU).
+* Las instrucciones predichas no modifican el estado del procesador (etapas M y ES).
+* Poder restaurar el flujo correcto, si se necesita (actualizar etapa CP).
+
+Un salto puede <u>seguir en secuencia</u> (no saltar, CP = CP +4) o <u>modificar el secuenciamiento</u> (saltar, CP = CP'). 
+
+![Prediccion](Tema 4 AC2.assets/Predicion.png)
+
+### Modelo de predicción
+
+Este modelo esta basado en las estructuras de bucle; con alta frecuencia los bucles saltan con valor negativo a su inicio. Entonces obtenemos el modelo:
+
+* Si es positivo, se predice seguir en secuencia.
+* Si es negativo, se predice saltar.
+
+La predicción se efectua en el ciclo DL y se verifica en la etapa ALU (módulo EV). Si es necesario recuperarse de una predicción, el mecanismo se inicia después de la verificación y actualiza el registro CP y descarta la instrucciones predichas.
+
+En D/L se conoce la @ efectiva del salto.
+
+| Predicción  | Seguir en Secuencia                                          | Saltar/Modificar                                             |
+| ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Acierto** | Las etapas posteriores tiene las instrucciones correctas.    | Se descartan las instrucciones siguientes y la etapa DL modifica el CP. |
+| **Fallo**   | Se modifica el CP desde la etapa ALU y se descartan las instrucciones predichas. | La recuperación consiste en comunicar el nuevo CP y descartar la instrucción que se habia predicho. |
+
+<table>
+    <tr>
+        <th>Predicción</th>
+	    <th>Seguir en secuencia</th>
+    	<th>Saltar/Modificar</th>
+    </tr>
+    <tr>
+    </tr>
+	<tr>
+        <td>Acierto</td>
+		<td><img src="Tema 4 AC2.assets/image-20200429180602943.png"/></td>
+		<td><img src="Tema 4 AC2.assets/image-20200429180924918.png"/></td>
+    </tr>
+    <tr>
+        <td>Fallo</td>
+		<td><img src="Tema 4 AC2.assets/image-20200429180843718.png"/></td>
+		<td><img src="Tema 4 AC2.assets/image-20200429180949933.png"/></td>
+    </tr>
+</table>
+
+
+
+### Riesgos con instrucciones predichas
+
+
 

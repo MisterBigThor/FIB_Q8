@@ -49,9 +49,9 @@ Si existen alguna de las dependencias, entonces es possible que tengamos que emu
 
 Segmentando el camino de datos, es possible que se modifique el orden de las lecturas/escrituras. Siempre debemos cumplir:
 
-* Un store siempre escribe antes de que lea un load posterior
-* Un load siempre lee antes que escriba un store posterior
-* Un store siempre escribe que un store posterior
+* Un store siempre escribe antes de que lea un load posterior. (Dep Vertadera)
+* Un load siempre lee antes que escriba un store posterior. (Antidependencia)
+* Un store siempre escribe que un store posterior. (Dep de salida)
 
 ### Riesgos de secuenciamiento
 
