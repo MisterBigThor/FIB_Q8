@@ -133,9 +133,11 @@ En nuestro caso, tenemos que la latencia de cálculo es de 1 ciclo para las inst
 
 En distancia 1, la instrucción de hace 1 ciclo estara en la etapa ALU y el dato se necesita en la ALU, se utiliza el corto ALU-ALU. En el caso que un load produzca un dato necesario para un store posterior se utiliza el corto M-M.
 
-'*' Se necesita consumir el dato en la etapa ALU para realizar el cálculo.  En este caso hay un riesgo de datos.
+'*' Se necesita consumir el dato en la etapa ALU para realizar el cálculo.  En este caso <u>hay un riesgo de datos.</u>
 
-'**' Se necesita consumir el dato en la etapa ALU para calcular la @ efectiva del Store. En el caso de S.ra, este se consume en la etapa M.
+'**' Se necesita consumir el dato en la etapa ALU para calcular la @ efectiva del Store. En este caso <u>hay un riesgo de datos.</u>
+
+En el caso de S.ra, este dato se consume en la etapa M.
 
 | **D=2**  |           | Con       | su        | mi        | dor       | as/      | Lec      | tur      | as        |
 | -------- | --------- | --------- | --------- | --------- | --------- | -------- | -------- | -------- | --------- |
@@ -233,4 +235,63 @@ En D/L se conoce la @ efectiva del salto.
 ### Riesgos con instrucciones predichas
 
 
+
+### Suma de dos vectores elemento a elemento
+
+El tamaño de un dato son 8 bytes. El registro r9 se ha inicializado con el número de iteraciones y los registros r2, r4 y r6 se han inicializado con la dirección base de los vectores C, B y A respectivamente
+
+````asm
+load r1, 0(r2) 
+load r3, 0(r4)
+add r5, r1, r3
+store r5, 0(r6)
+add r2, r2, #8 
+add r4, r4, #8 
+add r6, r6, #8 
+sub r9, r9, #1 
+bne r9, 1$
+````
+
+#### Dependencias de datos
+
+Dependencias vertaderas -, Antidependencias ---
+
+````mermaid
+graph TB;
+1 -.-> 5
+1 ==> 3
+2 ==> 3 ==> 4 -.->7
+8 ==> 9
+2 -.-> 6
+````
+
+Las dependencias debidas a memoria no exites, pues los vectores A, B y C tienen direcciones independientes.
+
+Se puede cambiar el codigo para situar instrucciones enmedio de instrucciones con dependencias y no perder ciclos, obtenemos el siguiente codigo equivalente:
+
+````asm
+a. load r1, 0(r2)
+b. load r3, 0(r4)
+c. add r5, r1, r3
+g. add r6, r6, #8
+d. store r5, -8(r6)
+e. add r2, r2, #8
+f. add r4, r4, #8
+h. sub r9, r9, #1
+i. bne r9, 1$
+````
+
+La antidependencia se ha convertido en una dependencia vertadera.
+
+#### Planificación de instrucciones
+
+Inicio del algoritmo, situamos en los arcos la distancia productor-uso - 1 (si se pierden ciclos, sino un 0) y añadimos dependencias ya que la instrucción de salto se tiene que ejecutar la ultima en el bloque.
+
+
+
+#### Ciclos perdidos por RD y RS
+
+
+
+#### Uso de cortocircuitos y predicciones
 
