@@ -1,3 +1,5 @@
+# Ejercicios tema 3
+
 [TOC]
 
 ### Ejercicio 3.1
@@ -145,59 +147,57 @@ El computador donde se ejecuta el programa funciona a una frecuencia de 500 Mhz 
 
 > $Iteraciones = \frac{0.5*E_B}{E_{P}^{C}*CPI} = \frac{9.000}{6*10^{-8}*2.75} = \space Millones \space It.$
 
-### Ejercicio 3.3(80)
+### Ejercicio 3.3
 
 En un procesador segmentado con 7 etapas (CP, BUS, D/L, ALU, ET, DT, ES), el proceso de interpretación de instrucciones se ha segmentado de la forma que se muestra en la siguiente figura.
 
 ![img3.3t1](rsc\3.380.jpg)
 
-La única diferencia con el procesador segmentado lineal descrito en el capítulo 3 es la segmentación del acceso a memoria de datos. Los posibles riesgos de datos debidos a registros y riesgos de secuenciamiento se gestionan de la misma forma que en el capítulo 3, dando lugar a que el inicio de la fase de ejecución de las instrucciones sea en orden de programa. 
+La única diferencia con el procesador segmentado lineal descrito en el capítulo 3 es la segmentación del acceso a memoria de datos. Los posibles <u>riesgos de datos debidos a registros y riesgos de secuenciamiento se gestionan de la misma forma que en el capítulo 3</u>, dando lugar a que el inicio de la fase de ejecución de las instrucciones sea en orden de programa. 
 
-El procesador dispone en el primer nivel de la jerarquía de memoria de una cache para instrucciones y una cache para datos. Nosotros supondremos que un acceso a cualquiera de las dos cache de primer nivel siempre es un acierto. Tanto el acceso al campo etiqueta como al campo dato de un contenedor de cache requiere un ciclo. En una instrucción load los campos etiqueta y dato de un contenedor se leen en paralelo (ciclo 5) y en el siguiente ciclo el dato leído se escribe en el banco de registros (ciclo 6). 
+El procesador dispone en el primer nivel de la jerarquía de memoria de una cache para instrucciones y una cache para datos. Nosotros supondremos que un acceso a cualquiera de las dos cache de primer nivel siempre es un acierto. Tanto el acceso al campo etiqueta como al campo dato de un contenedor de cache requiere un ciclo. 
 
-En el caso de una instrucción store es necesario en primer lugar acceder al campo etiqueta para comprobar si el dato está almacenado en cache antes de actualizar el campo dato. Como es necesario un ciclo para acceder a cada campo de información de un contenedor de cache y hay que efectuarlo secuencialmente son necesarios dos ciclos (ciclos 5 y 6). Supondremos que no existen riesgos estructurales cuando se interpretan de forma solapada varias instrucciones. En particular supondremos que la cache de datos dispone de un puerto de lectura y un puerto de escritura. Estos puertos de acceso son independientes y una acción de lectura o escritura en cualquiera de los campos del contenedor requiere todo el ciclo de la señal de reloj.
+En una <u>instrucción load</u> los campos etiqueta y dato de un contenedor se leen en paralelo (ciclo 5) y en el siguiente ciclo el dato leído se escribe en el banco de registros (ciclo 6). 
+
+En el caso de una <u>instrucción store</u> es necesario en primer lugar acceder al campo etiqueta para comprobar si el dato está almacenado en cache antes de actualizar el campo dato. Como es necesario un ciclo para acceder a cada campo de información de un contenedor de cache y hay que efectuarlo  secuencialmente son necesarios dos ciclos (ciclos 5 y 6). 
+
+Supondremos que no existen riesgos estructurales cuando se interpretan de forma solapada varias instrucciones. En particular supondremos que la cache de datos dispone de un puerto de lectura y un puerto de escritura. Estos puertos de acceso son independientes y una acción de lectura o escritura en cualquiera de los campos del contenedor requiere todo el ciclo de la señal de reloj.
 
 <u>Pregunta 1:</u> Analice los posibles riesgos de datos al acceder a la memoria de datos. 
 
-> Los tres tipos de riesgos de datos en memoria de datos pueden ser de tres tipos, vamos a analizarlos:
+> Los riesgos de datos al acceder a memoria tendran que ver con las operacion load y store, siempre que no se cumpla:
 >
-> (refactor for:
+> * Una instrucción store siempre escribe antes de que lea una instrucción load más joven. A
 >
-> ​	• una instrucción store siempre escribe antes de que lea una instrucción load más joven. 
+> * Una instrucción load siempre lee antes de que escriba una instrucción store más joven. B
 >
-> ​	• una instrucción load siempre lee antes de que escriba una instrucción store más joven. 
+>   ![Eje3.1](Tema 3 AC2 Ejercicios.assets/3.1.jpeg)
 >
-> ​	• una instrucción store siempre escribe antes de que escriba una instrucción store más joven.)
+> * Una instrucción store siempre escribe antes de que escriba una instrucción store más joven.
 >
-> * Dependencia Vertadera (**R1**= R2+R3, R5 = **R1**+R5)
->
->   Como en la anterior segmentación, es posible que el banco de registros no tenga el valor correcto en el banco de registros para alimentar a la instrucción joven que lo precisa.
->
-> * Antidependencia (R1=**R2**+R3, **R2**=R3+R5)
->
->   Para comprobar que no podemos tener RD aqui, debemos demostrar que  una instrucción siempre lee antes de que escriba una instrucción posterior en orden de programa. Si tenemos un store y seguidamente un load, se lee de memoria antes de que se haya actualizado la posicion de memoria (load lee en el ciclo 5 y store la actualiza en su 6 ciclo). Deberemos cuidar este tipo de riesgo. Con las instrucciones aritmeticas no hay problema en este caso.
->
->   Ej: Store #8, 0(r2), Load r5, 0(r2).
->
-> * Dependencia de Salida(R1=2+R4, R1=LOAD(R5))
->
->   Debemos comprobar que una instrucción siempre escribe antes que escriba una instrucción posterior en orden de programa. Con la tabla de reserva vemos que todas las escrituras son el mismo ciclo(ciclo 6), no existirá este tipo de riesgo.
+>   En nuestro caso, las instrucciones store siempre escriben en el mismo ciclo.
 
 <u>Pregunta 2:</u> Indique las acciones que deben efectuarse y el ciclo en el cual pueden efectuarse, para detectar el riesgo de datos al acceder a memoria.
 
-> Como la dirección de memoria se calcula en la etapa ALU, debemos efectuar las acciones en esta etapa. Las acciones deberan emular un funcionamiento serie.
+> Como la dirección de memoria se calcula en la etapa ALU, debemos efectuar las acciones en esta etapa. Las acciones deberán emular un funcionamiento serie; entonces retendremos las etapas posteriores a ALU (CP, BUS y D/L) y ALU.
 
 En el procesador segmentado que se utiliza, la última etapa del proceso de interpretación de una instrucción donde se puede retener una instrucción es la etapa D/L.
 
 <u>Pregunta 3:</u> Describa un mecanismo para controlar los posibles riesgos de datos al acceder a memoria. Posteriormente muestre en un diagrama temporal, utilizando la siguiente secuencia de instrucciones, el mecanismo de control de riesgo descrito. Justifique de forma detallada las retenciones o bloqueos en la etapa D/L.
 
-> La gestion conservadora controla la ejecucion a distancia 1 de un store y un load
+> La gestion conservadora controla la ejecucion a distancia 1 de un store y un load, independientemente de la dirección de memoria.
 
 <u>Pregunta 4:</u> Diseñe un circuito combinacional que, con las señales descritas, controle los multiplexores MUXCPBloq, MUXBUSBloq y MUXDLNop de la figura previa, en el caso de que se detecte un riesgo de datos, ya sea debido a registros o a memoria.
 
+>
+
 <u>Pregunta 5:</u> Calcule el CPI medio en el nuevo procesador que funciona a una frecuencia de 1 Ghz.
 
+>
+
 <u>Pregunta 6:</u> Calcule la ganancia del nuevo procesador respecto del diseño previo.
+
+>
 
 ### Ejercicio 3.5
 
@@ -216,8 +216,6 @@ T : 	r6 <--- r6 + 1			F
 
 <u>Pregunta 1:</u> Presente el cronograma de una iteración, suponiendo que las dos instrucciones de salto condicional rompen la secuencia (siempre saltan).
 
-
-
 > Debemos ver el grafo de dependencias debidas a registros:
 >
 > (Dependencia verdadera: flecha continua, antidependencia: felcha discontinua, dep de salida: flecha sin punta)
@@ -234,11 +232,11 @@ T : 	r6 <--- r6 + 1			F
 > E-.->G
 > `````
 >
-> ![image-20200414165453897](image-20200414165453897.png)
+> ![image-20200414165453897](rsc/image-20200414165453897.png)
 
 <u>Pregunta 2:</u> Presente el cronograma de una iteración , suponiendo que la primera instrucción de salto no rompe la secuencia (no salta a T) y que la segunda instrucción de salto rompe la secuencia (siempre salta a L).
 
-> ![image-20200414165507260](image-20200414165507260.png)
+> ![image-20200414165507260](rsc/image-20200414165507260.png)
 
 <u>Pregunta 3:</u> Calcule el número de ciclos perdidos en una iteración, indicando cuántos son por Riesgo de Datos y cuántos son por Riesgo de Secuenciamiento, en cada uno de las dos preguntas anteriores.
 
@@ -262,7 +260,7 @@ T : 	r6 <--- r6 + 1			F
 
 El camino de datos de un procesador con frecuencia de reloj de 2 GHz, segmentado en 6 etapas, dispone de un único puerto para acceder a la memoria de instrucciones y de datos (MID), tal como se muestra en la figura.
 
-![image-20200425212351371](image-20200425212351371.png)
+![image-20200425212351371](rsc/image-20200425212351371.png)
 
 Para contestar a las preguntas 1) y 2) suponga que los riesgos estructurales se pueden resolver retardando el inicio de la interpretación de las instrucciones. También, supondremos que no hay riesgos de datos y de secuenciamiento entre las instrucciones.
 
@@ -276,7 +274,7 @@ Para contestar a las preguntas 1) y 2) suponga que los riesgos estructurales se 
 >
 > Entonces las MID es fuente de riesgos estructurales, en una ejecuccion concurrente que usen la etapa M y no sea una etapa de retardo, tendremos:
 >
-> ![image-20200425214449940](image-20200425214449940.png)
+> ![image-20200425214449940](rsc/image-20200425214449940.png)
 >
 > La latencia prohibida sera 3. Desde la instrucción 1 pasan 3 instrucciones hasta el riesgo estructural, identico para las instrucciones 2 y 3.
 >
@@ -292,24 +290,89 @@ Para contestar a las preguntas 1) y 2) suponga que los riesgos estructurales se 
 >
 > Tenemos que el CPI sin riesgos estructurales (ideal) es 1, entonces hay que añadir 0.25(1/4) al CPI para cumplir los 1600 MIPS. Este 1/4 simboliza que se pierde un ciclo de cada 4 instrucciones, entonces solo queda garantizar que el ciclo solo se pierde entre las instrucciones i1 y i4 de cada 'iteracion de i'.
 >
-> i1 = load rX, 0(rX)
+> i1 = load rX, 0(rX), i2 = add ..., i3 = sub ..., i4 = add ...
 >
-> i2 = add ...
->
-> i3 = sub ...
->
-> i4 = add ...
 
 En este procesador, la latencia efectiva de las instrucciones que actualizan el banco de registros es de 3 ciclos; la latencia efectiva de las instrucciones que modifican el secuenciamiento implícito es
 de 5 ciclos. La figura muestra el esquema de la lógica para controlar los riesgos.
 
 El módulo RE detecta los riesgos estructurales debidos al único camino de acceso a memoria. El módulo RD detecta riesgos de datos y el módulo RS detecta riesgos de secuenciamiento.
+
 Para resolver un conflicto estructural, el control de la segmentación bloquea las etapas B y CP durante un ciclo de reloj e inyecta una NOP en la salida de la etapa B.
 
 <u>Pregunta 3:</u> Indique el número de ciclos que se puede conocer anticipadamente un riesgo estructural debido al único camino de acceso a memoria. Diseñe el módulo detector de riesgos estructurales RE.
 
+> Podemos conocer 3 ciclos antes el RE, debemos utilizar un contador HW que se inicie con si la operación en la etapa DL es un Load o store.
+>
+> ````vhdl
+> entity RE is     
+> port(	clock: in std_logic;
+>     	opDL: in op;
+> 		re: out std_logic);
+> end RE;
+>     
+> architecture estructura of RE is
+>     signal reAUX, r0,r1,r2 : std_logic;
+> begin
+>     reAUX <= (opDL and OP_LOAD) or (opDL and OP_STORE);
+>     r0: reg_1 port map(clock => clock, D=>reAUX, Q=>r0);
+> 	r1: reg_1 port map(clock => clock, D=>r0, Q=>r1);
+> 	r1: reg_1 port map(clock => clock, D=>r1, Q=>r2);
+>     re <= r2;
+> end;
+> ````
+>
+> 
+
 <u>Pregunta 4:</u> Muestre el cronograma de interpretación de la secuencia de instrucciones independentes
 Load, Load, Load, Add.
+
+> ![image-20200428155839997](rsc/image-20200428155839997.png)
+>
+> el $CPI= \frac{cp+inst}{instr} = \frac{3+4}{4} = 1.75$
+
+Cuando se produce un riesgo de datos, el control bloquea las etapas CP, B y DL; durante los ciclos de bloqueo se inyectan instrucciones NOP decodificadas en la salida de la etapa DL. 
+
+Para resolver un riesgo de secuenciamiento, el control descarta las instrucciones buscadas hasta que se actualiza el contador de programa con la dirección de la siguiente instrucción que debe interpretarse.
+
+<u>Pregunta 5:</u> Muestre los cronogramas de interpretación de las 2 secuencias de instrucciones:
+
+![image-20200428161531086](rsc/image-20200428161531086.png)
+
+<u>Pregunta 6:</u> Diseñe la lógica de control de los multiplexores m1, m2, m3 y m4.
+
+> Hay que tener en cuenta que el riesgo estructural es mas prioritario que el riesgo de datos y que el riesgo de secuenciamiento. El control de multiplexores se situara en la etapa DL, donde se decodifican las instrucciones y se pueden calcular los riesgos de datos.
+>
+> ````vhdl
+> --control CP: 1 bloquea CP(RD o RE)
+> m1<= '1' when (RD or RE) else '0';
+> --control B_DL: 1-0 bloquea B_DL(RD), X-1: nop a DL(RS)
+> m2<= '1' when RD else '0';
+> m3<= '1' when RS or RE else '0';
+> --control DL_ALU: 1 nopDecodificada, 0 decodificar instr.
+> m4<= '1' when RD else '0';
+> ````
+>
+> Si hay un Riesgo estructural -> Bloquear CP y B + nop a DL
+>
+> Si hay un Riesgo de datos -> Bloquear CP, B y DL + nop a ALU
+>
+> Si hay un Riesgo estructural -> descartar hasta nuevo CP, 
+
+<u>Pregunta 7:</u> Calcule el número de ciclos para ejecutar una iteración, indicando los ciclos perdidos por riesgos de datos, secuenciamiento y estructurales. Calcule el rendimiento del procesador en MIPS al ejecutar el programa de prueba.
+
+> ````mermaid
+> graph LR;
+> A==>C
+> A-.->|salida|D==>E
+> ````
+>
+> ![image-20200428164734989](rsc/image-20200428164734989.png)
+>
+> Se tardan 13 ciclos en una iteración. Se pierden 1 ciclos por RD en la instrucción C, 2 ciclos por RD en la instrucción E y 4 ciclos por el riesgo de secuenciamineto de E.
+>
+> Los riesgos estructurales no se dan, ya que se pierden justamente los ciclos de RE en otros tipos de riesgo.
+>
 
 ### Ejercicio 3.14
 

@@ -49,9 +49,9 @@ Si existen alguna de las dependencias, entonces es possible que tengamos que emu
 
 Segmentando el camino de datos, es possible que se modifique el orden de las lecturas/escrituras. Siempre debemos cumplir:
 
-* Un store siempre escribe antes de que lea un load posterior
-* Un load siempre lee antes que escriba un store posterior
-* Un store siempre escribe que un store posterior
+* Un store siempre escribe antes de que lea un load posterior. (Dep Vertadera)
+* Un load siempre lee antes que escriba un store posterior. (Antidependencia)
+* Un store siempre escribe que un store posterior. (Dep de salida)
 
 ### Riesgos de secuenciamiento
 
@@ -69,7 +69,7 @@ Para gestionar estos riesgos hay que añadir unidades de control(lógica interbl
 
 ### Riesgos de secuenciamiento
 
-![image-lazosHWSEQ](image-20200424202451434.png)
+![image-lazosHWSEQ](rsc/image-20200424202451434.png)
 
 El bucle HW A es de latencia 1, no tendremos problemas aqui. Sin embargo, el bucle B tiene latencia 5 y hara perder 5-1=4 ciclos.
 
@@ -78,7 +78,7 @@ En este diseño de procesador, al detectar el Riesgo de secuenciamiento en la et
 * <u>Descartar</u> las dos instrucciones mas jovenes que ya habrian empezado su CP y BUS.
 * <u>Suspender</u> la interpretación de nuevas instrucciones hasta que desaparezca el RS.
 
-![img-RS](image-20200424202354937.png)
+![img-RS](rsc/image-20200424202354937.png)
 
 En la practica CP y BUS seguiran haciendo su trabajo, pero a la etapa D/L se inyectara una 'NOP'.  En la misma etapa que se escriba el CP correcto, ya podemos reanudar la interpretación série.
 
@@ -112,11 +112,11 @@ Tenemos comprobar cada tipo de dependencia de datos para ver si realmente genera
 
 En la segmentación por etapas, vemos que la latencia real de la segmentación es de 3 ciclos, desde que se calcula el resultado (etapa ALU) hasta que se actualiza el banco de registros (etapa ES).
 
-![image-20200424210538620](image-20200424210538620.png)
+![image-20200424210538620](rsc/image-20200424210538620.png)
 
 Para solventar los riesgos de datos deberemos bloquear la interpretación de instruciones en la etapa DL y las posteriores ademas de inyectar NOP en la etapa DL. 
 
-![imgRD](image-20200424210222273.png)
+![imgRD](rsc/image-20200424210222273.png)
 
 El circuito de control tomará los registros fuente (A y B) de la instrucción en la etapa DL y los comparamos con los registros destino de las instrucciones en las etapas ALU y M; si alguna comparación es cierta, activaremos la señal de riesgo de datos. Además de señales de validación de control.
 

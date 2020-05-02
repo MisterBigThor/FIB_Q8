@@ -90,7 +90,7 @@ El objetivo es que las tablas de reserva sean lineales e iguales para todas las 
 
 Para el diseño anterior, una solución sera:
 
-![image-20200425021221056](image-20200425021221056.png)
+![image-20200425021221056](rsc/image-20200425021221056.png)
 
 En este diseño, se ha añadido un sumador (+) para el primer ciclo, dividido la memoria en MD i MI y el banco de registros en BRL y BRE. Además se ha añadido una etapa de retardo en las operaciones de tipo ENT.
 
