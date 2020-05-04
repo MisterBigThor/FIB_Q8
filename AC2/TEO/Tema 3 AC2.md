@@ -125,3 +125,46 @@ El circuito de control tomará los registros fuente (A y B) de la instrucción e
 ### Solapamiento de riesgos
 
 Si tenemos a la vez, riesgo de datos y riesgo de secuenciamiento; debera primar resolver el riesgo de datos ya que este bloquea la interpretación de instrucciones; una vez resuelto este riesgo, se actuará sobre el riesgo de secuenciamiento.
+
+## Resumen
+
+```mermaid
+graph LR;
+D{Perdida de ciclos}
+subgraph General
+A(Segmentación Lineal)==> B(necesita mantener la semántica) ==> C[Detectar Riesgos: Etapa DL]
+C==>X(Actuación)-.->D
+end
+
+subgraph Actuación
+H(Riesgos Datos) ==> J(Detener interpretación + inyectar NOP DL_ALU)
+I(Riesgos Sec) ==> O(Descartar instrucciones Jovenes + Suspender hasta 'CP)
+J==>e(Emular Série) -.-> D
+O==>e
+end
+
+subgraph Riesgo de datos
+l[RD]-.->H
+end
+subgraph Riesgo de secuenciamineto
+U[RS] -.->I
+end
+```
+
+````mermaid
+graph LR;
+a ==> C(Debido a registros)
+C -.-> f(Dependencia verdadera) ==> s("R1 = r2+r4 y r6 = R1 + r9")
+C -.-> e(Antidependencia) ==> u("r1 = R2 + r3 y R2 = r2 + r9")
+C -.-> r(Dependencia de salida) ==>b("r1 = 80+2 y r1 = 82+3")
+a[RD] ==> B(Debido a memoria)
+B -.-> y(Load lee antes que un store posterior escriba)==>u
+B -.-> x(Store escribe antes que un store posterior escriba)==>b
+B -.-> v(Store escribe antes que un Load posterior lea) ==>s
+
+````
+
+
+
+
+

@@ -207,8 +207,8 @@ En D/L se conoce la @ efectiva del salto.
 
 | Predicción  | Seguir en Secuencia                                          | Saltar/Modificar                                             |
 | ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Acierto** | Las etapas posteriores tiene las instrucciones correctas.    | Se descartan las instrucciones siguientes y la etapa DL modifica el CP. |
-| **Fallo**   | Se modifica el CP desde la etapa ALU y se descartan las instrucciones predichas. | La recuperación consiste en comunicar el nuevo CP y descartar la instrucción que se habia predicho. |
+| **Acierto** | Las etapas posteriores tiene las instrucciones correctas.    | Se descartan las instrucciones posteriores y la etapa DL modifica el CP. |
+| **Fallo**   | Se modifica el CP desde la etapa ALU y se descartan las instrucciones predichas. | La recuperación consiste en comunicar el nuevo CP y descartar las instrucciones que se habian predicho. |
 
 <table>
     <tr>
@@ -234,7 +234,18 @@ En D/L se conoce la @ efectiva del salto.
 
 ### Riesgos con instrucciones predichas
 
+Un riesgo en las instrucciones predichas esta <u>condicionada</u> por el caso que no se deba ejecutar esa instrucción (<u>ciclo de recuperación a la vez que el riesgo</u>). Una instrucción en D/L puede:
 
+* Detectar RD
+* Detectar RS
+
+Solo debemos tratar esto riesgos <u>SI</u> hemos acertado en la predicción.
+
+Si detectamos un RS o RD y un fallo en la predicción, el fallo ya descarta las instrucciones posteriores.
+
+Si no hay fallo en la predicción, deberemos usar las técnicas para evitarlos(inyectar nop's).
+
+# Ejemplos
 
 ### Suma de dos vectores elemento a elemento
 
