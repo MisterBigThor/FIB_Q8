@@ -114,7 +114,7 @@ En la segmentación por etapas, vemos que la latencia real de la segmentación e
 
 ![image-20200424210538620](rsc/image-20200424210538620.png)
 
-Para solventar los riesgos de datos deberemos bloquear la interpretación de instruciones en la etapa DL y las posteriores ademas de inyectar NOP en la etapa DL. 
+Para solventar los riesgos de datos deberemos <u>bloquear la interpretación</u> de instruciones en la etapa DL y las posteriores ademas de inyectar NOP en la etapa ALU(<u>inyectar</u>). 
 
 ![imgRD](rsc/image-20200424210222273.png)
 
