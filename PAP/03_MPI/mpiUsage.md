@@ -93,46 +93,22 @@ void main (int argc, char *argv[]) {
 	MPI_Init(&argc, &argv) ;
 	MPI_Comm_Rank(MPI_COMM_WORLD, &rank);
 	MPI_Comm_Size(MPI_COMM_WORLD, &procs);
+    
 	step = 1.0/(double) num_steps ;
 	for (i = rank; i < num_steps; i += procs){
 		x = (i + 0.5) * step;
 		sum += 4.0 / (1.0 + x*x);
 	}
 	pi = sum * step;
-	if (rank == 0)
-	for (i = 1; i < procs; i++) {
-		MPI_Recv(&x, 1, MPI_DOUBLE, i, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		pi += x;
-	}
+	if (rank == 0){
+		for (i = 1; i < procs; i++) {
+			MPI_Recv(&x, 1, MPI_DOUBLE, i, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+			pi += x;
+		}
+        printf("\nResult: %f\n");
+    }
 	else MPI_Send(&pi, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
 	MPI_Finalize() ;
-}
-````
-
-#### Distributed vector
-
-````c
-#include "mpi.h"
-#include <stdio.h>
-#include <stdlib.h>
-#define N 1024
-#define P 4
-int main (int argc, char *argv[]) {
-	int procs, rank;
-	double vector[N/P+1];
-	MPI_Init(&argc, &argv);
-	MPI_Comm_size(MPI_COMM_WORLD, &procs);
-	if (procs != P) {
-		printf("Error: number of processors should be %d\n", P);
-		MPI_Abort(MPI_COMM_WORLD, 0);
-	}
-	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-	random_init(vector, ((rank == 0) ? 0 : 1), N/P);
-	if (rank < P-1) MPI_Send(&buf[N/P], 1, MPI_DOUBLE, (rank+1), INIT, 						MPI_COMM_WORLD);
-	if (rank > 0) MPI_Recv(&buf[0], 1, MPI_DOUBLE, (rank-1), INIT, MPI_COMM_WORLD,
-		MPI_STATUS_IGNORE);
-	compute(vector, 1, N/P);
-	MPI_Finalize();
 }
 ````
 
