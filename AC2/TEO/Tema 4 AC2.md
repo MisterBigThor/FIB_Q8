@@ -105,6 +105,8 @@ end
 
 Un cortocircuito añade un bucle hardware, y almenos un multilpexor para poder selecionar la información.
 
+* Nomenclatura : C_FuenteDestino. donde fuente y destino son las unidades funcionales productora y consumidora.
+
 La comunicación entre etapas puede hacerse al final de una etapa:
 
 * Finalizando el ciclo : El tiempo de la etapa solo se suma el tiempo del multiplexor.
@@ -115,8 +117,6 @@ Para hacer un análisis hay que estudiar:
 * Latencia de cálculo (fase de ejecucción): Ciclos desde que se usan los datos hasta obtener el resultado
 
 * Instrucciones consumidoras de datos: Instrucciones que necesitan datos de las productoras. (ENT, STORE, LOAD y BR).
-
-Consumidoras de datos
 
 * Instrucciones productoras de datos: Instrucciones que generan resultados y las guardan (ENT, LOAD).
 
@@ -150,11 +150,23 @@ En este caso se utiliza el corto entre memoria y la ALU, pues a distancia 2 la i
 
 ![image-20200425032648409](rsc/image-20200425032648409.png)
 
-Los cortocircuitos necesitaran de multiplexores y señales de control. La leyenda para las señales de control es X.etapa.nombreCorto{.operando}
+Los cortocircuitos necesitaran de multiplexores y señales de control. La leyenda para las señales de control es X.etapa.nombreCorto{.operando}.
+
+### Cortocircuitos lógicos vs hardware
+
+Con este modelo, es possible que se pueda enviar el mismo dato en diferentes etapas:
+
+![image-20200504190806785](Tema 4 AC2.assets/image-20200504190806785.png)
+
+Varios cortos lógicos pueden implementarse con un único físico también varios cortocircuitos físicos pueden implementar el mismo corto lógico.
+
+El dato lo proporciona ALU a la etapa DL y M a la etapa ALU.
 
 ### Lógica de interbloqueos
 
 Dedicada a la gestión de los cortos y de los bloqueos necesarios. Como los cortos eliminan RD, el circuito de deteción es el mismo, variando la parte de actuación.
+
+La actuación se dedica a validar los datos de los cortocircuitos y fijar el camino de los multiplexores.
 
 ## Secuenciamiento - Reducir la latencia de segmentación
 
@@ -244,6 +256,21 @@ Solo debemos tratar esto riesgos <u>SI</u> hemos acertado en la predicción.
 Si detectamos un RS o RD y un fallo en la predicción, el fallo ya descarta las instrucciones posteriores.
 
 Si no hay fallo en la predicción, deberemos usar las técnicas para evitarlos(inyectar nop's).
+
+# Resumen  
+
+### Cortocircuitos
+
+Se trata de adelantar datos, para rebajar la latencia efectiva de la segmentación. 
+
+* Hay casos donde la latencia de cálculo no permite adelantar este dato
+* Un cortocircuito necesita multiplexar el camino de datos.
+
+Hay que detecar quien (operación.registro) produce/escribe datos y quien (operación.registro) consume/lee  datos y la distancia (en instrucciones) en que lo hacen. 
+
+
+
+
 
 # Ejemplos
 

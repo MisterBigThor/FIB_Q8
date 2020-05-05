@@ -21,7 +21,7 @@ Esta es una posible segmentación de un procesador, con su lenguaje maquina:
 
 
 
-<u>Lazo o bucle hardware.</u> Es una comunicación entre etapas que permite que en una etapa se utilice información suministrada desde etapas posteriores. La latencia puede verse como los ciclos que tardara la información en volver.
+<u>Lazo o bucle hardware.</u> Es una comunicación entre etapas que permite que en una etapa se utilice información suministrada desde etapas posteriores. La longuitud será el número de etapas entre inicio y final más esta ulima.
 
 ## Semántica del procesador segmentado
 
@@ -144,24 +144,27 @@ O==>e
 end
 
 subgraph Riesgo de datos
-l[RD]-.->H
+l[RD: Por a actualización de BR]-.->H
 end
 subgraph Riesgo de secuenciamineto
-U[RS] -.->I
+U[RS: Por a actualización de CP] -.->I
 end
 ```
 
 ````mermaid
 graph LR;
+subgraph Registros
 a ==> C(Debido a registros)
 C -.-> f(Dependencia verdadera) ==> s("R1 = r2+r4 y r6 = R1 + r9")
 C -.-> e(Antidependencia) ==> u("r1 = R2 + r3 y R2 = r2 + r9")
 C -.-> r(Dependencia de salida) ==>b("r1 = 80+2 y r1 = 82+3")
+end
+subgraph Memoria
 a[RD] ==> B(Debido a memoria)
 B -.-> y(Load lee antes que un store posterior escriba)==>u
 B -.-> x(Store escribe antes que un store posterior escriba)==>b
 B -.-> v(Store escribe antes que un Load posterior lea) ==>s
-
+end
 ````
 
 
