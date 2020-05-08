@@ -17,7 +17,7 @@ typedef struct {
 	void (*fn) (void *);
 	void *fn_data;
 
-	int id;			//id inside the nested level
+	int id;				//id inside the nested level
 	int nestedLevel;	//nested level of the thread
 
 	int num_threads; 	//threads defined in the region.
