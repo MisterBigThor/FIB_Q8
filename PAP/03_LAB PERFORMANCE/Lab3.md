@@ -19,6 +19,26 @@ Pel que fa a l’ús de les directives numactl, tenim que
 
 <ToDo>
 
+
+
+
+
+
+
+
+
+En el gràfic, que compara l’ample de banda en les tres versions podem veure:
+
+* La segona versió (memoria i thread en diferent) node es la que pitjor rendiment obté, el rendiment ve condicionat per la comunicació de dades entre els threads i la memória(que estan a diferent node).
+
+* La primera versió no escala al augmentar el numero de threads, ja que no s’aprofita tot el paral·lelisme possible (respecte a la versió 3) al mantenir l’execució en un únic node.
+
+* La tercera versió es la que dóna el millor rendiment, molt similar al de la segona versió amb pocs threads pero ràpidament escala el seu rendiment amb els threads.
+
+* El fet que amb dos threads la tercera versió estigui tant (relativament) lluny de la segona versió pot ser degut a un cas extrem en la justa execucció del test de proves.
+
+  
+
 ### Linpack
 
 ### HPCG
