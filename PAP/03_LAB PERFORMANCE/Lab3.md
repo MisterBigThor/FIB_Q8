@@ -48,5 +48,13 @@ En resum, mentres es fa l’operació s’aprofita aquest temps per transmetre a
 
 ### Linpack
 
+
+
+
+
+Cada node Boada té 2 Intel Xeon E5-2609 v4 @ 1,70GHz, amb un rendiment de pic de 217.6 GFLOPS.
+
+
+
 ### HPCG
 

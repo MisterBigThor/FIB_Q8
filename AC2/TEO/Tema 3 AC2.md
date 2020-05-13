@@ -1,31 +1,31 @@
-# Tema 3 AC2
-
-[TOC]
+# Procesador segmentado lineal
 
 ## Segmentación lineal
 
 Esta es una posible segmentación de un procesador, con su lenguaje maquina:
 
-| 1                           | 2                                     | 3                                         | 4                                  | 5                    | 6                                          |
-| --------------------------- | ------------------------------------- | ----------------------------------------- | ---------------------------------- | -------------------- | ------------------------------------------ |
-| CP                          | BUS                                   | D/L                                       | ALU                                | M                    | ES                                         |
-| Control del secuenciamiento | Busqueda en memoria de la Instrucción | Decodificación + busqueda operandos en BR | Operar con los datos suministrados | Aceso a MD o retardo | Escritura en BR y actualización CP(op. BR) |
+| 1                    | 2                                     | 3                                        | 4                                  | 5                     | 6                                                      |
+| -------------------- | ------------------------------------- | ---------------------------------------- | ---------------------------------- | --------------------- | ------------------------------------------------------ |
+| CP                   | BUS                                   | D/L                                      | ALU                                | M                     | ES                                                     |
+| Contador de programa | Búsqueda en memoria de la Instrucción | Decodificación + lectura operandos en BR | Operar con los datos suministrados | Acceso a MD o retardo | Escritura en BR y actualización CP(operaciones de  BR) |
+
+![image-20200513073504013](Tema 3 AC2.assets/image-20200513073504013.png)
 
 | NEMO  | Descripción                        | Semántica instrucción |
 | ----- | ---------------------------------- | --------------------- |
-| RR    | Instruccion Registro Registros     | ra op rb => rc        |
-| RI    | Instruccion Registro Literal       | ra op lit => rc       |
+| RR    | Instrucción Registro Registro    | ra op rb => rc        |
+| RI    | Instrucción Registro Literal      | ra op lit => rc       |
 | LOAD  | Carga de memoria                   | MEM[rb+lit] => ra     |
 | STORE | Guarda en memoria                  | MEM[rb+lit] <= ra |
-| BR    | Saltos condicionales/incondiciones | PC = PC'              |
+| BR    | Saltos condicionales/incondicionales | PC = PC'              |
 
 
 
-<u>Lazo o bucle hardware.</u> Es una comunicación entre etapas que permite que en una etapa se utilice información suministrada desde etapas posteriores. La longuitud será el número de etapas entre inicio y final más esta ulima.
+<u>Lazo o bucle hardware.</u> Es una comunicación entre etapas que permite que en una etapa se utilice información suministrada desde etapas posteriores. La longitud será el número de etapas entre inicio y final más esta última.
 
 ## Semántica del procesador segmentado
 
-Una ejecucción segmentada debe dar el mismo resultado que una serie, por eso es importante que se respete la semántica que ha expresado el programador en el programa; es decir, que se respete el orden de las lecturas y escrituras a posiciones de almacenamiento.
+Una ejecución segmentada debe dar el mismo resultado que una serie, por eso es importante que se respete la semántica que ha expresado el programador en el programa; es decir, que se respete el orden de las lecturas y escrituras a posiciones de almacenamiento.
 
 Respetar este orden viene caracterizado por <u>latencia efectiva de la segmentación</u>, los ciclos entre el inicio de un calculo y el ciclo donde se puede utilizar ese calculo. Se producen riesgos por los necesarios bucles hardware presentes, pueden ser de varios tipos:
 
@@ -35,7 +35,7 @@ Modificación del orden de escrituras/lecturas especificado sobre una posición 
 
 | TIPO                  | EJEMPO                             |
 | --------------------- | ---------------------------------- |
-| Dep. Vertadera        | **r1** = r2 + r3; r5 = **r1** + r7 |
+| Dependencia Verdadera | **r1** = r2 + r3; r5 = **r1** + r7 |
 | Antidependencia       | r1 = **r2** + r3; **r2** = r1 + r7 |
 | Dependencia de salida | **r1** = r2 + r3; **r1** = 6 + r7  |
 
@@ -43,25 +43,25 @@ Existen riesgos de datos por posiciones de memoria y por registros, que son los 
 
 #### Debidos a registros
 
-Si existen alguna de las dependencias, entonces es possible que tengamos que emular el funcionamiento série para respetar la semántica del procesador.
+Si existen alguna de las dependencias, entonces es posible que tengamos que emular el funcionamiento serie para respetar la semántica del procesador.
 
 #### Debidos a memoria
 
-Segmentando el camino de datos, es possible que se modifique el orden de las lecturas/escrituras. Siempre debemos cumplir:
+Segmentando el camino de datos, es posible que se modifique el orden de las lecturas/escrituras. Siempre debemos cumplir:
 
-* Un store siempre escribe antes de que lea un load posterior. (Dep Vertadera)
+* Un store siempre escribe antes de que lea un load posterior. (Dependencia Verdadera)
 * Un load siempre lee antes que escriba un store posterior. (Antidependencia)
-* Un store siempre escribe que un store posterior. (Dep de salida)
+* Un store siempre escribe que un store posterior. (Dependencia de salida)
 
 ### Riesgos de secuenciamiento
 
 Interpretación de instrucciones distinta a la especificada por el programador.
 
-Mientras se evalua una instrucción de salto condicional, este procesador puede estar ejecutando instrucciones que modifican el estado de la maquina. Deberemos detener la interpretación hasta resolver el riesgo.
+Mientras se evalúa una instrucción de salto condicional, este procesador puede estar ejecutando instrucciones que modifican el estado de la maquina. Deberemos detener la interpretación hasta resolver el riesgo.
 
 ### Lógica de interbloqueos - Gestión de riesgos
 
-Para gestionar estos riesgos hay que añadir unidades de control(lógica interbloqueos), trataremos los riesgos en la etapa D/L, la primera donde podemos 'saber' si hay riesgo. La actuación de la logica será emular el funcionamiento serie, al coste de perder ciclos.
+Para gestionar estos riesgos hay que añadir unidades de control(lógica interbloqueos), trataremos los riesgos en la etapa D/L, la primera donde podemos 'saber' si hay riesgo. La actuación de la lógica será emular el funcionamiento serie, al coste de perder ciclos.
 
 
 
@@ -71,18 +71,18 @@ Para gestionar estos riesgos hay que añadir unidades de control(lógica interbl
 
 ![image-lazosHWSEQ](rsc/image-20200424202451434.png)
 
-El bucle HW A es de latencia 1, no tendremos problemas aqui. Sin embargo, el bucle B tiene latencia 5 y hara perder 5-1=4 ciclos.
+El bucle HW A es de latencia 1, no tendremos problemas aquí. Sin embargo, el bucle B tiene latencia 5 y hará perder 5-1=4 ciclos.
 
 En este diseño de procesador, al detectar el Riesgo de secuenciamiento en la etapa D/L deberemos: 
 
-* <u>Descartar</u> las dos instrucciones mas jovenes que ya habrian empezado su CP y BUS.
+* <u>Descartar</u> las dos instrucciones mas jóvenes que ya habrían empezado su CP y BUS.
 * <u>Suspender</u> la interpretación de nuevas instrucciones hasta que desaparezca el RS.
 
 ![img-RS](rsc/image-20200424202354937.png)
 
-En la practica CP y BUS seguiran haciendo su trabajo, pero a la etapa D/L se inyectara una 'NOP'.  En la misma etapa que se escriba el CP correcto, ya podemos reanudar la interpretación série.
+En la practica CP y BUS seguirán haciendo su “trabajo”, pero <u>a la etapa D/L se inyectara una 'NOP'</u>.  En la misma etapa que se escriba el CP correcto, ya podemos reanudar la interpretación serie.
 
-El circuito de deteción de Riesgo de secuenciamiento controlara la inyecicción de NOP a la etapa DL( registro BUS_DL ).
+El circuito de detección de Riesgo de secuenciamiento controlara la inyección de NOP a la etapa DL( registro BUS_DL ).
 
 ````vhdl
 RD<= BR_DL or BR_DL_ALU or BR_ALU_MEM or BR_MEM_ES;
@@ -94,13 +94,13 @@ RD<= BR_DL or BR_DL_ALU or BR_ALU_MEM or BR_MEM_ES;
 
 Tenemos comprobar cada tipo de dependencia de datos para ver si realmente genera riesgo de datos.
 
-* Riesgo de datos por dependencia vertadera
+* Riesgo de datos por dependencia verdadera
 
   Existe riesgo si una instrucción mas vieja aun no ha actualizado la posición de almacenamiento para una instrucción mas nueva. Esto se da por que se tardan 3 ciclos en actualizar el banco de registros.
 
 * Riesgo de datos por antidependencia
 
-  Existe riesgo si una instrucción más nueva actualiza una posicion antes que una instrucción antigua haya usado este dato; es decir, una instruccion siempre lee antes de que escriba una instrucción anterior. No se da en esta segmentación
+  Existe riesgo si una instrucción más nueva actualiza una posición antes que una instrucción antigua haya usado este dato; es decir, una instrucción siempre lee antes de que escriba una instrucción anterior. No se da en esta segmentación
 
 * Resigo de datos por dependencia de salida
 
@@ -114,17 +114,17 @@ En la segmentación por etapas, vemos que la latencia real de la segmentación e
 
 ![image-20200424210538620](rsc/image-20200424210538620.png)
 
-Para solventar los riesgos de datos deberemos <u>bloquear la interpretación</u> de instruciones en la etapa DL y las posteriores ademas de inyectar NOP en la etapa ALU(<u>inyectar</u>). 
+Para solventar los riesgos de datos deberemos <u>bloquear la interpretación</u> de instrucciones en la etapa DL y las posteriores además de inyectar NOP en la etapa ALU(<u>inyectar</u>). 
 
 ![imgRD](rsc/image-20200424210222273.png)
 
 El circuito de control tomará los registros fuente (A y B) de la instrucción en la etapa DL y los comparamos con los registros destino de las instrucciones en las etapas ALU y M; si alguna comparación es cierta, activaremos la señal de riesgo de datos. Además de señales de validación de control.
 
-<Foto de control Riesgo de datos>
+![image-20200513074020004](Tema 3 AC2.assets/image-20200513074020004.png)
 
 ### Solapamiento de riesgos
 
-Si tenemos a la vez, riesgo de datos y riesgo de secuenciamiento; debera primar resolver el riesgo de datos ya que este bloquea la interpretación de instrucciones; una vez resuelto este riesgo, se actuará sobre el riesgo de secuenciamiento.
+Si tenemos a la vez, riesgo de datos y riesgo de secuenciamiento; deberá primar resolver el riesgo de datos ya que este bloquea la interpretación de instrucciones; una vez resuelto este riesgo, se actuará sobre el riesgo de secuenciamiento.
 
 ## Resumen
 
