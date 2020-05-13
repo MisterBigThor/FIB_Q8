@@ -1,0 +1,39 @@
+--use work.cte_tipos_UF_pkg.all;
+eje8: process is
+	variable vInstruciones : integer := 0;
+	variable vInstStore : integer := 0;
+	variable vInstLoad : integer := 0; 
+	variable vInstAriLog : integer := 0;
+	variable vInstSecCond : integer := 0;
+	variable vInstSecIncond : integer := 0;
+		
+begin
+	wait until reloj'event and reloj ='1';
+	
+	vInstruciones := vInstruciones + 1;
+	if (s_opMD(4) = '1' and s_opMD(3) = '0') then 
+		vInstLoad := vInstLoad + 1;
+	elsif (s_opMD(4) = '1' and s_opMD(3) = '1')then
+		vInstStore := vInstStore + 1;
+		
+	elsif (s_opALU = ALU_ADD or s_opALU = ALU_SUB or s_opALU = ALU_SLL 
+	or s_opALU = ALU_SLT or s_opALU = ALU_SLTU or s_opALU = ALU_XOR or s_opALU = ALU_SRL 
+	or s_opALU = ALU_SRA or s_opALU = ALU_OR or s_opALU = ALU_AND)
+	then
+		vInstAriLog := vInstAriLog + 1;
+
+	elsif (s_opSEC = DECS_BEQ or s_opSEC = DECS_BNE or s_opSEC = DECS_BLT or s_opSEC = DECS_BGE 
+			or s_opSEC = DECS_BLTU or s_opSEC = DECS_BGEU) then
+		vInstSecCond := vInstSecCond  + 1;
+	elsif (s_opSEC(3)) then
+		vInstSecIncond := vInstSecIncond + 1;
+	end if;
+	
+	report "instructions: " & integer'image(vInstruciones)
+	& " arithmetic/logic: " & integer'image(vInstAriLog)
+	& " Instruciones load : " & integer'image(vInstLoad)
+	& " Instruciones store: " & integer'image(vInstStore)
+	& " Instruciones sec Cond: " & integer'image(vInstSecCond)
+	& " Instruciones sec Inco: " & integer'image(vInstSecIncond);	
+	
+end process eje8;

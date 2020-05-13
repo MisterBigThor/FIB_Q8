@@ -1,0 +1,117 @@
+# Reading D:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do alinearE_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/param_disenyo_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package param_disenyo_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/cte_tipos_deco_camino_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package cte_tipos_deco_camino_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/retardos_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package retardos_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB4/PROC_SERIE/MD/COMPONENTES/ELEMENTOS/mux2m.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mux2M
+# -- Compiling architecture comportamiento of mux2M
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB4/PROC_SERIE/MD/tipos_ctes_MD_pkg/tipos_constan_memoria_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package param_disenyo_pkg
+# -- Compiling package tipos_constan_memoria_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/componentes_FMTE_pkg/componentes_FMTE_pkg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package param_disenyo_pkg
+# -- Loading package NUMERIC_STD
+# -- Loading package cte_tipos_deco_camino_pkg
+# -- Loading package MATH_REAL
+# -- Loading package tipos_constan_memoria_pkg
+# -- Compiling package componentes_FMTE_pkg
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/CODIGO/alinearE.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package param_disenyo_pkg
+# -- Loading package tipos_constan_memoria_pkg
+# -- Loading package cte_tipos_deco_camino_pkg
+# -- Loading package componentes_FMTE_pkg
+# -- Loading package retardos_pkg
+# -- Compiling entity alinearE
+# -- Compiling architecture estructural of alinearE
+# 
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/QUARTUS/../PRUEBAS/prueba_alinearE.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package param_disenyo_pkg
+# -- Loading package tipos_constan_memoria_pkg
+# -- Loading package cte_tipos_deco_camino_pkg
+# -- Compiling entity prueba_alinearE
+# -- Compiling architecture compor of prueba_alinearE
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs="+acc"  prueba_alinearE
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs=\"+acc\" -t 1ps prueba_alinearE 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.param_disenyo_pkg
+# Loading work.tipos_constan_memoria_pkg
+# Loading work.cte_tipos_deco_camino_pkg
+# Loading work.prueba_alineare(compor)
+# Loading work.componentes_fmte_pkg
+# Loading work.retardos_pkg
+# Loading work.alineare(estructural)
+# Loading work.mux2m(comportamiento)
+# 
+# do D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/QUARTUS/../PRUEBAS/formato_ventanas.do
+# log -r /*
+# if {[batch_mode] == 0} then { do wave.do }
+# transcript off
+# run -all
+# ** Note: entrada 50462976
+#    Time: 40 ns  Iteration: 0  Instance: /prueba_alineare
+# ** Note: salida 50462976
+#    Time: 40 ns  Iteration: 0  Instance: /prueba_alineare
+# ** Failure: incorret out int halfword
+#    Time: 80 ns  Iteration: 0  Process: /prueba_alineare/impulsos File: D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/QUARTUS/../PRUEBAS/prueba_alinearE.vhd
+# Break in Process impulsos at D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/QUARTUS/../PRUEBAS/prueba_alinearE.vhd line 55
+# Simulation Breakpoint: Break in Process impulsos at D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/QUARTUS/../PRUEBAS/prueba_alinearE.vhd line 55
+# MACRO D:\FIB_Q8\AC2\LAB4\PROC_SERIE_fmte\MD\COMPONENTES\FMTE\COMPONENTES\ALINEARE\QUARTUS\..\PRUEBAS\formato_ventanas.do PAUSED at line 3

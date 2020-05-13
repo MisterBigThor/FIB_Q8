@@ -1,0 +1,540 @@
+Analysis & Elaboration report for proc_MD_MI
+Tue May 12 01:38:58 2020
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: Deco_cam_dat_secu:procesa|camino_datos:cam_datos|mux3:muxL1
+  5. Parameter Settings for User Entity Instance: Deco_cam_dat_secu:procesa|camino_datos:cam_datos|mux2:muxL2
+  6. Parameter Settings for User Entity Instance: Deco_cam_dat_secu:procesa|camino_datos:cam_datos|mux3:muxmES
+  7. Parameter Settings for User Entity Instance: Deco_cam_dat_secu:procesa|camino_secuen:cam_secuen|muxdirec:muxrelatindex
+  8. Parameter Settings for User Entity Instance: Deco_cam_dat_secu:procesa|camino_secuen:cam_secuen|muxdirec:muxsecuen
+  9. Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTE:form_esc|alinearE:alinaE|mux2M:\columna:1:iter:1:filab:2:gencoluma
+ 10. Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTE:form_esc|alinearE:alinaE|mux2M:\columna:1:iter:1:filab:3:gencoluma
+ 11. Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTE:form_esc|alinearE:alinaE|mux2M:\columna:2:iter:1:filab:1:gencoluma
+ 12. Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTE:form_esc|alinearE:alinaE|mux2M:\columna:2:iter:2:filab:3:gencoluma
+ 13. Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|alinear:alina|mux2M:\columna:1:filaa:0:gencoluma
+ 14. Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|alinear:alina|mux2M:\columna:1:filaa:1:gencoluma
+ 15. Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|alinear:alina|mux2M:\columna:2:filaa:0:gencoluma
+ 16. Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|FMTL_extsig:ext_sig|mux2M:\selec:1:muxsig
+ 17. Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|FMTL_extsig:ext_sig|mux2M:\selec:2:muxsig
+ 18. Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|FMTL_extsig:ext_sig|mux2M:\selec:3:muxsig
+ 19. Analysis & Elaboration Settings
+ 20. Port Connectivity Checks: "Deco_cam_dat_secu:procesa|camino_datos:cam_datos|mux3:muxL1"
+ 21. Analysis & Elaboration Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                  ;
++------------------------------------+--------------------------------------------+
+; Analysis & Elaboration Status      ; Successful - Tue May 12 01:38:58 2020      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; proc_MD_MI                                 ;
+; Top-level Entity Name              ; proc_MD_MI                                 ;
+; Family                             ; Cyclone IV GX                              ;
+; Total logic elements               ; N/A until Partition Merge                  ;
+;     Total combinational functions  ; N/A until Partition Merge                  ;
+;     Dedicated logic registers      ; N/A until Partition Merge                  ;
+; Total registers                    ; N/A until Partition Merge                  ;
+; Total pins                         ; N/A until Partition Merge                  ;
+; Total virtual pins                 ; N/A until Partition Merge                  ;
+; Total memory bits                  ; N/A until Partition Merge                  ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
+; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                  ;
+; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                  ;
+; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                  ;
+; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                  ;
+; Total PLLs                         ; N/A until Partition Merge                  ;
++------------------------------------+--------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Deco_cam_dat_secu:procesa|camino_datos:cam_datos|mux3:muxL1 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; sel1           ; 00    ; Unsigned Binary                                                                 ;
+; sel2           ; 01    ; Unsigned Binary                                                                 ;
+; sel3           ; 10    ; Unsigned Binary                                                                 ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Deco_cam_dat_secu:procesa|camino_datos:cam_datos|mux2:muxL2 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; sel1           ; '0'   ; Enumerated                                                                      ;
+; sel2           ; '1'   ; Enumerated                                                                      ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Deco_cam_dat_secu:procesa|camino_datos:cam_datos|mux3:muxmES ;
++----------------+-------+----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                             ;
++----------------+-------+----------------------------------------------------------------------------------+
+; sel1           ; 00    ; Unsigned Binary                                                                  ;
+; sel2           ; 01    ; Unsigned Binary                                                                  ;
+; sel3           ; 10    ; Unsigned Binary                                                                  ;
++----------------+-------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Deco_cam_dat_secu:procesa|camino_secuen:cam_secuen|muxdirec:muxrelatindex ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; sel1           ; '0'   ; Enumerated                                                                                    ;
+; sel2           ; '1'   ; Enumerated                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Deco_cam_dat_secu:procesa|camino_secuen:cam_secuen|muxdirec:muxsecuen ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; sel1           ; '0'   ; Enumerated                                                                                ;
+; sel2           ; '1'   ; Enumerated                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTE:form_esc|alinearE:alinaE|mux2M:\columna:1:iter:1:filab:2:gencoluma ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; tam_mux_datos  ; 8     ; Signed Integer                                                                                                      ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTE:form_esc|alinearE:alinaE|mux2M:\columna:1:iter:1:filab:3:gencoluma ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; tam_mux_datos  ; 8     ; Signed Integer                                                                                                      ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTE:form_esc|alinearE:alinaE|mux2M:\columna:2:iter:1:filab:1:gencoluma ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; tam_mux_datos  ; 8     ; Signed Integer                                                                                                      ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTE:form_esc|alinearE:alinaE|mux2M:\columna:2:iter:2:filab:3:gencoluma ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+; tam_mux_datos  ; 8     ; Signed Integer                                                                                                      ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|alinear:alina|mux2M:\columna:1:filaa:0:gencoluma ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                       ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+; tam_mux_datos  ; 8     ; Signed Integer                                                                                             ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|alinear:alina|mux2M:\columna:1:filaa:1:gencoluma ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                       ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+; tam_mux_datos  ; 8     ; Signed Integer                                                                                             ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|alinear:alina|mux2M:\columna:2:filaa:0:gencoluma ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                       ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+; tam_mux_datos  ; 8     ; Signed Integer                                                                                             ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|FMTL_extsig:ext_sig|mux2M:\selec:1:muxsig ;
++----------------+-------+-----------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                ;
++----------------+-------+-----------------------------------------------------------------------------------------------------+
+; tam_mux_datos  ; 8     ; Signed Integer                                                                                      ;
++----------------+-------+-----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|FMTL_extsig:ext_sig|mux2M:\selec:2:muxsig ;
++----------------+-------+-----------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                ;
++----------------+-------+-----------------------------------------------------------------------------------------------------+
+; tam_mux_datos  ; 8     ; Signed Integer                                                                                      ;
++----------------+-------+-----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|FMTL_extsig:ext_sig|mux2M:\selec:3:muxsig ;
++----------------+-------+-----------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                ;
++----------------+-------+-----------------------------------------------------------------------------------------------------+
+; tam_mux_datos  ; 8     ; Signed Integer                                                                                      ;
++----------------+-------+-----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CGX30CF23C6     ;                    ;
+; Top-level entity name                                                      ; proc_MD_MI         ; proc_MD_MI         ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Deco_cam_dat_secu:procesa|camino_datos:cam_datos|mux3:muxL1" ;
++------+-------+----------+---------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                       ;
++------+-------+----------+---------------------------------------------------------------+
+; d2   ; Input ; Info     ; Stuck at GND                                                  ;
++------+-------+----------+---------------------------------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Elaboration
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Tue May 12 01:38:54 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off proc_MD_MI -c proc_MD_MI --analysis_and_elaboration
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/mi/tipos_ctes_mi_pkg/tipos_constan_memoria_i_pkg.vhd
+    Info (12022): Found design unit 1: tipos_constan_memoria_I_pkg
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/usecuen/componentes_secuenciamiento_pkg/componentes_secuenciamiento_pkg.vhd
+    Info (12022): Found design unit 1: componentes_secuenciamiento_pkg
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/ucalculo/componentes_cam_datos_pkg/componentes_cam_datos_pkg.vhd
+    Info (12022): Found design unit 1: componentes_cam_datos_pkg
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/procesador/auto_control/decodificador/codigo/componentes_decodificador_pkg.vhd
+    Info (12022): Found design unit 1: componentes_decodificador_pkg
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/md/componentes_md_pkg/componentes_md_pkg.vhd
+    Info (12022): Found design unit 1: componentes_MD_pkg
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/md/tipos_ctes_md_pkg/tipos_constan_memoria_pkg.vhd
+    Info (12022): Found design unit 1: tipos_constan_memoria_pkg
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/tipos_constantes_pkg/riscv32_coop_funct_pkg.vhd
+    Info (12022): Found design unit 1: riscv32_coop_funct_pkg
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/tipos_constantes_pkg/retardos_pkg.vhd
+    Info (12022): Found design unit 1: retardos_pkg
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/tipos_constantes_pkg/retardos_even_pkg.vhd
+    Info (12022): Found design unit 1: retardos_even_pkg
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/tipos_constantes_pkg/cte_tipos_uf_pkg.vhd
+    Info (12022): Found design unit 1: cte_tipos_UF_pkg
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/tipos_constantes_pkg/cte_tipos_deco_camino_pkg.vhd
+    Info (12022): Found design unit 1: cte_tipos_deco_camino_pkg
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/tipos_constantes_pkg/param_disenyo_pkg.vhd
+    Info (12022): Found design unit 1: param_disenyo_pkg
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/mi/componentes_mi_pkg/componentes_mi_pkg.vhd
+    Info (12022): Found design unit 1: componentes_MI_pkg
+Info (12021): Found 1 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/componentes_proc_md_mi_pkg/componentes_proc_md_mi_pkg.vhd
+    Info (12022): Found design unit 1: componentes_proc_MD_MI_pkg
+Info (12021): Found 2 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/mi/memoria_mi/codigo/ini_mem_i_pkg.vhd
+    Info (12022): Found design unit 1: inicializa_mem_I_pkg
+    Info (12022): Found design unit 2: inicializa_mem_I_pkg-body
+Info (12021): Found 2 design units, including 0 entities, in source file /fib_q8/ac2/lab4/proc_serie/md/memoria_ram/codigo/ini_mem_pkg.vhd
+    Info (12022): Found design unit 1: inicializa_mem_pkg
+    Info (12022): Found design unit 2: inicializa_mem_pkg-body
+Info (12021): Found 2 design units, including 1 entities, in source file /fib_q8/ac2/lab4/proc_serie/ensamblado/codigo/proc_md_mi.vhd
+    Info (12022): Found design unit 1: proc_MD_MI-estructural
+    Info (12023): Found entity 1: proc_MD_MI
+Info (12127): Elaborating entity "proc_MD_MI" for the top level hierarchy
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/cp/codigo/regcp.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: regCP-comportamiento
+    Info (12023): Found entity 1: regCP
+Info (12128): Elaborating entity "regCP" for hierarchy "regCP:regis_CP"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/mi/ensamblado_componentes_mi/codigo/cam_mem_inst.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: cam_MEM_INST-estruc
+    Info (12023): Found entity 1: cam_MEM_INST
+Info (12128): Elaborating entity "cam_MEM_INST" for hierarchy "cam_MEM_INST:Mem_INST"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/mi/memoria_mi/codigo/mi.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: MI-rtl
+    Info (12023): Found entity 1: MI
+Info (12128): Elaborating entity "MI" for hierarchy "cam_MEM_INST:Mem_INST|MI:mem_inst"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/ensamblado_deco_uc_us/codigo/deco_cam_dat_secu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Deco_cam_dat_secu-estructural
+    Info (12023): Found entity 1: Deco_cam_dat_secu
+Info (12128): Elaborating entity "Deco_cam_dat_secu" for hierarchy "Deco_cam_dat_secu:procesa"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/auto_control/decodificador/codigo/decodificador.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: decodificador-estructural
+    Info (12023): Found entity 1: decodificador
+Info (12128): Elaborating entity "decodificador" for hierarchy "Deco_cam_dat_secu:procesa|decodificador:deco"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/auto_control/decodificador/codigo/decocamino.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: decocamino-comportamiento
+    Info (12023): Found entity 1: decocamino
+Info (12128): Elaborating entity "decocamino" for hierarchy "Deco_cam_dat_secu:procesa|decodificador:deco|decocamino:camino"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/auto_control/decodificador/codigo/decoopalu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: decoopALU-comportamiento
+    Info (12023): Found entity 1: decoopALU
+Info (12128): Elaborating entity "decoopALU" for hierarchy "Deco_cam_dat_secu:procesa|decodificador:deco|decoopALU:ALU"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/auto_control/decodificador/codigo/decoopmd.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: decoopMD-comportamiento
+    Info (12023): Found entity 1: decoopMD
+Info (12128): Elaborating entity "decoopMD" for hierarchy "Deco_cam_dat_secu:procesa|decodificador:deco|decoopMD:MEMORIA"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/auto_control/decodificador/codigo/decoopsec.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: decoopSEC-comportamiento
+    Info (12023): Found entity 1: decoopSEC
+Info (12128): Elaborating entity "decoopSEC" for hierarchy "Deco_cam_dat_secu:procesa|decodificador:deco|decoopSEC:SECUEN"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/auto_control/decodificador/codigo/deco_excep.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: deco_excep-comportamiento
+    Info (12023): Found entity 1: deco_excep
+Info (12128): Elaborating entity "deco_excep" for hierarchy "Deco_cam_dat_secu:procesa|decodificador:deco|deco_excep:Inst_ERR"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/ucalculo/ensamblado_uc/codigo/camino_datos.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: camino_datos-estructural
+    Info (12023): Found entity 1: camino_datos
+Info (12128): Elaborating entity "camino_datos" for hierarchy "Deco_cam_dat_secu:procesa|camino_datos:cam_datos"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/ucalculo/componentes/fmtd/codigo/fmtd.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: FMTD-compor
+    Info (12023): Found entity 1: FMTD
+Info (12128): Elaborating entity "FMTD" for hierarchy "Deco_cam_dat_secu:procesa|camino_datos:cam_datos|FMTD:form_dat"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/ucalculo/componentes/br/codigo/br.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: BR-compor
+    Info (12023): Found entity 1: BR
+Info (12128): Elaborating entity "BR" for hierarchy "Deco_cam_dat_secu:procesa|camino_datos:cam_datos|BR:banco_registros"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/ucalculo/componentes/multiplexores/codigo/mux3.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: mux3-comportamiento
+    Info (12023): Found entity 1: mux3
+Info (12128): Elaborating entity "mux3" for hierarchy "Deco_cam_dat_secu:procesa|camino_datos:cam_datos|mux3:muxL1"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/ucalculo/componentes/multiplexores/codigo/mux2.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: mux2-comportamiento
+    Info (12023): Found entity 1: mux2
+Info (12128): Elaborating entity "mux2" for hierarchy "Deco_cam_dat_secu:procesa|camino_datos:cam_datos|mux2:muxL2"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/ucalculo/componentes/alu/codigo/alu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: alu-compor
+    Info (12023): Found entity 1: alu
+Info (12128): Elaborating entity "alu" for hierarchy "Deco_cam_dat_secu:procesa|camino_datos:cam_datos|alu:alu_map"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/usecuen/decs/codigo/decs.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: DECS-comporta
+    Info (12023): Found entity 1: DECS
+Info (12128): Elaborating entity "DECS" for hierarchy "Deco_cam_dat_secu:procesa|DECS:control"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/usecuen/ensamblado_us/codigo/camino_secuen.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: camino_secuen-estructural
+    Info (12023): Found entity 1: camino_secuen
+Info (12128): Elaborating entity "camino_secuen" for hierarchy "Deco_cam_dat_secu:procesa|camino_secuen:cam_secuen"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/usecuen/componentes/cuatro/codigo/cuatro.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: cuatro-comportamiento
+    Info (12023): Found entity 1: cuatro
+Info (12128): Elaborating entity "cuatro" for hierarchy "Deco_cam_dat_secu:procesa|camino_secuen:cam_secuen|cuatro:ctecuatro"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/usecuen/componentes/sumador/codigo/sumador.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: sumador-comportamiento
+    Info (12023): Found entity 1: sumador
+Info (12128): Elaborating entity "sumador" for hierarchy "Deco_cam_dat_secu:procesa|camino_secuen:cam_secuen|sumador:sumcuatro"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/usecuen/componentes/fmts/codigo/fmts.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: FMTS-compor
+    Info (12023): Found entity 1: FMTS
+Info (12128): Elaborating entity "FMTS" for hierarchy "Deco_cam_dat_secu:procesa|camino_secuen:cam_secuen|FMTS:formatearS"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/usecuen/componentes/multiplexores/codigo/muxdirec.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: muxdirec-comportamiento
+    Info (12023): Found entity 1: muxdirec
+Info (12128): Elaborating entity "muxdirec" for hierarchy "Deco_cam_dat_secu:procesa|camino_secuen:cam_secuen|muxdirec:muxrelatindex"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/usecuen/componentes/sumador/codigo/sum_secu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: sum_secu-comportamiento
+    Info (12023): Found entity 1: sum_secu
+Info (12128): Elaborating entity "sum_secu" for hierarchy "Deco_cam_dat_secu:procesa|camino_secuen:cam_secuen|sum_secu:sumrelatindex"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/usecuen/componentes/evaluacion/codigo/eval.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: eval-comport
+    Info (12023): Found entity 1: eval
+Info (12128): Elaborating entity "eval" for hierarchy "Deco_cam_dat_secu:procesa|camino_secuen:cam_secuen|eval:evaluar"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/procesador/camino_datos/usecuen/componentes/acceso_mi/codigo/acceso_mi.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: acceso_MI-comport
+    Info (12023): Found entity 1: acceso_MI
+Info (12128): Elaborating entity "acceso_MI" for hierarchy "Deco_cam_dat_secu:procesa|camino_secuen:cam_secuen|acceso_MI:compro_acc"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/md/ensamblado_compontes_memoria/codigo/cam_mem_datos.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: cam_MEM_DATOS-estruc
+    Info (12023): Found entity 1: cam_MEM_DATOS
+Info (12128): Elaborating entity "cam_MEM_DATOS" for hierarchy "cam_MEM_DATOS:Mem_DATOS"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/md/componentes/fmte/ensamblado_fmte/codigo/fmte.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: FMTE-estructural
+    Info (12023): Found entity 1: FMTE
+Info (12128): Elaborating entity "FMTE" for hierarchy "cam_MEM_DATOS:Mem_DATOS|FMTE:form_esc"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/md/componentes/fmte/componentes/alineare/codigo/alineare.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: alinearE-estructura
+    Info (12023): Found entity 1: alinearE
+Info (12128): Elaborating entity "alinearE" for hierarchy "cam_MEM_DATOS:Mem_DATOS|FMTE:form_esc|alinearE:alinaE"
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "conexiones" into its bus
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/md/componentes/elementos/mux2m.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: mux2M-comportamiento
+    Info (12023): Found entity 1: mux2M
+Info (12128): Elaborating entity "mux2M" for hierarchy "cam_MEM_DATOS:Mem_DATOS|FMTE:form_esc|alinearE:alinaE|mux2M:\columna:1:iter:1:filab:2:gencoluma"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/md/componentes/fmte/componentes/selec_byte/codigo/sel_byte.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: sel_byte-estructura
+    Info (12023): Found entity 1: sel_byte
+Info (12128): Elaborating entity "sel_byte" for hierarchy "cam_MEM_DATOS:Mem_DATOS|FMTE:form_esc|sel_byte:selecE_byte"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/md/memoria_ram/codigo/md.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: MD-rtl
+    Info (12023): Found entity 1: MD
+Info (12128): Elaborating entity "MD" for hierarchy "cam_MEM_DATOS:Mem_DATOS|MD:mem_dat"
+Warning (10543): VHDL Variable Declaration warning at ini_mem_pkg.vhd(30): used default initial value for variable "temp_mem" because variable was never assigned a value or an initial value expression. Use of default initial value may introduce unintended design optimizations.
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/md/componentes/fmtl/ensamblado_fmtl/codigo/fmtl.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: FMTL-estructural
+    Info (12023): Found entity 1: FMTL
+Info (12128): Elaborating entity "FMTL" for hierarchy "cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/md/componentes/fmtl/componentes/alinear/codigo/alinear.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: alinear-estructural
+    Info (12023): Found entity 1: alinear
+Info (12128): Elaborating entity "alinear" for hierarchy "cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|alinear:alina"
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "conexiones" into its bus
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/md/componentes/fmtl/componentes/sel_signo/codigo/fmtl_sel_signo.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: FMTL_sel_signo-comportamiento
+    Info (12023): Found entity 1: FMTL_sel_signo
+Info (12128): Elaborating entity "FMTL_sel_signo" for hierarchy "cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|FMTL_sel_signo:sel_sig"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/md/componentes/fmtl/componentes/extsig/codigo/fmtl_extsig.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: FMTL_extsig-estructural
+    Info (12023): Found entity 1: FMTL_extsig
+Info (12128): Elaborating entity "FMTL_extsig" for hierarchy "cam_MEM_DATOS:Mem_DATOS|FMTL:form_lec|FMTL_extsig:ext_sig"
+Warning (12125): Using design file /fib_q8/ac2/lab4/proc_serie/md/componentes/acceso/codigo/acceso_md.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: acceso_MD-comport
+    Info (12023): Found entity 1: acceso_MD
+Info (12128): Elaborating entity "acceso_MD" for hierarchy "cam_MEM_DATOS:Mem_DATOS|acceso_MD:compro_acc"
+Info: Quartus II 64-Bit Analysis & Elaboration was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 4677 megabytes
+    Info: Processing ended: Tue May 12 01:38:58 2020
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
+
+

@@ -23,14 +23,6 @@ S'han aplicat els següents paràmetres en els diferents test proposats:
 * Ubicar la memória a un node i els threads a un altre node.(V2 al gràfic)``numactl -m 0 -N 1``
 * Ubicar memória i threads a dos nodes.(V3 al gràfic)``numactl -m 0,1 -N 0,1``
 
-> Afegir gràfic i comentar
-
-
-
-
-
-
-
 ![](Lab3.assets/image-20200508223307319.png)
 
 En el gràfic, que compara l’ample de banda en les tres versions podem veure:

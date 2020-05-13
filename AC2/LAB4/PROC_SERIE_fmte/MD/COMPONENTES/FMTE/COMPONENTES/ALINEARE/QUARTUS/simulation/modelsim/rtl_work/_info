@@ -1,0 +1,240 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\FIB_Q8\AC2\LAB4\PROC_SERIE_fmte\MD\COMPONENTES\FMTE\COMPONENTES\ALINEARE\QUARTUS\simulation\modelsim
+Ealineare
+Z1 w1589239122
+Z2 DPx4 work 12 retardos_pkg 0 22 fETc?bEQY_h3MOmQ85?^_0
+Z3 DPx4 work 25 cte_tipos_deco_camino_pkg 0 22 0W_zZKZK36N7jZ6Pi;B8[0
+Z4 DPx4 work 20 componentes_fmte_pkg 0 22 ZAdm`0J`Lfo<OD7`7`h2g2
+Z5 DPx4 work 25 tipos_constan_memoria_pkg 0 22 g7hGX<m?PiFf9Z0C2zMPJ1
+Z6 DPx4 work 17 param_disenyo_pkg 0 22 dQO[:VbkRS]1;1_96^i:H0
+Z7 DPx4 ieee 9 math_real 0 22 :iME`dTX54_U49lJNF5JI3
+Z8 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z9 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z10 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z11 dD:\FIB_Q8\AC2\LAB4\PROC_SERIE_fmte\MD\COMPONENTES\FMTE\COMPONENTES\ALINEARE\QUARTUS\simulation\modelsim
+Z12 8D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/CODIGO/alinearE.vhd
+Z13 FD:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/CODIGO/alinearE.vhd
+l0
+L17
+V8[e_KQk^fYSd]MfPGY:P53
+Z14 OV;C;10.1d;51
+31
+Z15 !s108 1589239673.343000
+Z16 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/CODIGO/alinearE.vhd|
+Z17 !s107 D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/CODIGO/alinearE.vhd|
+Z18 o-93 -work work -O0
+Z19 tExplicit 1
+!s100 l0Io[4SDMG1S9IbDTl[2l0
+!i10b 1
+Aestructural
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 8 alineare 0 22 8[e_KQk^fYSd]MfPGY:P53
+l32
+L23
+Vh<@6<2=>TKQXI[kR`^Q]A3
+R14
+31
+R15
+R16
+R17
+R18
+R19
+!s100 9eD]OYN@K]N7>f=4`6QgK2
+!i10b 1
+Pcomponentes_fmte_pkg
+R7
+R5
+R8
+R3
+R6
+R9
+R10
+w1553452731
+R11
+8D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/componentes_FMTE_pkg/componentes_FMTE_pkg.vhd
+FD:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/componentes_FMTE_pkg/componentes_FMTE_pkg.vhd
+l0
+L13
+VZAdm`0J`Lfo<OD7`7`h2g2
+R14
+31
+R18
+R19
+!s100 FiTBWYd5CJ;KG5MkA?1Zn0
+!i10b 1
+!s108 1589239673.114000
+!s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/componentes_FMTE_pkg/componentes_FMTE_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/componentes_FMTE_pkg/componentes_FMTE_pkg.vhd|
+Pcte_tipos_deco_camino_pkg
+R8
+R9
+R10
+Z20 w1534675090
+R11
+8D:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/cte_tipos_deco_camino_pkg.vhd
+FD:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/cte_tipos_deco_camino_pkg.vhd
+l0
+L10
+V0W_zZKZK36N7jZ6Pi;B8[0
+R14
+31
+R18
+R19
+!s100 Li7eIK`5hVC>IcZ;5;B9d2
+!i10b 1
+!s108 1589239672.431000
+!s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/cte_tipos_deco_camino_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/cte_tipos_deco_camino_pkg.vhd|
+Emux2m
+R20
+R8
+R9
+R10
+R11
+Z21 8D:/FIB_Q8/AC2/LAB4/PROC_SERIE/MD/COMPONENTES/ELEMENTOS/mux2m.vhd
+Z22 FD:/FIB_Q8/AC2/LAB4/PROC_SERIE/MD/COMPONENTES/ELEMENTOS/mux2m.vhd
+l0
+L10
+VEcBB7B>[GU:K^BNC8LcD21
+R14
+31
+Z23 !s108 1589239672.703000
+Z24 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB4/PROC_SERIE/MD/COMPONENTES/ELEMENTOS/mux2m.vhd|
+Z25 !s107 D:/FIB_Q8/AC2/LAB4/PROC_SERIE/MD/COMPONENTES/ELEMENTOS/mux2m.vhd|
+R18
+R19
+!s100 3l0VG8PaN@DA4Lk[8RDU`0
+!i10b 1
+Acomportamiento
+R8
+R9
+R10
+DEx4 work 5 mux2m 0 22 EcBB7B>[GU:K^BNC8LcD21
+l18
+L17
+VKZ<8>4nJOX;lAb>z7;0a43
+R14
+31
+R23
+R24
+R25
+R18
+R19
+!s100 OXoLfiz<]kM95ALQIUB=70
+!i10b 1
+Pparam_disenyo_pkg
+R9
+R10
+R20
+R11
+8D:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/param_disenyo_pkg.vhd
+FD:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/param_disenyo_pkg.vhd
+l0
+L9
+VdQO[:VbkRS]1;1_96^i:H0
+R14
+31
+R18
+R19
+!s100 3R_1M]JfV9Cjd@Th67g]o0
+!i10b 1
+!s108 1589239672.230000
+!s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/param_disenyo_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/param_disenyo_pkg.vhd|
+Eprueba_alineare
+Z26 w1589239663
+R3
+R6
+R7
+R5
+R8
+R9
+R10
+R11
+Z27 8D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/QUARTUS/../PRUEBAS/prueba_alinearE.vhd
+Z28 FD:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/QUARTUS/../PRUEBAS/prueba_alinearE.vhd
+l0
+L10
+V>bFdD=Y`57NAj<WjXiMD;3
+!s100 V`NZEO^m^h5O5>j4W:7IM3
+R14
+31
+!i10b 1
+Z29 !s108 1589239673.623000
+Z30 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/QUARTUS/../PRUEBAS/prueba_alinearE.vhd|
+Z31 !s107 D:/FIB_Q8/AC2/LAB4/PROC_SERIE_fmte/MD/COMPONENTES/FMTE/COMPONENTES/ALINEARE/QUARTUS/../PRUEBAS/prueba_alinearE.vhd|
+R18
+R19
+Acompor
+R3
+R6
+R7
+R5
+R8
+R9
+R10
+DEx4 work 15 prueba_alineare 0 22 >bFdD=Y`57NAj<WjXiMD;3
+l33
+L14
+V2Z2ZI1SG]eO;l<zS6UZSD1
+!s100 azMgc9?z<g@D[SRSheBd[0
+R14
+31
+!i10b 1
+R29
+R30
+R31
+R18
+R19
+Pretardos_pkg
+R9
+R10
+w1547660140
+R11
+8D:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/retardos_pkg.vhd
+FD:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/retardos_pkg.vhd
+l0
+L9
+VfETc?bEQY_h3MOmQ85?^_0
+R14
+31
+R18
+R19
+!s100 RT:1ejKh58bXFMoB?Ch;z1
+!i10b 1
+!s108 1589239672.575000
+!s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/retardos_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB4/PROC_SERIE/tipos_constantes_pkg/retardos_pkg.vhd|
+Ptipos_constan_memoria_pkg
+R6
+R7
+R8
+R9
+R10
+R20
+R11
+8D:/FIB_Q8/AC2/LAB4/PROC_SERIE/MD/tipos_ctes_MD_pkg/tipos_constan_memoria_pkg.vhd
+FD:/FIB_Q8/AC2/LAB4/PROC_SERIE/MD/tipos_ctes_MD_pkg/tipos_constan_memoria_pkg.vhd
+l0
+L13
+Vg7hGX<m?PiFf9Z0C2zMPJ1
+R14
+31
+R18
+R19
+!s100 5hkKL2bg8BOSMNMZ0UKAL0
+!i10b 1
+!s108 1589239672.930000
+!s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB4/PROC_SERIE/MD/tipos_ctes_MD_pkg/tipos_constan_memoria_pkg.vhd|
+!s107 D:/FIB_Q8/AC2/LAB4/PROC_SERIE/MD/tipos_ctes_MD_pkg/tipos_constan_memoria_pkg.vhd|
