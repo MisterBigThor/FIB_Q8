@@ -1,6 +1,4 @@
-# Tema 4 AC2
-
-[TOC]
+# Técnicas para tolerar/reducir la latencia efectiva
 
 Con la segmentación del tema 3 tenemos ciertos momento de riesgo donde perdemos ciclos, en este tema se exponen varias soluciones.
 
@@ -256,80 +254,4 @@ Solo debemos tratar esto riesgos <u>SI</u> hemos acertado en la predicción.
 Si detectamos un RS o RD y un fallo en la predicción, el fallo ya descarta las instrucciones posteriores.
 
 Si no hay fallo en la predicción, deberemos usar las técnicas para evitarlos(inyectar nop's).
-
-# Resumen  
-
-### Cortocircuitos
-
-Se trata de adelantar datos, para rebajar la latencia efectiva de la segmentación. 
-
-* Hay casos donde la latencia de cálculo no permite adelantar este dato
-* Un cortocircuito necesita multiplexar el camino de datos.
-
-Hay que detecar quien (operación.registro) produce/escribe datos y quien (operación.registro) consume/lee  datos y la distancia (en instrucciones) en que lo hacen. 
-
-
-
-
-
-# Ejemplos
-
-### Suma de dos vectores elemento a elemento
-
-El tamaño de un dato son 8 bytes. El registro r9 se ha inicializado con el número de iteraciones y los registros r2, r4 y r6 se han inicializado con la dirección base de los vectores C, B y A respectivamente
-
-````asm
-load r1, 0(r2) 
-load r3, 0(r4)
-add r5, r1, r3
-store r5, 0(r6)
-add r2, r2, #8 
-add r4, r4, #8 
-add r6, r6, #8 
-sub r9, r9, #1 
-bne r9, 1$
-````
-
-#### Dependencias de datos
-
-Dependencias vertaderas -, Antidependencias ---
-
-````mermaid
-graph TB;
-1 -.-> 5
-1 ==> 3
-2 ==> 3 ==> 4 -.->7
-8 ==> 9
-2 -.-> 6
-````
-
-Las dependencias debidas a memoria no exites, pues los vectores A, B y C tienen direcciones independientes.
-
-Se puede cambiar el codigo para situar instrucciones enmedio de instrucciones con dependencias y no perder ciclos, obtenemos el siguiente codigo equivalente:
-
-````asm
-a. load r1, 0(r2)
-b. load r3, 0(r4)
-c. add r5, r1, r3
-g. add r6, r6, #8
-d. store r5, -8(r6)
-e. add r2, r2, #8
-f. add r4, r4, #8
-h. sub r9, r9, #1
-i. bne r9, 1$
-````
-
-La antidependencia se ha convertido en una dependencia vertadera.
-
-#### Planificación de instrucciones
-
-Inicio del algoritmo, situamos en los arcos la distancia productor-uso - 1 (si se pierden ciclos, sino un 0) y añadimos dependencias ya que la instrucción de salto se tiene que ejecutar la ultima en el bloque.
-
-
-
-#### Ciclos perdidos por RD y RS
-
-
-
-#### Uso de cortocircuitos y predicciones
 
