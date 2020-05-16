@@ -2,8 +2,6 @@
 
 En el document s'inclouen els resultats de diferents programes de prova. Els resultats es comparen amb la màquina BOADA. Cada programa de proves està dissenyat per un supòsit.
 
-
-
 ### Stream
 
 Aquest joc de proves comprova operacions d’alt ús de memória. L'ample de banda obtingut de les diferents operacions es representa en el gràfic.
@@ -46,8 +44,6 @@ Aquest *benchmark* està destinat a mesurar el rendiment en operacions de coma f
 
 <img src="Lab3.assets/image-20200515012653304.png" alt="image-20200515012653304" style="zoom:80%;" />
 
-​		Per 1 node, el millor rendiment en trobem amb 8 processos i una graella de 4x2.
-
 * Per 2 nodes, s'han trobat els següents resultats:
 
 <img src="Lab3.assets/image-20200515011939503.png" alt="image-20200515011939503" style="zoom:100%;" />
@@ -82,25 +78,29 @@ Prenent les mesures de rendiment, obtenim les següents gràfiques. L'escalabili
 
 ![image-20200516052426235](Lab3.assets/image-20200516052426235.png)
 
-Podem veure l'escalabilitat; com era d'esperar l'escalabilitat queda lluny de l'ideal i el rendiment es bastant irregular. El càlcul de  GFLOPS/s total, es fa ponderant el temps d'exeucció <todo>
+Podem veure que l'escalabilitat total; com era d'esperar, queda lluny de l'ideal i el rendiment es bastant irregular. 
+
+El càlcul de  GFLOPS/s total, es fa ponderant el temps d'exeucció de cada *kernel*. Aproximadament tenim la següent ponderació per cada *kernel*:
+
+* DDOT(0,008%): Producte de punts de dos vectors. 
+* WAXPBY(0,009%): Actualització d’un vector amb la suma de dos vectors.
+* SpMV(0,09%): Multiplicació de matrius esparses
+* MG(0,89%): Simètric Gauss-Seidel
+
+Veient això, si haugéssim de millorar el rendiment, hauríem de millor aquella secció de codi mes utilitzada (llei d’Amdahl).
+
+També podem observar que l’escalada de cada kernel, exceptuan WAXPBY i el DDOT, tenen un rendiment força irregula. També podem veure, en general que queda lluny de l’escalat ideal.
 
 
 
-, mirem i analitzem per separat cada kernel:
-
-![image-20200516054324866](Lab3.assets/image-20200516054324866.png)
-
-* DDOT: 
-
-* WAXPBY:<todo>
-
-* SpMV:
-
-* MG:
-
-  
+![image-20200516120903842](Lab3.assets/image-20200516120903842.png)
 
 
 
-Per comparar els resultats, em de tenir en compte que en HPCG em mesurat amb GFLOPS/s (en 60 segons) i Linpack en GLOPS
+Comparant els resultats d’aquest *benchmark* amb el Linpack(agafant el temps d’execucció), obtenim:
+
+* Rendiment Linpack 2 nodes i 8 Threads: 42,25 GFLOPS / 8.08 s  = 5,22 GFLOPS/s 
+* Rendiment HPCG 2 nodes i 8 Threads : 2,33 GFLOPS/s
+
+Podem veure com el rendiment del Linpack es superior, era d’esperar ja que el Linpack es un *benchmark* on sempre es fa la mateixa operació, en contra del HPCG. 
 
