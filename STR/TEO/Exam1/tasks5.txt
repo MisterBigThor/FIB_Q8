@@ -1,0 +1,7 @@
+#Can put comments with a # in the start of a line
+#The space is the separator beetwen info
+#Number of task <space> Computing time <space> DeadLine <\n>
+1 10 30 20
+2 12 50 50
+3 15 90 760
+4 20 100 80
