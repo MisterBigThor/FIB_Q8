@@ -1,5 +1,24 @@
 from task import *
 import numpy as np
+import pathlib
+
+def main():
+    print("This is the script to evaluate tasks for a earliest deadline first scheduler")
+    print("To exit, generate a keyboard interrupt Ctrl+C")
+    print("For display the help for format, type *file")
+    print("Current path {}".format(pathlib.Path().absolute()))
+    while True:
+        try:
+            f = input("Enter the tasks file: ")
+            if f == "*file": helpFileFormat()
+            else: 
+                t = readTasksFromFile(f)
+                planCyclicScheduler(t)
+        except KeyboardInterrupt:
+            print("Keyboard interrupt -> exit");
+            quit()
+        except FileNotFoundError:
+            print("*****No such file: {}, try again*****".format(f))
 
 def hyper(tasks):
         l = list(r.period for r in tasks)
@@ -60,12 +79,6 @@ def planCyclicScheduler(tasks):
 
 print("This is the script to evaluate tasks for a cyclic scheduler")
 print("To exit, generate a keyboard interrupt Ctrl+C");
-while 1:
-    
-    try:
-        f = input("Enter the tasks file: ")
-        t = readTasksFromFile(f)
-        planCyclicScheduler(t)
-    except KeyboardInterrupt:
-        print("Keyboard interrupt -> exit");
-        quit()
+
+if __name__ == "__main__":
+        main()

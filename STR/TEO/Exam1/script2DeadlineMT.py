@@ -1,6 +1,7 @@
 from task import *
 import numpy as np
 import math
+import pathlib
 
 def s(e):
     return e.priority
@@ -85,16 +86,23 @@ def planDeadlineMonotonic(tasks):
         print("=====> tasks cannot be scheduled")
         
 
-                
-print("This is the script to evaluate tasks for a cyclic scheduler")
-print("To exit, generate a keyboard interrupt Ctrl+C");
-while 1:
-    try:
-        f = input("Enter the tasks file: ")
-        t = readTasksFromFile(f)
-        planDeadlineMonotonic(t)
-    except KeyboardInterrupt:
-        print("Keyboard interrupt -> exit");
-        quit()
-    except FileNotFoundError:
-        print("*****No such file: {}, try again*****".format(f))
+def main():                
+    print("This is the script to evaluate tasks for a deadline monotonic scheduler")
+    print("To exit, generate a keyboard interrupt, (Ctrl+C)");
+    print("For display the help for format, type *file")
+    print("The current path {}".format(pathlib.Path().absolute()))  
+    while True:
+        try:
+            f = input("Enter the tasks file: ")
+            if f == "*file": helpFileFormat()
+            else: 
+                t = readTasksFromFile(f)
+                planDeadlineMonotonic(t)
+        except KeyboardInterrupt:
+            print("Keyboard interrupt -> exit");
+            quit()
+        except FileNotFoundError:
+            print("*****No such file: {}, try again*****".format(f))
+
+
+if __name__ == "__main__": main()

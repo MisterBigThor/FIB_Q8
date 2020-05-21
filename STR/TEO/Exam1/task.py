@@ -10,9 +10,9 @@ class taskRT:
         self.period = per
         if d==-1 : d = per
         self.deadline = d
-        self.priority = 0
+        self.priority = -1
     def __str__(self):
-        return "task {} with computing time {}, period {}, deadline {} and priroty {}".format(self.num, self.c, self.period, self.deadline, self.priority)
+        return "task {} with computing time {}, period {}, deadline {} and priority {}".format(self.num, self.c, self.period, self.deadline, self.priority)
     
 def readTasksFromFile(file):
     """
@@ -29,6 +29,20 @@ def readTasksFromFile(file):
         print(newTask)
     return ret;
 
+def helpFileFormat():
+    print("************************************************************")
+    print("| One task in each line")
+    print("| A line with a # at the begginig will be ignored (use to commnent)")
+    print("| In each line, with a space between numbers the correct format is:")
+    print("| taskID <space> Computing time <space> Period <space> deadline <endline>")
+    print("| If the deadline is not found, then the deadline will be equal to the period")
+    print("************************************************************")
+
+
+def printTasks(tasks):
+    for t in tasks:
+        print(t)
+        
 def utilization(tasks):
     ret = 0.0
     for task in tasks:
