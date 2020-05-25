@@ -1,0 +1,17 @@
+Heat execution with 1 nodes and 4 total processes (4 processes per node)
+I am worker 2 on boada-6 and ready to receive work from master ...
+I am worker 1 on boada-6 and ready to receive work from master ...
+I am the master running on boada-6, distributing work to 3 additional workers ...
+I am worker 3 on boada-6 and ready to receive work from master ...
+Iterations        : 25000
+Resolution        : 256
+Algorithm         : 0 (Jacobi)
+Num. Heat sources : 2
+   1: (0.00, 0.00) 1.00 2.50 
+   2: (0.50, 1.00) 1.00 2.50 
+Process 2 finished computing after 25000 iterations with residual value = 0.000017
+Time: 6.776 
+Flops and Flops per second: (18.022 GFlop => 2659.61 MFlop/s)
+Convergence to residual=0.000017: 25000 iterations
+Process 3 finished computing after 25000 iterations with residual value = 0.000017
+Process 1 finished computing after 25000 iterations with residual value = 0.000017

@@ -1,0 +1,1 @@
+pscp -scp -r -pw eicae3uiXush ./MPI_FILES pap0005@boada.ac.upc.edu:heat/
