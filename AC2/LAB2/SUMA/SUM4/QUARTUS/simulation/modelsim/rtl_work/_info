@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 dD:\FIB_Q8\AC2\LAB2\SUMA\SUM4\QUARTUS\simulation\modelsim
 Eprueba_s4bits
-Z1 w1583779250
+Z1 w1583782850
 Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z4 dD:\FIB_Q8\AC2\LAB2\SUMA\SUM4\QUARTUS\simulation\modelsim
@@ -17,7 +17,7 @@ VGJ;8?c3hZDFK]RPF<I@>k1
 Z7 OV;C;10.1d;51
 31
 !i10b 1
-Z8 !s108 1583779275.271000
+Z8 !s108 1590336543.639000
 Z9 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB2/SUMA/SUM4/QUARTUS/../PRUEBAS/prueba_s4bits.vhd|
 Z10 !s107 D:/FIB_Q8/AC2/LAB2/SUMA/SUM4/QUARTUS/../PRUEBAS/prueba_s4bits.vhd|
 Z11 o-93 -work work -O0
@@ -39,7 +39,7 @@ R10
 R11
 R12
 Es1bit
-Z13 w1582728574
+Z13 w1582732174
 R2
 R3
 R4
@@ -50,7 +50,7 @@ L9
 V@JNN>7U`jY@9:?[N>7M>a3
 R7
 31
-Z16 !s108 1583779275.063000
+Z16 !s108 1590336543.423000
 Z17 !s90 -reportprogress|300|-93|-work|work|d:/fib_q8/ac2/lab2/suma/componentes/sum1bit/codigo/s1bit.vhd|
 Z18 !s107 d:/fib_q8/ac2/lab2/suma/componentes/sum1bit/codigo/s1bit.vhd|
 R11
@@ -74,7 +74,7 @@ R12
 !s100 9C6;<]@ERVgdOhGH^z84>0
 !i10b 1
 Es4bits
-Z19 w1583778102
+Z19 w1583781702
 R2
 R3
 R4
@@ -85,7 +85,7 @@ L13
 V_d0CLzdC;S@UzYVHUNzoD1
 R7
 31
-Z22 !s108 1583779274.809000
+Z22 !s108 1590336543.179000
 Z23 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB2/SUMA/SUM4/CODIGO/S4bits.vhd|
 Z24 !s107 D:/FIB_Q8/AC2/LAB2/SUMA/SUM4/CODIGO/S4bits.vhd|
 R11

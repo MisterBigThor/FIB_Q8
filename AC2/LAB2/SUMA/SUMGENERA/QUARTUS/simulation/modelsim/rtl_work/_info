@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 dD:\FIB_Q8\AC2\LAB2\SUMA\SUMGENERA\QUARTUS\simulation\modelsim
 Eprueba_snbits_reloj
-Z1 w1583779558
+Z1 w1583783158
 Z2 DPx4 ieee 9 math_real 0 22 :iME`dTX54_U49lJNF5JI3
 Z3 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
@@ -17,7 +17,7 @@ L11
 VgNSl8aGD13WFYKGm5<Dnz3
 Z9 OV;C;10.1d;51
 33
-Z10 !s108 1583780859.443000
+Z10 !s108 1590336773.423000
 Z11 !s90 -reportprogress|300|-2008|-work|work|D:/FIB_Q8/AC2/LAB2/SUMA/SUMGENERA/QUARTUS/../PRUEBAS/prueba_snbits_reloj.vhd|
 Z12 !s107 D:/FIB_Q8/AC2/LAB2/SUMA/SUMGENERA/QUARTUS/../PRUEBAS/prueba_snbits_reloj.vhd|
 Z13 o-2008 -work work -O0
@@ -43,7 +43,7 @@ R14
 !s100 >5daJVF@:Wj<T6fKEoX[F2
 !i10b 1
 Es1bit
-Z15 w1582728574
+Z15 w1582732174
 R4
 R5
 R6
@@ -54,7 +54,7 @@ L9
 V@JNN>7U`jY@9:?[N>7M>a3
 R9
 31
-Z18 !s108 1583780859.242000
+Z18 !s108 1590336773.236000
 Z19 !s90 -reportprogress|300|-93|-work|work|d:/fib_q8/ac2/lab2/suma/componentes/sum1bit/codigo/s1bit.vhd|
 Z20 !s107 d:/fib_q8/ac2/lab2/suma/componentes/sum1bit/codigo/s1bit.vhd|
 Z21 o-93 -work work -O0
@@ -78,7 +78,7 @@ R14
 !s100 9C6;<]@ERVgdOhGH^z84>0
 !i10b 1
 Esnbits
-Z22 w1583778102
+Z22 w1583781702
 R4
 R5
 R6
@@ -89,7 +89,7 @@ L14
 VR1@89LEiNVYh_eGQ:JH]F3
 R9
 31
-Z25 !s108 1583780858.989000
+Z25 !s108 1590336773.018000
 Z26 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB2/SUMA/SUMGENERA/CODIGO/snbits.vhd|
 Z27 !s107 D:/FIB_Q8/AC2/LAB2/SUMA/SUMGENERA/CODIGO/snbits.vhd|
 R21
@@ -127,7 +127,7 @@ VTHOVS@S]MIXYA1CcTRnN50
 R9
 31
 !i10b 1
-Z30 !s108 1583780859.660000
+Z30 !s108 1590336773.782000
 Z31 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB2/SUMA/SUMGENERA/QUARTUS/../PRUEBAS/snref.vhd|
 Z32 !s107 D:/FIB_Q8/AC2/LAB2/SUMA/SUMGENERA/QUARTUS/../PRUEBAS/snref.vhd|
 R21

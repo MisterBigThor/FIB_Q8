@@ -1,16 +1,16 @@
-# Reading C:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
+# Reading D:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
 # do s1bit_run_msim_rtl_vhdl.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
 # vlib rtl_work
 # vmap work rtl_work
-# Copying C:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Copying D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# ** Warning: Copied C:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+# ** Warning: Copied D:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {C:/Users/corre/Documents/FIBQ8/AC2/LAB1 AC2/ENTREGA/CODIGO/s1bit.vhd}
+# vcom -93 -work work {D:/FIB_Q8/AC2/LAB1/ENTREGA/CODIGO/s1bit.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -18,33 +18,65 @@
 # -- Compiling entity s1bit
 # -- Compiling architecture halfAdder of s1bit
 # 
-vsim rtl_work.s1bit
-# vsim rtl_work.s1bit 
+ls
+# list.do       msim_transcript  s1bit_run_msim_rtl_vhdl.do      s1bit_run_msim_rtl_vhdl.do.bak1  s1bit_run_msim_rtl_vhdl.do.bak3  vsim.wlf  
+# modelsim.ini  rtl_work         s1bit_run_msim_rtl_vhdl.do.bak  s1bit_run_msim_rtl_vhdl.do.bak2  s1bit_run_msim_rtl_vhdl.do.bak4  wave.do   
+do ../../../PRUEBAS/es
+# Cannot open macro file: ../../../PRUEBAS/es
+do ../../../PRUEBAS/estimulos.do
+# ** Error: (vish-4008) Object 's1bit/x' not found.
+# Error in macro ./../../../PRUEBAS/estimulos.do line 1
+# ** Error: (vish-4008) Object 's1bit/x' not found.
+# 
+#     while executing
+# "force s1bit/x U 0 ns, 0 50 ns, U 100 ns, 0 150 ns, U 200 ns, 0 250 ns, U 300 ns, 0 350 ns, U 400 ns, 1 450 ns, U 500 ns, 1 550 ns, U 600 ns, 1 650 ns,..."
+vsim work.s1bit
+# vsim work.s1bit 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading rtl_work.s1bit(halfadder)
-do wave.do
+# Loading work.s1bit(halfadder)
+vsim work.s1bit
+# vsim work.s1bit 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.s1bit(halfadder)
+add wave -position end  sim:/s1bit/x
+add wave -position end  sim:/s1bit/y
+add wave -position end  sim:/s1bit/cen
+add wave -position end  sim:/s1bit/s
+add wave -position end  sim:/s1bit/csal
+do ../../../PRUEBAS/estimulos.do
+add list  \
+sim:/s1bit/x \
+sim:/s1bit/y \
+sim:/s1bit/cen \
+sim:/s1bit/s \
+sim:/s1bit/csal
+write list -window .main_pane.list.interior.cs.body D:/FIB_Q8/AC2/LAB1/ENTREGA/RESULTADOS/listaTAB
+add wave -position end  sim:/s1bit/xorxy
+add wave -position end  sim:/s1bit/andxy
+add wave -position end  sim:/s1bit/andxorxyz
+do ../../../PRUEBAS/estimulos.do
 run
-force -freeze sim:/s1bit/x 1 0
-force -freeze sim:/s1bit/y {} 0
-# ** Error: (vsim-4026) Value "" does not represent a literal of the enumeration type.
-# ** Error: (vsim-4011) Invalid force value: {} 0.
+restart
+add wave -position end  sim:/s1bit/x
+add wave -position end  sim:/s1bit/y
+add wave -position end  sim:/s1bit/cen
+add wave -position end  sim:/s1bit/s
+add wave -position end  sim:/s1bit/csal
+force s1biit/x U 0ns
+# ** Error: (vish-4008) Object 's1biit/x' not found.
 # 
-force -freeze sim:/s1bit/cen 0 0
-force -freeze sim:/s1bit/y 1 0
-run
-force -freeze sim:/s1bit/x 0 0
-force -freeze sim:/s1bit/y 1 0
-force -freeze sim:/s1bit/cen 0 0
+force s1bit/x U 0ns
+force s1bit/y U 0ns
+force s1bit/cen U 0ns
 run
 run
-run
-run
-restart -force
-force -freeze sim:/s1bit/x 1 0
-force -freeze sim:/s1bit/y 1 0
-force -freeze sim:/s1bit/cen 0 0
+force s1bit/x 1 25 ns
+force s1bit/y 1 25 ns
+force s1bit/cen 0 25 ns
 run
 run
 run
@@ -57,6 +89,7 @@ run
 run
 run
 run
+force s1bit/x 0 0 ns
 run
 run
 run
@@ -67,44 +100,25 @@ run
 run
 run
 run
+restart
+force s1bit/x U 0ns
+force s1bit/y U 0ns
+force s1bit/cen U 0ns
+run
+run
+run
+force s1bit/x 0 0ns
+force s1bit/y 0 0ns
+force s1bit/cen 1 0ns
+run
+
 run
 run
 run
 run
 run
 run
-run
-run
-run
-run
-run
-run
-run
-force -freeze sim:/s1bit/x 0 0
-force -freeze sim:/s1bit/y 1 0
-force -freeze sim:/s1bit/cen 0 0
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
+force s1bit/y 1 0ns
 run
 run
 run

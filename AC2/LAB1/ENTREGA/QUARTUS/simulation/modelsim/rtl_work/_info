@@ -2,14 +2,14 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\Users\corre\Documents\FIBQ8\AC2\LAB1 AC2\ENTREGA\QUARTUS\simulation\modelsim
+Z0 dD:\FIB_Q8\AC2\LAB1\ENTREGA\QUARTUS\simulation\modelsim
 Es1bit
-Z1 w1582621114
+Z1 w1582732175
 Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z4 dC:\Users\corre\Documents\FIBQ8\AC2\LAB1 AC2\ENTREGA\QUARTUS\simulation\modelsim
-Z5 8C:/Users/corre/Documents/FIBQ8/AC2/LAB1 AC2/ENTREGA/CODIGO/s1bit.vhd
-Z6 FC:/Users/corre/Documents/FIBQ8/AC2/LAB1 AC2/ENTREGA/CODIGO/s1bit.vhd
+Z4 dD:\FIB_Q8\AC2\LAB1\ENTREGA\QUARTUS\simulation\modelsim
+Z5 8D:/FIB_Q8/AC2/LAB1/ENTREGA/CODIGO/s1bit.vhd
+Z6 FD:/FIB_Q8/AC2/LAB1/ENTREGA/CODIGO/s1bit.vhd
 l0
 L5
 VHbR:Vl?[_GIML`e2<@OzJ2
@@ -17,9 +17,9 @@ VHbR:Vl?[_GIML`e2<@OzJ2
 Z7 OV;C;10.1d;51
 31
 !i10b 1
-Z8 !s108 1582631929.880000
-Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/corre/Documents/FIBQ8/AC2/LAB1 AC2/ENTREGA/CODIGO/s1bit.vhd|
-Z10 !s107 C:/Users/corre/Documents/FIBQ8/AC2/LAB1 AC2/ENTREGA/CODIGO/s1bit.vhd|
+Z8 !s108 1590333431.507000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/FIB_Q8/AC2/LAB1/ENTREGA/CODIGO/s1bit.vhd|
+Z10 !s107 D:/FIB_Q8/AC2/LAB1/ENTREGA/CODIGO/s1bit.vhd|
 Z11 o-93 -work work -O0
 Z12 tExplicit 1
 Ahalfadder
