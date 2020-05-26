@@ -18,6 +18,7 @@ def readTasksFromFile(file):
     """
     Read and generate a list of tasks.
     """
+    print("\nReading from file {} ...".format(file))
     ret = [];
     for l in open(file, 'r').readlines():    
         if l[0] == '#': continue        
@@ -27,6 +28,7 @@ def readTasksFromFile(file):
         ret.append(newTask)
         print("Found:", end=" ")
         print(newTask)
+    print("\nDone reading from file {} ...\n".format(file))
     return ret;
 
 def helpFileFormat():

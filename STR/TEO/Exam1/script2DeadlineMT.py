@@ -57,15 +57,24 @@ def calcPriority(tasks):
         print("task {} has priorty {}".format(task.num, task.priority))
 
 def planDeadlineMonotonic(tasks):
-    
+    print("Assign higher priorities to shorter deadlines...")
+    calcPriority(tasks)
+    print("\n")
     print("Going to use the following task set:");
+    deadlinesEqualPeriod = True
     for item in tasks:
+        deadlinesEqualPeriod = deadlinesEqualPeriod and item.period == item.deadline 
         print(item)
+    if deadlinesEqualPeriod :
+        print("\n     * The deadlines are equal to the periods.\n")
+    else:
+        print("\n     * The deadlines aren't equal to the periods.\n")
+        
     print("Calculating the utilization:")
     U = utilization(tasks)
     print("     * The utilization factor is {}".format(U))
     if(U > 1):
-        print("The utilitzation is over 1, no way to plan")
+        print("\nThe utilitzation is over 1, no way to plan")
         print("=====> tasks cannot be scheduled")
         return;
     
@@ -73,16 +82,20 @@ def planDeadlineMonotonic(tasks):
     x = 5 * (pow(2, 1/len(tasks)) - 1)
     print("     *{} <= {}".format(U, x))
     if(U > x):
-        print("=====> tasks cannot be scheduled")
+        print("\n=====> Tasks cannot be scheduled")
         return;
-    print("Response time analysis, assign higher priorities to shorter deadline:");
-    calcPriority(tasks)
+    elif deadlinesEqualPeriod :
+        print("\n=====> Since Di == Ti the U <= n(2^1/n-1) is a sufficient condition")
+        print("=====> Tasks can be scheduled")
+        return;
+    print("Since Di != Ti, a Response time analysis is mandatory:");
+    
     r = responseTime(tasks)
     if r:
-        print("     *OK: response time")
+        print("\n     *OK: response time")
         print("=====> tasks can be scheduled")
     else:
-        print("     *ER: response time")
+        print("\n     *ER: response time")
         print("=====> tasks cannot be scheduled")
         
 

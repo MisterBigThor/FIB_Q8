@@ -44,13 +44,24 @@ def calcG(tasks, D):
     
 def earliestDeadline(tasks):
     print("Using the following task set:");
-    printTasks(tasks)
+    deadlinesEqualPeriod = True
+    for item in tasks:
+        deadlinesEqualPeriod = deadlinesEqualPeriod and item.period == item.deadline 
+        print(item)
+    if deadlinesEqualPeriod :
+        print("\n     * The deadlines are equal to the periods.\n")
+    else:
+        print("\n     * The deadlines aren't equal to the periods.\n")
     print("Checking the utilization: ");
     U = utilization(tasks)
     print("    * The utilization factor is {}.".format(U))
     if U > 1 :
-        print("The utilization factor is over 1, no way to plan");
-        print("    =====> The task cannot be scheduled");
+        print("The utilization factor is over 1, no way to plan")
+        print("    =====> The task cannot be scheduled")
+        return;
+    elif deadlinesEqualPeriod:
+        print("\n   =====> Since Di == Ti the utilization factor is a sufficient condition")
+        print("     =====> The tasks can be scheduled")
         return;
     print("Cheking the H and L*:")
     H = hyper(tasks)
