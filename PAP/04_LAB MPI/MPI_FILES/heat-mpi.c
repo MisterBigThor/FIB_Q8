@@ -27,6 +27,8 @@ int main( int argc, char *argv[] )
     MPI_Comm_rank(MPI_COMM_WORLD, &myid);
     MPI_Get_processor_name(hostname, &len);
 
+
+    //master
     if (myid == 0) {
         printf("I am the master running on %s, distributing work to %d additional workers ...\n", hostname, numprocs-1);
 
@@ -78,8 +80,8 @@ int main( int argc, char *argv[] )
         maxiter = param.maxiter;
         // full size (param.resolution are only the inner points)
         columns = param.resolution + 2;
-        rows = columns;
-
+        rows = columns; 
+        int rowsChunk = rows/ numprocs;
         // starting time
         runtime = wtime();
 
@@ -88,6 +90,7 @@ int main( int argc, char *argv[] )
             if (i>0) {
                 MPI_Send(&maxiter, 1, MPI_INT, i, 0, MPI_COMM_WORLD);
                 MPI_Send(&columns, 1, MPI_INT, i, 0, MPI_COMM_WORLD);
+                MPI_Send(&rowsChunk, 1, MPI_INT, i, 0, MPI_COMM_WORLD);
                 MPI_Send(&param.u[0], rows*columns, MPI_DOUBLE, i, 0, MPI_COMM_WORLD);
                 MPI_Send(&param.uhelp[0], rows*columns, MPI_DOUBLE, i, 0, MPI_COMM_WORLD);
             }
@@ -95,7 +98,7 @@ int main( int argc, char *argv[] )
 
         iter = 0;
         while(1) {
-            residual = relax_jacobi(param.u, param.uhelp, rows, columns);
+            residual = relax_jacobi(param.u, param.uhelp, rowsChunk, columns);
             // Copy uhelp into u
             double * tmp = param.u; param.u = param.uhelp; param.uhelp = tmp;
 
@@ -130,13 +133,18 @@ int main( int argc, char *argv[] )
 
         MPI_Finalize();
         return 0;
-    } else {
+    } 
+    
+    //workers
+    else {
         printf("I am worker %d on %s and ready to receive work from master ...\n", myid, hostname);
 
         // receive information from master to perform computation locally
         MPI_Recv(&maxiter, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
         MPI_Recv(&columns, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
-        rows = columns;
+        //recive the row chunk size.
+        MPI_Recv(&rows, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
+        
 
         // allocate memory for worker
         double * u     = calloc( sizeof(double),rows*columns );
