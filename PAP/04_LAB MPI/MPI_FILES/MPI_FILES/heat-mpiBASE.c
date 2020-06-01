@@ -1,20 +1,19 @@
+/*
+ * Iterative solver for heat distribution
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "heat.h"
 #include <mpi.h>
 
-
-
-/*
- *
- *
- *
- */
-void usage( char *s ){
+void usage( char *s )
+{
     fprintf(stderr, "Usage: %s <input file> [result file]\n\n", s);
 }
 
-int main( int argc, char *argv[] ){
+int main( int argc, char *argv[] )
+{
     int columns, rows;
     int iter, maxiter;
     double residual=0.0;
@@ -80,60 +79,33 @@ int main( int argc, char *argv[] ){
         // full size (param.resolution are only the inner points)
         columns = param.resolution + 2;
         rows = columns;
-	int rowsToSolve = (rows / numprocs) + 2;
-	int size = rowsToSolve*columns;
-	printf("The chunks have %d elements\n", rowsToSolve*columns);
+
         // starting time
         runtime = wtime();
 
         // send to workers the necessary information to perform computation
         for (int i=0; i<numprocs; i++) {
             if (i>0) {
-		//Send side size:
                 MPI_Send(&maxiter, 1, MPI_INT, i, 0, MPI_COMM_WORLD);
                 MPI_Send(&columns, 1, MPI_INT, i, 0, MPI_COMM_WORLD);
-		MPI_Send(&rowsToSolve, 1, MPI_INT, i, 0, MPI_COMM_WORLD);
-		//Each worker needs [Base, Base+itemsPerChunk]
-		int index = columns * rowsToSolve * i;
-                MPI_Send(&param.u[index],size, MPI_DOUBLE, i, 0, MPI_COMM_WORLD);
-                MPI_Send(&param.uhelp[index],size , MPI_DOUBLE, i, 0, MPI_COMM_WORLD);
-		printf("Worker %i recive the[%i]\n", i, index);
+                MPI_Send(&param.u[0], rows*columns, MPI_DOUBLE, i, 0, MPI_COMM_WORLD);
+                MPI_Send(&param.uhelp[0], rows*columns, MPI_DOUBLE, i, 0, MPI_COMM_WORLD);
             }
-
         }
 
-	//master resolution: the lower boundary needs to be nofied to proces 1
-	int lastCol = (columns*rowsToSolve)-columns;
-	printf("\t===> Master notify proc 1 the %d row\n", lastCol);
         iter = 0;
         while(1) {
+            residual = relax_jacobi(param.u, param.uhelp, rows, columns);
+            // Copy uhelp into u
+            double * tmp = param.u; param.u = param.uhelp; param.uhelp = tmp;
 
-		residual = relax_jacobi(param.u, param.uhelp, rowsToSolve, columns);
+            iter++;
 
-		double * tmp = param.u;
-		param.u = param.uhelp;
-		param.uhelp = tmp;
+            // solution good enough ?
+            // if (residual < 0.00005) break;
 
-		MPI_Send(&param.u[lastCol], columns, MPI_DOUBLE, 1, 0, MPI_COMM_WORLD);
-		MPI_Send(&param.uhelp[lastCol],columns , MPI_DOUBLE, 1, 0, MPI_COMM_WORLD);
-
-		iter++;
-		// solution good enough ?
-		// if (residual < 0.00005) break;
-
-		// max. iteration reached ? (no limit with maxiter=0)
-		if (maxiter>0 && iter>=maxiter) break;
-        }
-
-	printf("Master end his loop.\n");
-
-
-	for (int i=0; i<numprocs; i++) {
-            if (i > 0) {
-		int index = columns * rowsToSolve * i;
-		printf("MASTER: reciving from %d to u[%d]. Size = %i\n", i, index, size);
-                MPI_Recv(&param.u[index], size-1, MPI_DOUBLE, i, 0, MPI_COMM_WORLD, &status);
-            }
+            // max. iteration reached ? (no limit with maxiter=0)
+            if (maxiter>0 && iter>=maxiter) break;
         }
 
         // stopping time
@@ -148,28 +120,23 @@ int main( int argc, char *argv[] ){
                 flop/runtime/1000000);
         fprintf(stdout, "Convergence to residual=%f: %d iterations\n", residual, iter);
 
-
+        // for plot...
         if (param.resolution < 1024) {
             coarsen( param.u, rows, columns, param.uvis, param.visres+2, param.visres+2 );
             write_image( resfile, param.uvis, param.visres+2, param.visres+2 );
         }
 
-
-	printf("Master: All done\n");
-	finalize( &param );
+        finalize( &param );
 
         MPI_Finalize();
         return 0;
-    }
-    else {
+    } else {
         printf("I am worker %d on %s and ready to receive work from master ...\n", myid, hostname);
 
         // receive information from master to perform computation locally
         MPI_Recv(&maxiter, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
         MPI_Recv(&columns, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
-	MPI_Recv(&rows, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
-
-	fprintf(stdout, "Worker %d: have %i columns and %i rows\n" ,myid, columns, rows);
+        rows = columns;
 
         // allocate memory for worker
         double * u     = calloc( sizeof(double),rows*columns );
@@ -185,44 +152,23 @@ int main( int argc, char *argv[] ){
         MPI_Recv(&uhelp[0], rows*columns, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD, &status);
 
         iter = 0;
-	int lastCol = columns *(rows-1);
-	printf("\t====>Between proces, send the %d column\n", lastCol);
-	//process n recive his upper boundary from n-1 and send the lower boundary to n+1
         while(1) {
+            residual = relax_jacobi(u, uhelp, rows, columns);
+            // Copy uhelp into u
+            double * tmp = u; u = uhelp; uhelp = tmp;
 
-		MPI_Recv(&u[0], columns, MPI_DOUBLE, (myid - 1), 0, MPI_COMM_WORLD, &status);
-		MPI_Recv(&uhelp[0], columns, MPI_DOUBLE, (myid - 1), 0, MPI_COMM_WORLD, &status);
+            iter++;
 
-		residual = relax_jacobi(u, uhelp, rows, columns);
+            // solution good enough ?
+            // if (residual < 0.00005) break;
 
-		double * tmp = u;
-		u = uhelp;
-		uhelp = tmp;
-
-		if(myid < numprocs - 1){
-			MPI_Send(&u[rows-1],columns, MPI_DOUBLE, (myid + 1), 0, MPI_COMM_WORLD);
-			MPI_Send(&uhelp[rows-1],columns, MPI_DOUBLE, (myid + 1), 0, MPI_COMM_WORLD);
-		}
-
-
-		iter++;
-
-		// solution good enough ?
-		// if (residual < 0.00005) break;
-
-		// max. iteration reached ? (no limit with maxiter=0)
-		if (maxiter>0 && iter>=maxiter) break;
+            // max. iteration reached ? (no limit with maxiter=0)
+            if (maxiter>0 && iter>=maxiter) break;
         }
 
         fprintf(stdout, "Process %d finished computing after %d iterations with residual value = %f\n", myid, iter, residual);
-	printf("Process %d sending the results to master, total of %i\n", myid, rows*columns);
 
-	MPI_Send(&u[0], (rows*columns)-1, MPI_DOUBLE, 0,0, MPI_COMM_WORLD);
-
- 	printf("Process %d : MPI_finalize()\n", myid);
         MPI_Finalize();
         return 0;
     }
 }
-
-

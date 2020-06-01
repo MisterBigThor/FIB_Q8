@@ -1,0 +1,50 @@
+Heat execution with 1 nodes and 4 total processes (4 processes per node)
+I am the master running on boada-7, distributing work to 3 additional workers ...
+I am worker 2 on boada-7 and ready to receive work from master ...
+I am worker 1 on boada-7 and ready to receive work from master ...
+I am worker 3 on boada-7 and ready to receive work from master ...
+Iterations        : 25000
+Resolution        : 256
+Algorithm         : 0 (Jacobi)
+Num. Heat sources : 2
+   1: (0.00, 0.00) 1.00 2.50 
+   2: (0.50, 1.00) 1.00 2.50 
+The chunks have 17028 elements
+Worker 1: have 258 columns and 66 rows
+Worker 1 recive the[17028]
+Worker 2: have 258 columns and 66 rows
+	====>Between proces, send the 16770 column
+Worker 2 recive the[34056]
+Worker 3: have 258 columns and 66 rows
+	====>Between proces, send the 16770 column
+Worker 3 recive the[51084]
+	===> Master notify proc 1 the 16770 row
+	====>Between proces, send the 16770 column
+Master end his loop.
+MASTER: reciving from 1 to u[17028]. Size = 17028
+Process 1 finished computing after 25000 iterations with residual value = 0.000000
+Process 1 sending the results to master, total of 17028
+Process 1 : MPI_finalize()
+MASTER: reciving from 2 to u[34056]. Size = 17028
+Process 2 finished computing after 25000 iterations with residual value = 0.000000
+Process 2 sending the results to master, total of 17028
+Process 2 : MPI_finalize()
+Process 3 finished computing after 25000 iterations with residual value = 0.000000
+Process 3 sending the results to master, total of 17028
+MASTER: reciving from 3 to u[51084]. Size = 17028
+Time: 1.969 
+Flops and Flops per second: (18.022 GFlop => 9153.72 MFlop/s)
+Convergence to residual=0.000000: 25000 iterations
+Process 3 : MPI_finalize()
+Master: All done
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 8751 RUNNING AT boada-7.ac.upc.es
+=   EXIT CODE: 6
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+YOUR APPLICATION TERMINATED WITH THE EXIT STRING: Aborted (signal 6)
+This typically refers to a problem with your application.
+Please see the FAQ page for debugging suggestions

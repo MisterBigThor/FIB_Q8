@@ -1,5 +1,6 @@
 /*
  * Iterative solver for heat distribution
+ * HI
  */
 
 #include <stdio.h>
